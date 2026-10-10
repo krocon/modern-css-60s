@@ -1,0 +1,10 @@
+/* Zustand „install“ – beim install-Event legt sw.js offline.html in den Cache (cache.add). */
+@import url("demo.css");
+
+.a-cache { opacity: 1; color: #d946ef; }
+.a-cache span { background: #d946ef; color: #ffffff; }
+.b-cache { border-color: #d946ef; background: color-mix(in srgb, #d946ef 18%, var(--surface-2)); box-shadow: 0 0 0 4px rgb(217 70 239 / 0.25); }
+.b-cache .full { color: #a21caf; }
+.a-reg, .a-net, .b-net { opacity: 0.35; }
+.a-net, .a-reg { color: var(--text-muted); }
+.b-net { border-color: var(--border); }

@@ -1,0 +1,4 @@
+/* Zustand – so sieht es in einem Browser ohne field-sizing aus (langer Text):
+   field-sizing wird ignoriert, min-block-size: 3lh bleibt – ein normales Feld mit Scrollbalken. */
+@import url("after.css");
+textarea { field-sizing: fixed; }

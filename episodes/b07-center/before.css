@@ -1,0 +1,2 @@
+/* Before – kein Zentrieren: alles klebt oben links (Karte auf der Seite, Initialen im Kreis, Icons im Button). */
+.avatar, .icon { display: block; }

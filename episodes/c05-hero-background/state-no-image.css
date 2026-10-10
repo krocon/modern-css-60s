@@ -1,0 +1,3 @@
+/* Bild fehlt – simuliert per background-image ohne Bild: Verlauf + Fallback-Farbe halten die Schrift lesbar. */
+@import url("after.css");
+.hero { background-image: linear-gradient(#0003, #000c), none; }

@@ -1,0 +1,14 @@
+/* Momentaufnahme: Einblend-Animation nach 750 ms von 1000 ms (75 %).
+   Jede Kachel startet 100 ms später; --p = wie weit sie schon ist (ease-out). */
+@import url("after.css");
+.tile {
+  animation: none;
+  opacity: var(--p);
+  translate: 0 calc((1 - var(--p)) * 2rem);
+}
+.tile:nth-child(1) { --p: 1.0; }
+.tile:nth-child(2) { --p: 1.0; }
+.tile:nth-child(3) { --p: 1.0; }
+.tile:nth-child(4) { --p: 0.98; }
+.tile:nth-child(5) { --p: 0.87; }
+.tile:nth-child(6) { --p: 0.68; }

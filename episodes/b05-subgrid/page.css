@@ -1,0 +1,40 @@
+/* page.css – gemeinsame Optik aller Zustände (Seite, Eltern-Grid, Kartenlook). Die Ausrichtung IN der Karte steht in before/flex-auto/after.css. */
+.page { max-inline-size: 76rem; margin-inline: auto; padding: 5rem var(--space-4) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+/* Eltern-Grid: Spalten wie in Folge B4 */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(16rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+
+.card {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.thumb {
+  display: grid;
+  place-items: center;
+  block-size: 7rem;
+  border-radius: calc(var(--radius) - 0.25rem);
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+}
+.card:nth-child(2) .thumb { background: linear-gradient(135deg, #6366f1, var(--brand)); }
+.card:nth-child(3) .thumb { background: linear-gradient(135deg, #f59e0b, #ef4444); }
+.thumb svg { inline-size: 3rem; fill: #ffffff; opacity: 0.9; }
+.card h2 { font-size: var(--step-2); }
+.card p { color: var(--text-muted); font-size: var(--step-1); }
+.button {
+  justify-self: start;
+  align-self: start;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font-weight: 700;
+  text-decoration: none;
+}

@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="450" viewBox="0 0 1600 900">
+  <!-- Coverbild (Illustration statt Foto): heller Himmel, helle Berge, heller See – weiße Schrift hat darauf keinen Kontrast. -->
+  <defs>
+    <linearGradient id="sky" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#bae6fd"/>
+      <stop offset="0.55" stop-color="#fef3c7"/>
+      <stop offset="1" stop-color="#fde68a"/>
+    </linearGradient>
+    <linearGradient id="lake" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#e0f2fe"/>
+      <stop offset="1" stop-color="#bae6fd"/>
+    </linearGradient>
+    <radialGradient id="sun" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0.55" stop-color="#fffbeb"/>
+      <stop offset="1" stop-color="#fffbeb" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#sky)"/>
+  <circle cx="800" cy="440" r="170" fill="url(#sun)"/>
+  <path d="M0 560 L220 360 L380 470 L560 280 L760 500 L900 410 L1080 540 L1260 330 L1440 480 L1600 400 L1600 640 L0 640 Z" fill="#c7d2fe"/>
+  <path d="M560 280 L620 345 L590 335 L560 360 L530 330 L500 345 Z M1260 330 L1310 385 L1285 378 L1260 400 L1235 375 L1210 385 Z" fill="#ffffff"/>
+  <path d="M0 610 L180 500 L340 580 L520 470 L700 590 L880 520 L1060 600 L1240 500 L1420 590 L1600 540 L1600 680 L0 680 Z" fill="#a5b4fc"/>
+  <rect y="660" width="1600" height="240" fill="url(#lake)"/>
+  <path d="M0 700 H1600 M120 740 H600 M900 760 H1500 M300 800 H1100 M0 850 H700" stroke="#ffffff" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+</svg>

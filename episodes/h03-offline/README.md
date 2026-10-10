@@ -3,13 +3,15 @@
 **DE:** Website offline nutzbar in 20 Zeilen
 
 🎬 Episode 056 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 056 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/h03-offline/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Service Worker mit Offline-Seite, Flugmodus-Test
-
-_Demo coming soon / Demo folgt._
+```css
+/* After – online mit Service Worker: Jeder Seitenaufruf geht durch sw.js ans Netz (fetch).
+   Die Offline-Seite liegt schon im Cache bereit, wird aber nicht gebraucht. */
+@import url("demo.css");
+```
 
 ## Browser support
 
@@ -22,4 +24,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=service%20wor
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

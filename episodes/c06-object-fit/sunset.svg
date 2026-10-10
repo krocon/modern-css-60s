@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="500" viewBox="0 0 1200 500" preserveAspectRatio="none">
+  <!-- Breit 12:5 – runde Sonne über dem Meer. -->
+  <defs><linearGradient id="s" x2="0" y2="1"><stop offset="0" stop-color="#7c3aed"/><stop offset="1" stop-color="#fb923c"/></linearGradient></defs>
+  <rect width="1200" height="500" fill="url(#s)"/>
+  <circle cx="600" cy="300" r="120" fill="#fde047"/>
+  <rect y="320" width="1200" height="180" fill="#1e3a8a"/>
+  <g stroke="#fde047" stroke-width="10" stroke-linecap="round"><path d="M500 360H700M530 400H670M560 440H640"/></g>
+</svg>

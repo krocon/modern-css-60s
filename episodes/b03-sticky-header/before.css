@@ -1,0 +1,13 @@
+/* Before – die overflow-Falle: overflow-x: hidden am Elternelement (.app).
+   hidden macht .app zum Scroll-Container (overflow-y wird automatisch auto). Der Header klebt jetzt
+   an .app – und .app scrollt nie, die Seite scrollt. Ergebnis: der Header scrollt einfach weg. */
+.site-header {
+  position: sticky;
+  top: 0;
+}
+.app {
+  overflow-x: hidden;
+}
+
+/* Nur Video-Bühne: gleiche Scroll-Position wie after.css */
+:root { --demo-scroll: 640; }

@@ -1,0 +1,4 @@
+/* Zustand „caniuse“ – diese Karte im Fokus, die anderen treten zurück. */
+@import url("after.css");
+.tool:not(.caniuse) { opacity: 0.3; filter: grayscale(1); }
+.caniuse { outline: 3px solid var(--brand); outline-offset: 4px; scale: 1.03; }

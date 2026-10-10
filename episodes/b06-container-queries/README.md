@@ -3,13 +3,13 @@
 **DE:** Kacheln, die sich ihrem Container anpassen
 
 🎬 Episode 013 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 013 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/b06-container-queries/
 
-## Core idea
+## Core CSS (`after.css`)
 
-container-type: inline-size + @container (width > 30rem)
-
-_Demo coming soon / Demo folgt._
+```css
+main, aside { container-type: inline-size; }
+```
 
 ## Browser support
 
@@ -22,4 +22,4 @@ Baseline 2023 · [caniuse](https://caniuse.com/?search=container%20queries) · [
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

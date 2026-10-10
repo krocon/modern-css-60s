@@ -1,0 +1,7 @@
+.field:has(input:invalid) {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+
+/* After – :has() färbt das Feld rot, solange die E-Mail ungültig ist. Daneben: drei Wege, den Support zu prüfen. */
+.old-answer { display: none; }

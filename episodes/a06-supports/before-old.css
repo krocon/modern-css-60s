@@ -1,0 +1,4 @@
+/* Before im alten Browser (simuliert) – anchor-name, position-anchor und position-area werden ignoriert.
+   Übrig bleibt position: absolute: der Hinweis verlässt den Textfluss und liegt über dem Text. */
+.tip { position: absolute; }
+.status { --state: #dc2626; --msg: "✗ old browser: anchor properties ignored → hint covers the text"; }

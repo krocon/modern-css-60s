@@ -1,0 +1,6 @@
+/* Before – Flexbox für alles: die Galerie wird mit Prozentbreiten zum „Raster“ gezwungen.
+   33.333 % + Gap ist mehr als 100 % → statt drei Spalten nur zwei, rechts bleibt ein Loch. */
+.row { display: flex; flex-wrap: wrap; }
+.tile { flex: 0 0 33.333%; }
+
+.col::before { content: "flex + 33.333%"; }

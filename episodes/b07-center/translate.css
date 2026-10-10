@@ -1,0 +1,10 @@
+/* Old hacks – so wurde früher zentriert: für jedes Element ein anderer Trick.
+   Karte: absolute + translate, Initialen: line-height = Höhe, Icons: magischer Margin. */
+.card {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.avatar { line-height: 6rem; }
+.icon svg { margin: 0.875rem auto; } /* (3.25rem − 1.5rem) / 2 */

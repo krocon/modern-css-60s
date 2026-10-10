@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G5 · Smooth page changes with View Transitions</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Ansichten/Momentaufnahmen für das Video (dort laufen keine Animationen). -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-50.css state-detail.css"
+        data-labels="Before|After|Morph 50 %|Detail">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Trips 2027</p>
+      <h1>Where to next?</h1>
+      <p class="lead">Click a trip – the card morphs into the detail view.</p>
+    </header>
+    <section class="trips" aria-label="Trips">
+      <article class="trip" style="--vt: lisbon">
+        <svg class="photo" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="sky-lisbon" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#fb923c"/><stop offset="1" stop-color="#fde68a"/></linearGradient></defs>
+          <rect width="400" height="240" fill="url(#sky-lisbon)"/>
+          <circle cx="290" cy="95" r="34" fill="#fff7ed" opacity=".85"/>
+          <path d="M0 170 L90 110 L170 160 L260 100 L400 165 V240 H0Z" fill="#0e7490"/>
+          <path d="M0 200 L120 160 L230 195 L330 170 L400 190 V240 H0Z" fill="#155e75"/>
+        </svg>
+        <div class="body">
+          <h2><button type="button" aria-expanded="false">Lisbon</button></h2>
+          <p class="meta">Portugal · 4 days · €640</p>
+          <p class="more">Trams, tiles and pastéis de nata. Sunset at Miradouro da Graça, fado in Alfama, a day trip to Sintra.</p>
+        </div>
+      </article>
+      <article class="trip" style="--vt: kyoto">
+        <svg class="photo" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="sky-kyoto" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f472b6"/><stop offset="1" stop-color="#fbcfe8"/></linearGradient></defs>
+          <rect width="400" height="240" fill="url(#sky-kyoto)"/>
+          <circle cx="290" cy="95" r="34" fill="#fff7ed" opacity=".85"/>
+          <path d="M0 170 L90 110 L170 160 L260 100 L400 165 V240 H0Z" fill="#3f6212"/>
+          <path d="M0 200 L120 160 L230 195 L330 170 L400 190 V240 H0Z" fill="#365314"/>
+        </svg>
+        <div class="body">
+          <h2><button type="button" aria-expanded="false">Kyoto</button></h2>
+          <p class="meta">Japan · 9 days · €2,180</p>
+          <p class="more">Temples at dawn, the bamboo grove in Arashiyama and a tea ceremony in Gion.</p>
+        </div>
+      </article>
+      <article class="trip" style="--vt: reykjavik">
+        <svg class="photo" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="sky-reykjavik" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#e0f2fe"/><stop offset="1" stop-color="#a5f3fc"/></linearGradient></defs>
+          <rect width="400" height="240" fill="url(#sky-reykjavik)"/>
+          <circle cx="290" cy="95" r="34" fill="#fff7ed" opacity=".85"/>
+          <path d="M0 170 L90 110 L170 160 L260 100 L400 165 V240 H0Z" fill="#334155"/>
+          <path d="M0 200 L120 160 L230 195 L330 170 L400 190 V240 H0Z" fill="#1e293b"/>
+        </svg>
+        <div class="body">
+          <h2><button type="button" aria-expanded="false">Reykjavík</button></h2>
+          <p class="meta">Iceland · 6 days · €1,350</p>
+          <p class="more">Golden Circle, black sand beaches and – with a bit of luck – northern lights.</p>
+        </div>
+      </article>
+      <article class="trip" style="--vt: cape-town">
+        <svg class="photo" viewBox="0 0 400 240" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+          <defs><linearGradient id="sky-cape-town" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#f59e0b"/><stop offset="1" stop-color="#fef08a"/></linearGradient></defs>
+          <rect width="400" height="240" fill="url(#sky-cape-town)"/>
+          <circle cx="290" cy="95" r="34" fill="#fff7ed" opacity=".85"/>
+          <path d="M0 170 L90 110 L170 160 L260 100 L400 165 V240 H0Z" fill="#7c2d12"/>
+          <path d="M0 200 L120 160 L230 195 L330 170 L400 190 V240 H0Z" fill="#1e3a8a"/>
+        </svg>
+        <div class="body">
+          <h2><button type="button" aria-expanded="false">Cape Town</button></h2>
+          <p class="meta">South Africa · 10 days · €1,990</p>
+          <p class="more">Table Mountain, penguins at Boulders Beach and the Cape of Good Hope.</p>
+        </div>
+      </article>
+    </section>
+  </main>
+  <script>
+    // Nur für die Video-Bühne: ?css=state-detail.css / state-50.css öffnet „Kyoto“ schon beim Laden. Keine Zeitabhängigkeit.
+    if (/^state-/.test(new URLSearchParams(location.search).get('css') || '')) document.querySelectorAll('.trip')[1].classList.add('is-open');
+  </script>
+</body>
+</html>

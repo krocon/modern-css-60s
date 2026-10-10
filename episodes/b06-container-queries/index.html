@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B6 · Cards that adapt to their container, not the screen</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- page.css = Seitenlayout + Optik. Wie sich die Karte anpasst, entscheidet das umschaltbare Stylesheet. -->
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-outline.css after.css" data-labels="Before (@media)|Containers|After (@container)">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <div class="page">
+    <header class="intro">
+      <h1>Travel journal</h1>
+      <p class="lead">One card component – in the main column and in the sidebar.</p>
+    </header>
+    <div class="layout">
+      <main>
+        <article class="card">
+          <div class="thumb thumb-a" aria-hidden="true"></div>
+          <div class="body">
+            <p class="kicker">Guide</p>
+            <h2>Pack a carry-on for two weeks</h2>
+            <p>Roll, don't fold: a packing list that fits in one small bag – shoes included.</p>
+          </div>
+        </article>
+        <article class="card">
+          <div class="thumb thumb-b" aria-hidden="true"></div>
+          <div class="body">
+            <p class="kicker">Story</p>
+            <h2>Night trains are back</h2>
+            <p>Sleep in Berlin, wake up in Vienna. Why the night train is the best hotel on rails.</p>
+          </div>
+        </article>
+      </main>
+      <aside>
+        <article class="card">
+          <div class="thumb thumb-c" aria-hidden="true"></div>
+          <div class="body">
+            <p class="kicker">Editor's pick</p>
+            <h2>Ten cities by bike</h2>
+            <p>Flat routes, safe lanes and the best coffee stops.</p>
+          </div>
+        </article>
+      </aside>
+    </div>
+  </div>
+</body>
+</html>

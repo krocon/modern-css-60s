@@ -1,0 +1,10 @@
+/* Zustand „Drittens“ – wie after.css, die Namensschilder zeigen jetzt die grid-area-Zuweisung. */
+@import url("after.css");
+
+.layout > [data-area]::after {
+  content: "grid-area: " attr(data-area);
+  padding: 0.45rem 0.75rem;
+  font-size: 0.95rem;
+  outline: 2px solid currentColor;
+}
+.layout > * { outline: 3px dashed color-mix(in srgb, var(--brand) 55%, transparent); outline-offset: -3px; }

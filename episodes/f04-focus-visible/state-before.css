@@ -1,0 +1,7 @@
+/* Zustand für die Video-Bühne: Tastaturfokus auf „Pricing“ – aber mit before.css (outline: none) unsichtbar.
+   Im Browser echt: before.css wählen und Tab drücken. */
+@import url("before.css");
+
+.kbd-hint { display: flex; }
+.kbd-hint .key::before { content: "Tab ⇥"; }
+.kbd-hint .target::before { content: "Focus on “Pricing” – can you see it?"; }

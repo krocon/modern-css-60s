@@ -1,0 +1,5 @@
+/* Before · Leisten weg – nur in diesem Moment passt 100vh (= großes Viewport). */
+@import url("before.css");
+.phone { --bar-top: 0px; --bar-bottom: 0px; }
+.status { color: var(--accent); }
+.status::after { content: "100vh · bars hidden → fits (only now)"; }

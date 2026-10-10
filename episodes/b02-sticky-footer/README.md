@@ -3,13 +3,17 @@
 **DE:** Der Footer, der immer unten bleibt
 
 🎬 Episode 009 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 009 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/b02-sticky-footer/
 
-## Core idea
+## Core CSS (`after.css`)
 
-min-block-size: 100dvh; grid-template-rows: auto 1fr auto
-
-_Demo coming soon / Demo folgt._
+```css
+body {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+```
 
 ## Browser support
 
@@ -22,4 +26,4 @@ Baseline 2022 · [caniuse](https://caniuse.com/?search=dvh) · [Web Features Exp
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

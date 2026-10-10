@@ -1,0 +1,13 @@
+.site-header {
+  position: sticky;
+  top: 0;
+}
+.app {
+  overflow-x: clip;
+}
+
+/* After – der Header klebt. overflow-x: clip schneidet die Deko rechts trotzdem ab,
+   macht .app aber NICHT zum Scroll-Container. Darum bleibt der Viewport der Bezug für sticky. */
+
+/* Nur Video-Bühne: so weit ist die Seite in diesem Zustand gescrollt (liest das Inline-Script). */
+:root { --demo-scroll: 640; }

@@ -1,0 +1,130 @@
+/* demo.css – gemeinsames Layout aller Zustände: links das Manifest, rechts drei Vorschauen (eigene, neutrale Nachbauten).
+   Grundzustand = Manifest wirkt. before.css und die Fokus-Zustände (state-…) bauen darauf auf. */
+
+.page { max-inline-size: 80rem; margin-inline: auto; padding: 3rem var(--space-5) var(--space-4); }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--brand); font-weight: 700; letter-spacing: 0.04em; }
+.intro h1 { font-size: var(--step-3); letter-spacing: -0.02em; }
+.intro { margin-block-end: var(--space-5); }
+
+.stage { display: flex; flex-wrap: wrap; gap: var(--space-5); align-items: start; justify-content: center; }
+
+/* ---------- Code ---------- */
+.code { display: grid; gap: var(--space-3); flex: 0 1 34rem; }
+.file { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); }
+.json, .guess pre {
+  margin: 0;
+  padding: 1rem 0.5rem 1rem 0;
+  border: 1px solid #334155;
+  border-radius: var(--radius);
+  background: #0b1220;
+  color: #e2e8f0;
+  font-family: var(--font-mono);
+  font-size: 0.95rem;
+  line-height: 1.9;
+  list-style: none;
+}
+.json li { position: relative; white-space: pre; padding-inline: 1.25rem 2.5rem; color: #f0abfc; transition: background 0.3s, opacity 0.3s; }
+.json li:first-child, .json li:last-child { color: #e2e8f0; }
+.json li b {
+  position: absolute;
+  inset-inline-end: 0.6rem;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+}
+/* Nummern-Marker (Code und Vorschau gleich) */
+.json li b, .previews [data-f]::after {
+  display: grid;
+  place-items: center;
+  inline-size: 1.4rem;
+  block-size: 1.4rem;
+  border-radius: 50%;
+  background: #d946ef;
+  color: #ffffff;
+  font: 800 0.75rem/1 var(--font-sans);
+}
+.guess { display: none; gap: var(--space-2); }
+.guess pre { padding: 1rem 1.25rem; color: #94a3b8; white-space: pre-wrap; }
+.guess-note { padding: 0.75rem 1rem; border-radius: var(--radius); background: color-mix(in srgb, #f59e0b 18%, transparent); border: 1px solid #f59e0b; font-weight: 600; }
+.hint { font-size: var(--step--1); color: var(--text-muted); }
+
+/* ---------- Vorschauen ---------- */
+.previews { display: flex; gap: var(--space-4); flex-wrap: wrap; justify-content: center; }
+.shot { display: grid; justify-items: center; gap: var(--space-2); }
+figcaption { font-size: var(--step--1); font-weight: 700; color: var(--text-muted); }
+.screen {
+  position: relative;
+  inline-size: 12rem;
+  block-size: 28rem;
+  border: 0.45rem solid #0b1020;
+  border-radius: 1.9rem;
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1rem 2rem rgb(15 23 42 / 0.22), 0 0 0 1px #334155;
+}
+.screen::before { content: ""; position: absolute; z-index: 3; inset-block-start: 0.35rem; inset-inline-start: 50%; translate: -50% 0; inline-size: 0.55rem; block-size: 0.55rem; border-radius: 50%; background: #0b1020; }
+.previews [data-f] { position: relative; transition: box-shadow 0.3s, opacity 0.3s; }
+.previews [data-f]::after { position: absolute; z-index: 5; }
+
+/* Icon: echtes Icon aus dem Manifest – oder (ohne Manifest) ein Buchstabe */
+.ico { display: grid; place-items: center; }
+.ico img { inline-size: 100%; border-radius: 22%; }
+.ico em { display: none; }
+
+/* 1) Startbildschirm */
+.home {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-content: start;
+  gap: 1rem 0.3rem;
+  padding: 2rem 0.5rem;
+  background: linear-gradient(160deg, #134e4a, #1e293b 55%, #4a044e);
+  color: #ffffff;
+  border-radius: 1.45rem;
+}
+.app { display: grid; grid-template-columns: minmax(0, 1fr); justify-items: center; gap: 0.3rem; font-size: 0.68rem; font-weight: 600; min-inline-size: 0; }
+.app i, .app .ico { inline-size: 2.6rem; block-size: 2.6rem; border-radius: 0.7rem; }
+.app i { background: linear-gradient(135deg, #94a3b8, #475569); }
+.app:nth-child(2) i { background: linear-gradient(135deg, #5eead4, #0f766e); }
+.app:nth-child(4) i { background: linear-gradient(135deg, #fda4af, #be123c); }
+.app:nth-child(5) i { background: linear-gradient(135deg, #93c5fd, #1d4ed8); }
+.label { max-inline-size: 100%; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.label .long { display: none; }
+.app.mine .ico::after { content: "2"; inset: -0.5rem -0.5rem auto auto; }
+.app.mine .label::after { content: "1"; inset: auto auto -1.6rem 50%; translate: -50% 0; }
+.app.mine .label { overflow: visible; }
+
+/* 2) Splash */
+.splash {
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  gap: 0.75rem;
+  background: #ffffff;
+}
+.splash .ico { inline-size: 4.5rem; }
+.splash strong { font-size: 1.05rem; }
+.splash .loading { font-size: 0.7rem; color: #94a3b8; }
+.splash::after { content: "4"; inset: 0.9rem auto auto 0.6rem; }
+.splash .ico::after { content: "2"; inset: -0.4rem -0.4rem auto auto; }
+.splash strong::after { content: "1"; inset: 50% -1.8rem auto auto; translate: 0 -50%; }
+
+/* 3) App-Fenster */
+.app-window { display: flex; flex-direction: column; overflow: hidden; }
+.status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.35rem 0.9rem;
+  background: #a21caf;
+  color: #ffffff;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+.status::after { content: "4"; inset: 50% auto auto 3rem; translate: 0 -50%; inline-size: 1.15rem; block-size: 1.15rem; }
+.urlbar { display: none; margin: 0.3rem 0.4rem; padding: 0.3rem 0.6rem; border-radius: 999px; background: #eef0f4; font-size: 0.68rem; color: #334155; }
+.urlbar::after { content: "3"; inset: 50% -0.2rem auto auto; translate: 0 -50%; }
+.callout { margin: 0.4rem 0.5rem 0; padding: 0.3rem 0.5rem; border: 1px dashed #d946ef; border-radius: 0.5rem; color: #a21caf; font-size: 0.68rem; font-weight: 700; text-align: center; }
+.callout::after { content: "3"; inset: -0.6rem auto auto -0.5rem; }
+.site-bar { margin-block-start: 0.4rem; padding: 0.55rem 0.75rem; background: #a21caf; color: #ffffff; font-weight: 800; font-size: 0.85rem; }
+.notes { list-style: none; padding: 0.5rem 0.6rem; display: grid; gap: 0.4rem; font-size: 0.75rem; }
+.notes li { padding: 0.4rem 0.55rem; border-radius: 0.5rem; background: #f5f3f7; border-inline-start: 3px solid #d946ef; }

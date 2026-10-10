@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="540" viewBox="0 0 960 540">
+  <!-- Platzhalter für ein Foto in einer bestimmten Größe – das Etikett zeigt, welche Datei der Browser gewählt hat. -->
+  <defs><linearGradient id="g" x2="0" y2="1"><stop offset="0" stop-color="#0c4a6e"/><stop offset="0.6" stop-color="#38bdf8"/><stop offset="1" stop-color="#e0f2fe"/></linearGradient></defs>
+  <rect width="960" height="540" fill="url(#g)"/>
+  <circle cx="672" cy="189" r="45" fill="#fef9c3"/>
+  <path d="M0 378 L192 243 L384 334 L576 216 L768 324 L960 270 V540 H0 Z" fill="#0f172a" opacity="0.85"/>
+  <g transform="translate(480 270)" font-family="ui-monospace, Menlo, Consolas, monospace" text-anchor="middle">
+    <rect x="-190" y="-56" width="380" height="112" rx="18" fill="#0f766e"/>
+    <text y="-9" font-size="37" font-weight="800" fill="#fff">hero-m.svg</text>
+    <text y="37" font-size="22" font-weight="600" fill="#fff">960 × 540</text>
+  </g>
+</svg>

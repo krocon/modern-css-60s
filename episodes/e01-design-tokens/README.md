@@ -3,13 +3,19 @@
 **DE:** Alle Farben der Website an einer Stelle ändern
 
 🎬 Episode 033 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 033 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e01-design-tokens/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Design-Tokens: --brand, --surface, --text in :root
-
-_Demo coming soon / Demo folgt._
+```css
+:root {
+  --brand:   #a21caf;
+  --surface: #fdfbff;
+  --text:    #1e1b2e;
+}
+.button { background: var(--brand); }
+.badge  { color: var(--brand); }
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=custom%20prop
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

@@ -3,13 +3,19 @@
 **DE:** Hell/Dunkel/System-Schalter fast ohne JS
 
 🎬 Episode 039 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 039 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e07-theme-switch/
 
-## Core idea
+## Core CSS (`after.css`)
 
-:root:has(#theme-dark:checked) { color-scheme: dark }, 3 Zeilen JS zum Merken
-
-_Demo coming soon / Demo folgt._
+```css
+:root:has(#theme-light:checked) {
+  color-scheme: light;
+}
+:root:has(#theme-dark:checked) {
+  color-scheme: dark;
+}
+/* System = color-scheme: light dark */
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2023 · [caniuse](https://caniuse.com/?search=has) · [Web Features Exp
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

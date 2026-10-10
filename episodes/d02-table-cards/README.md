@@ -3,13 +3,13 @@
 **DE:** Responsive Tabellen, Teil 2: Zeilen werden Karten
 
 🎬 Episode 024 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 024 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d02-table-cards/
 
-## Core idea
+## Core CSS (`after.css`)
 
-@container + td::before { content: attr(data-label) }
-
-_Demo coming soon / Demo folgt._
+```css
+.orders { container-type: inline-size; }
+```
 
 ## Browser support
 
@@ -22,4 +22,4 @@ Baseline 2023 · [caniuse](https://caniuse.com/?search=container%20queries) · [
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

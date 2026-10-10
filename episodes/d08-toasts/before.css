@@ -1,0 +1,62 @@
+.toast {
+  position: fixed;
+  z-index: 9999;
+}
+.cookie-bar {
+  z-index: 10000; /* … und schon ist er weg */
+}
+
+/* Before – der alte Weg: Toast als normales fixed-div mit z-index (plus Bibliothek fürs Ein-/Ausblenden).
+   Das Cookie-Banner hat einen höheren z-index – die Meldungen verschwinden dahinter.
+   (Simulation: Toasts hier dauerhaft sichtbar, wie ein eingeblendetes div.) */
+.toast { display: block; inset: auto 1.5rem 1.5rem auto; margin: 0; }
+.toast:nth-of-type(2) { inset-block-end: 5.5rem; }
+.toast:nth-of-type(3) { inset-block-end: 9.5rem; }
+
+.page { max-inline-size: 48rem; margin-inline: auto; padding: 3.5rem var(--space-4) 8rem; }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.card h2 { font-size: var(--step-2); }
+label { display: grid; gap: var(--space-1); font-weight: 600; }
+input { padding: 0.5rem 0.75rem; border: 1px solid var(--border); border-radius: 0.5rem; background: var(--surface); color: var(--text); }
+.row { display: flex; flex-wrap: wrap; gap: var(--space-2); }
+button { padding: 0.625rem 1.25rem; border: 0; border-radius: 999px; background: var(--brand); color: var(--on-brand); font-weight: 700; cursor: pointer; }
+button.ghost { background: transparent; color: var(--brand); box-shadow: inset 0 0 0 2px var(--brand); }
+
+/* Fremd-Widget mit riesigem z-index – hier gewinnt sonst jedes Wettrüsten */
+.cookie-bar {
+  position: fixed;
+  inset: auto 0 0;
+  z-index: 10000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  background: #1e293b;
+  color: #f8fafc;
+  box-shadow: 0 -0.5rem 2rem rgb(0 0 0 / 0.25);
+}
+.cookie-bar button { background: #f8fafc; color: #0f172a; }
+
+.toast {
+  inline-size: 20rem;
+  padding: 0.875rem 1.125rem;
+  border: 0;
+  border-inline-start: 0.375rem solid var(--accent);
+  border-radius: 0.75rem;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.3);
+}
+.toast.is-error { border-inline-start-color: #dc2626; }

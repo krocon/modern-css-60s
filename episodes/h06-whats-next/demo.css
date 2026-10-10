@@ -1,0 +1,56 @@
+/* demo.css – Layout (immer aktiv, nicht umschaltbar): vier Karten im 2×2-Raster.
+   Hier steht nur das, was jeder Browser kann. Die neuen Features kommen erst in after.css – jedes hinter @supports. */
+
+.page { max-inline-size: 80rem; margin-inline: auto; padding: 2.5rem var(--space-5) var(--space-4); }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--brand); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.intro h1 { font-size: var(--step-3); letter-spacing: -0.02em; }
+.intro { margin-block-end: var(--space-4); }
+
+.features { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(30rem, 100%), 1fr)); gap: var(--space-4); }
+.feat {
+  display: grid;
+  grid-template-rows: auto auto 1fr auto;
+  gap: var(--space-2);
+  block-size: 16.5rem;
+  overflow: hidden;
+  padding: var(--space-3) var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  transition: opacity 0.3s, scale 0.3s, filter 0.3s;
+}
+.feat > header { display: flex; justify-content: space-between; align-items: center; gap: var(--space-2); }
+.feat h2 { font-size: var(--step-1); }
+.feat h2 code { font-size: 1em; color: var(--brand); }
+.badge { flex: none; padding: 0.2rem 0.6rem; border-radius: 999px; border: 1px solid #f59e0b; background: color-mix(in srgb, #f59e0b 16%, transparent); font-size: var(--step--1); font-weight: 700; }
+.badge::before { content: "⚠ "; }
+.what { color: var(--text-muted); }
+.snippet { font-size: var(--step--1); color: var(--text-muted); }
+.support { font-size: var(--step--1); font-weight: 700; color: var(--text-muted); }
+.support .yes { display: none; }
+.demo { min-block-size: 0; overflow: hidden; }
+
+/* if(): Aufgaben-Karten (Fallback: alle gleich) */
+.tasks { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); align-content: center; }
+.task { display: grid; gap: 0.2rem; padding: 0.7rem 0.8rem; border-radius: 0.6rem; border: 1px solid var(--border); background: var(--surface); }
+.task small { font-family: var(--font-mono); font-weight: 700; text-transform: uppercase; font-size: 0.7rem; }
+.task.done { --status: done; }
+.task.open { --status: open; }
+.task.late { --status: late; }
+
+/* grid-lanes: Galerie, verschieden hohe Kacheln */
+.gallery { gap: 0.5rem; align-self: start; }
+.tile { display: grid; place-items: center; border-radius: 0.5rem; color: #ffffff; font-weight: 800; background: linear-gradient(135deg, #d946ef, #7e22ce); }
+.t1 { block-size: 2.5rem; } .t2 { block-size: 4.5rem; background: linear-gradient(135deg, #2dd4bf, #0f766e); }
+.t3 { block-size: 3rem; background: linear-gradient(135deg, #fbbf24, #ea580c); } .t4 { block-size: 4rem; background: linear-gradient(135deg, #93c5fd, #1d4ed8); }
+.t5 { block-size: 2rem; } .t6 { block-size: 3rem; background: linear-gradient(135deg, #2dd4bf, #0f766e); }
+
+/* base-select: Formular */
+.picker { display: flex; align-items: center; gap: var(--space-3); font-weight: 700; }
+select { min-inline-size: 12rem; padding: 0.5rem 0.75rem; font-size: var(--step-1); }
+
+/* text-box: gestrichelte Linie = Textbox (Platz über den Großbuchstaben / unter der Grundlinie sichtbar) */
+.trim { display: flex; align-items: center; gap: var(--space-4); }
+.trim .txt { display: inline-block; outline: 1.5px dashed currentColor; outline-offset: 0; }
+.pill { display: inline-block; padding: 0.6rem 1.2rem; border-radius: 999px; background: #a21caf; color: #ffffff; font-weight: 800; font-size: var(--step-1); letter-spacing: 0.04em; line-height: 1.5; }
+.big { display: inline-block; padding: 0.4rem 0.6rem; border-radius: 0.5rem; background: var(--surface); border: 1px solid var(--border); font-size: 3.2rem; font-weight: 800; line-height: 1.3; }

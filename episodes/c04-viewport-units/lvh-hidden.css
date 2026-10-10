@@ -1,0 +1,6 @@
+/* lvh · Leisten weg – jetzt passt lvh genau. */
+@import url("lvh.css");
+.phone { --bar-top: 0px; --bar-bottom: 0px; }
+.ruler-lvh, .unit-lvh { color: var(--accent); }
+.status { color: var(--accent); }
+.status::after { content: "100lvh · bars hidden → fits ✓"; }

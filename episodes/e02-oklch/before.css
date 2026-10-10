@@ -1,0 +1,44 @@
+.tile {
+  /* überall 50 % Helligkeit – angeblich */
+  background: hsl(var(--h) 85% 50%);
+}
+.danger  { --h: 0; }
+.warning { --h: 45; }
+.success { --h: 120; }
+.info    { --h: 190; }
+.primary { --h: 225; }
+.accent  { --h: 300; }
+
+/* Before – HSL: L = 50 % bei allen Kacheln, trotzdem strahlen Gelb, Grün und Cyan,
+   Blau ist dunkel. Kontrast zu Weiß springt von 1,6 bis 6,6 : 1. */
+.formula::before { content: "hsl(H 85% 50%)"; }
+.danger  .ratio::after { content: "4.5 : 1"; }
+.warning .ratio::after { content: "1.9 : 1"; }
+.success .ratio::after { content: "1.6 : 1"; }
+.info    .ratio::after { content: "2.0 : 1"; }
+.primary .ratio::after { content: "6.6 : 1"; }
+.accent  .ratio::after { content: "3.6 : 1"; }
+
+:root { color-scheme: light; }
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+.formula { padding: 0.1em 0.4em; border-radius: 0.3em; background: var(--surface-2); color: var(--text); font-weight: 700; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  gap: var(--space-3);
+}
+.tile {
+  display: grid;
+  align-content: space-between;
+  min-block-size: 11rem;
+  padding: var(--space-4);
+  border-radius: calc(var(--radius) * 1.5);
+  color: #fff;
+}
+.tile h2 { font-size: var(--step-3); }
+.ratio { font-size: var(--step-1); font-weight: 600; }
+.ratio::before { content: "Contrast "; font-weight: 400; }
+.note { margin-block-start: var(--space-3); color: var(--text-muted); }

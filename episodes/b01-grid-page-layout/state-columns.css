@@ -1,0 +1,8 @@
+/* Zustand „Erstens“ – nur display: grid + drei Spalten, noch KEINE Areas:
+   der Browser verteilt die fünf Elemente der Reihe nach auf die Zellen (Auto-Placement). */
+.layout {
+  display: grid;
+  grid-template-columns: 12rem 1fr 14rem;
+  align-content: start;
+  gap: var(--space-3);
+}

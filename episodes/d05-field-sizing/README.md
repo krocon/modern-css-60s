@@ -3,13 +3,17 @@
 **DE:** Ein Textfeld, das beim Tippen mitwächst
 
 🎬 Episode 027 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 027 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d05-field-sizing/
 
-## Core idea
+## Core CSS (`after.css`)
 
-field-sizing: content
-
-_Demo coming soon / Demo folgt._
+```css
+textarea {
+  field-sizing: content;
+  min-block-size: 3lh;
+  max-block-size: 10lh;
+}
+```
 
 ## Browser support
 
@@ -22,4 +26,4 @@ Baseline 2026 (newly available) · [caniuse](https://caniuse.com/?search=field-s
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

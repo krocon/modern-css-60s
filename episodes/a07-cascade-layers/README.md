@@ -3,13 +3,19 @@
 **DE:** Schluss mit dem Spezifitäts-Chaos: @layer
 
 🎬 Episode 007 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 007 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/a07-cascade-layers/
 
-## Core idea
+## Core CSS (`after.css`)
 
+```css
 @layer reset, base, components, utilities;
-
-_Demo coming soon / Demo folgt._
+@layer components {
+  .card .actions .btn { background: var(--btn); }
+}
+@layer utilities {
+  .bg-danger { background: var(--danger); }
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2022 · [caniuse](https://caniuse.com/?search=%40layer) · [Web Feature
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

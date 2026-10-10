@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A6 · Ask the browser what it supports – in CSS</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- before-old.css und fallback.css simulieren einen Browser OHNE Anchor Positioning (im echten Chrome/Safari/Firefox sieht man sonst nur die neue Fassung). -->
+  <link rel="stylesheet" href="after.css" data-styles="before.css before-old.css fallback.css after.css" data-labels="Before|Before · old browser|Fallback (simulated)|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Ask first, then enhance</h1>
+    <p class="lead">One hint, two paths: anchored to the button where supported, a plain line everywhere else.</p>
+
+    <section class="editor" aria-label="Editor">
+      <div class="toolbar" role="toolbar" aria-label="Formatting">
+        <button type="button"><b>B</b></button>
+        <button type="button"><i>I</i></button>
+        <button type="button" class="link-btn" aria-describedby="tip">Link</button>
+        <button type="button">Quote</button>
+        <button type="button">List</button>
+      </div>
+      <p class="tip" id="tip">Insert a link · Ctrl + K</p>
+      <div class="doc">
+        <h2>Release notes</h2>
+        <p>Anchor positioning ties one element to another – no JavaScript measuring, no scroll listeners.</p>
+        <p>Browsers that don’t know it yet simply get the fallback. Nobody gets a broken page.</p>
+      </div>
+    </section>
+
+    <p class="status"></p>
+  </main>
+</body>
+</html>

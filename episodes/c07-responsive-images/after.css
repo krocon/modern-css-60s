@@ -1,0 +1,36 @@
+/* After – <picture> + srcset: der Browser lädt je nach Breite hero-s/m/l.svg (Handy: Hochformat-Ausschnitt).
+   fetchpriority="high" fürs wichtigste Bild, loading="lazy" für die Galerie weit unten: lädt erst beim Hinscrollen.
+   Die Live-Anzeige rechts zeigt, welche Datei wirklich geladen wurde. */
+.old { display: none; }
+.new.grid { display: grid; }
+
+.page { margin-inline-end: 23rem; padding: 2rem var(--space-4) var(--space-6); }
+.intro { margin-block-end: var(--space-3); }
+.kicker { font-size: var(--step--1); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); }
+.intro h1 { font-size: var(--step-3); }
+.hero img { inline-size: 100%; block-size: auto; max-block-size: 62vh; object-fit: cover; border-radius: var(--radius); }
+.story { min-block-size: 3200px; padding-block: var(--space-4); max-inline-size: 40rem; color: var(--text-muted); }
+.gallery h2 { margin-block-end: var(--space-3); }
+.grid { grid-template-columns: repeat(auto-fit, minmax(min(12rem, 100%), 1fr)); gap: var(--space-3); }
+.grid img { inline-size: 100%; aspect-ratio: 3 / 2; border-radius: var(--radius); background: var(--surface-2); }
+
+/* Live-Anzeige „Images on this page“ */
+.net { position: fixed; inset-block-start: 1rem; inset-inline-end: 1rem; inline-size: 21rem; padding: var(--space-3);
+  border: 1px solid #334155; border-radius: var(--radius); background: #0b1220; color: #e2e8f0; color-scheme: dark;
+  font: 0.875rem/1.4 var(--font-mono); box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.25); }
+.net-title { margin-block-end: var(--space-2); color: #f0abfc; font-weight: 800; text-transform: uppercase; letter-spacing: 0.06em; }
+.net-list { display: grid; gap: var(--space-2); padding: 0; list-style: none; }
+.net-list li { display: grid; padding: 0.5rem 0.625rem; border-radius: 0.5rem; background: #1e293b; border-inline-start: 4px solid #14b8a6; }
+.net-list li.wait { border-color: #64748b; color: #94a3b8; }
+.net-list b { color: #fff; }
+.net-list span { font-weight: 700; color: #5eead4; }
+.net-list .wait span { color: #94a3b8; }
+.net-list i { font-style: normal; color: #94a3b8; font-size: 0.8rem; }
+.net-note { margin-block-start: var(--space-2); color: #94a3b8; font-size: 0.75rem; }
+.net-note code { color: #f0abfc; }
+@media (width < 36em) {
+  .page { margin-inline-end: 0; padding-block-end: 16rem; }
+  .net { inset: auto 0.5rem 0.5rem; inline-size: auto; padding: var(--space-2); font-size: 0.75rem; }
+  .net-list { grid-template-columns: 1fr 1fr; gap: 0.375rem; }
+  .net-note { display: none; }
+}

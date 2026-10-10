@@ -3,13 +3,16 @@
 **DE:** Lange Seiten schneller rendern mit einer Eigenschaft
 
 🎬 Episode 058 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 058 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/h05-content-visibility/
 
-## Core idea
+## Core CSS (`after.css`)
 
-content-visibility: auto + contain-intrinsic-size
-
-_Demo coming soon / Demo folgt._
+```css
+.post {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 22rem;
+}
+```
 
 ## Browser support
 
@@ -22,4 +25,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=content-visibility) · [W
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

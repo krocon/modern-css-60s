@@ -1,0 +1,9 @@
+/* Zustand „Zweitens“ – Fokus auf die Galerie: Grid hält die Spalten, Flex zieht die letzte Reihe breit. */
+@import url("after.css");
+
+.nav { opacity: 0.2; }
+.gallery { outline: 3px solid var(--verdict); outline-offset: 0.5rem; border-radius: 0.25rem; }
+.flex { --verdict: #f43f5e; }
+.grid { --verdict: #10b981; }
+.flex::before { content: "display: flex ✗ gallery"; background: #f43f5e; }
+.grid::before { content: "display: grid ✓ gallery"; background: #10b981; }

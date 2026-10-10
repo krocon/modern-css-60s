@@ -1,0 +1,9 @@
+/* Zustand „auto“ – wie gescrollt; die Abschnitte 1–17 waren schon einmal gerendert.
+   Dank „auto“ behalten sie ihre echte (gemerkte) Höhe statt der 22rem-Schätzung. */
+@import url("state-scrolled.css");
+
+.map li:nth-child(-n+17) { background: var(--memo); outline: 1px solid #d946ef; outline-offset: -1px; }
+.map li:nth-child(3n+1):nth-child(-n+17) { block-size: 10px; }
+.map li:nth-child(3n+2):nth-child(-n+17) { block-size: 6px; }
+.map li:nth-child(3n):nth-child(-n+17) { block-size: 12px; }
+.panel { --at: 19; } /* Rahmen: Summe der gemerkten Höhen von 1–17 */

@@ -1,0 +1,39 @@
+/* Screenreader-Sicht (div-Suppe) – nur namenlose div-Kästen: keine Landmarks, keine Überschriften. */
+@import url("before.css");
+.soup div {
+  position: relative;
+  outline: 2px dashed #94a3b8;
+  outline-offset: 3px;
+}
+.soup div::before {
+  content: "div";
+  position: absolute;
+  inset-block-start: -0.7rem;
+  inset-inline-start: 0.5rem;
+  z-index: 1;
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.3rem;
+  background: #94a3b8;
+  color: #0f172a;
+  font: 700 0.75rem/1.4 var(--font-mono);
+}
+.soup .main { outline-offset: -4px; }
+.soup .main::before { inset-block-start: 0.3rem; }
+.sr-soup {
+  display: block;
+  position: fixed;
+  inset-block-end: var(--space-4);
+  inset-inline-end: var(--space-4);
+  inline-size: 19rem;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.3);
+  font: 0.9rem/1.5 var(--font-mono);
+}
+.sr-head { color: #f0abfc; font-weight: 700; }
+.sr-none { margin-block: var(--space-1) var(--space-2); color: #fca5a5; }
+body { padding: 1.25rem 0.75rem; }
+.soup :is(.title, .side-title, .meta, .text)::before { inset-inline-start: auto; inset-inline-end: 0.5rem; }

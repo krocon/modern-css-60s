@@ -1,0 +1,12 @@
+/* Zustand „System dunkel“ – SIMULIERT für die Video-Bühne:
+   prefers-color-scheme folgt dem Betriebssystem, nicht dem ☀/☾-Schalter, und die Bühne kann das System
+   nicht umschalten. Darum stehen hier exakt die Regeln aus den @media (prefers-color-scheme: dark)-Blöcken
+   von after.css – nur ohne Media Query. Im echten Browser reicht after.css: System auf dunkel stellen. */
+@import url("after.css");
+
+:root {
+  color-scheme: dark; /* = was „light dark“ bei dunklem System wählt */
+  --surface: #0f172a; --text: #e2e8f0;
+  --card: #1e293b; --muted: #94a3b8; --brand: #f0abfc; --line: #334155;
+}
+.system::after { content: "☾ dark"; }

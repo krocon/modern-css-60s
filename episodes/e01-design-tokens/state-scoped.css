@@ -1,0 +1,5 @@
+/* Zustand – Token lokal überschreiben: --brand nur in der Promo-Karte neu.
+   Custom Properties erben: alles in .promo nutzt automatisch den neuen Wert, der Rest bleibt Magenta. */
+@import url("after.css");
+
+.promo { --brand: #2563eb; }

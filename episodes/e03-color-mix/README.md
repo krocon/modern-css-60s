@@ -3,13 +3,19 @@
 **DE:** Hover-Farben, ohne neue Farben auszusuchen
 
 🎬 Episode 035 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 035 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e03-color-mix/
 
-## Core idea
+## Core CSS (`after.css`)
 
-color-mix(in oklch, var(--brand), black 15%)
-
-_Demo coming soon / Demo folgt._
+```css
+.btn { background: var(--brand); }
+.btn:hover {
+  background:
+    color-mix(in oklch, var(--brand), black 15%);
+}
+.starter { --brand: #0d9488; }
+.team    { --brand: #ea580c; }
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2023 · [caniuse](https://caniuse.com/?search=color-mix) · [Web Featur
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

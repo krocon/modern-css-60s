@@ -1,0 +1,28 @@
+/* page.css – Seiten-Optik (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css. */
+.page {
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.page h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.tiles {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+.tile {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border-block-start: 4px solid var(--brand);
+}
+.tile h2 { font-size: var(--step-0); color: var(--text-muted); font-weight: 600; }
+.value { font-size: var(--step-3); font-weight: 800; }
+.trend { color: var(--accent); font-weight: 700; font-size: var(--step--1); }
+.trend.down { color: light-dark(#b45309, #fbbf24); }
+.trend span { color: var(--text-muted); font-weight: 400; }

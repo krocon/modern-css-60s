@@ -1,0 +1,4 @@
+/* Vorher – viewport-fit=cover, aber ohne env(): Die Seite reicht bis in die Ecken, der Inhalt auch.
+   Titel unter Statusleiste und Kamera-Insel, Tabs unter dem Home-Balken, im Querformat Text unter der Kamera.
+   (Grundlayout aus demo.css: .app-bar { padding: 0.5rem 1rem } – kein Abstand zu den Safe Areas.) */
+.landscape .list, .landscape .app-bar { padding-inline: 0.4rem; }

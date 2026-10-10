@@ -1,0 +1,14 @@
+@layer reset, base, components, utilities;
+@layer components {
+  .card .actions .btn { background: var(--btn); }
+}
+@layer utilities {
+  .bg-danger { background: var(--danger); }
+}
+
+/* After – eine Zeile legt die Reihenfolge fest. utilities steht zuletzt und gewinnt,
+   obwohl .card .actions .btn (0,3,0) viel spezifischer ist als .bg-danger (0,1,0). Kein !important. */
+@layer utilities {
+  .l-utilities { background: #be185d; color: #ffffff; }
+  .l-utilities::after { content: "wins ✓"; }
+}

@@ -1,0 +1,4 @@
+/* Schritt – Zeilen sind schon Karten (display: block), aber ohne td::before:
+   Nur Werte, keiner weiß, was „1“ oder „€129.00“ bedeutet. */
+@import url("after.css");
+td::before { content: none; }

@@ -1,0 +1,5 @@
+/* Zustand „WebKit“ – Safari auf Mac, iPhone und iPad. */
+@import url("after.css");
+.engine:not(.webkit) { opacity: 0.3; filter: grayscale(1); }
+.webkit { outline: 3px solid var(--engine); outline-offset: 4px; scale: 1.03; }
+.iphone { outline: 2px dashed var(--engine); outline-offset: 4px; }

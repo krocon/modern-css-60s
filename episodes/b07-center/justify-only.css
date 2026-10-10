@@ -1,0 +1,7 @@
+/* justify-items: center – nur waagerecht zentriert (Inline-Achse), senkrecht noch oben. */
+body,
+.avatar,
+.icon {
+  display: grid;
+  justify-items: center;
+}

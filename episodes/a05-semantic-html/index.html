@@ -1,0 +1,77 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A5 · Stop writing div soup</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="layout.css">
+  <!-- before.css zeigt die div-Suppe, after.css die semantische Fassung. Ausgeblendetes (display: none) ist auch für Screenreader weg. -->
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-soup.css after.css state-outline.css state-main.css" data-labels="Div soup|Soup: screen reader|Semantic|Semantic: screen reader|main">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+
+  <!-- VORHER: div-Suppe – sieht gleich aus, hat aber keine Bedeutung -->
+  <div class="soup">
+    <div class="header">
+      <div class="logo">CSS Weekly</div>
+      <div class="nav">
+        <a href="#">Articles</a> <a href="#">Talks</a> <a href="#">About</a>
+      </div>
+    </div>
+    <div class="main">
+      <div class="article">
+        <div class="title">Stop writing div soup</div>
+        <div class="meta">5 min read · October 2026</div>
+        <div class="text">A page built only from divs looks fine. But screen readers, search engines and reader modes see a pile of nameless boxes.</div>
+        <div class="text">Semantic elements give every part of the page a role – for free, without a single line of ARIA.</div>
+      </div>
+      <div class="sidebar">
+        <div class="side-title">Related</div>
+        <div class="links"><a href="#">Landmarks explained</a><a href="#">Headings that make sense</a><a href="#">Skip links</a></div>
+      </div>
+    </div>
+    <div class="footer">© 2026 CSS Weekly · Imprint</div>
+  </div>
+
+  <!-- NACHHER: semantisches HTML – gleiche Optik, echte Struktur -->
+  <div class="semantic">
+    <header>
+      <p class="logo">CSS Weekly</p>
+      <nav aria-label="Main">
+        <a href="#">Articles</a> <a href="#">Talks</a> <a href="#">About</a>
+      </nav>
+    </header>
+    <main>
+      <article>
+        <h1>Stop writing div soup</h1>
+        <p class="meta">5 min read · <time datetime="2026-10">October 2026</time></p>
+        <p>A page built only from divs looks fine. But screen readers, search engines and reader modes see a pile of nameless boxes.</p>
+        <p>Semantic elements give every part of the page a role – for free, without a single line of ARIA.</p>
+      </article>
+      <aside aria-label="Related">
+        <h2>Related</h2>
+        <ul><li><a href="#">Landmarks explained</a></li><li><a href="#">Headings that make sense</a></li><li><a href="#">Skip links</a></li></ul>
+      </aside>
+    </main>
+    <footer>© 2026 CSS Weekly · Imprint</footer>
+  </div>
+
+  <!-- Erklär-Tafel für die Screenreader-Ansicht (nur Optik für das Video) -->
+  <div class="sr-panel sr-semantic" aria-hidden="true">
+    <p class="sr-head">Screen reader: landmarks</p>
+    <ol><li>banner</li><li>navigation “Main”</li><li>main</li><li>complementary “Related”</li><li>contentinfo</li></ol>
+    <p class="sr-head">Headings</p>
+    <ol><li>h1 Stop writing div soup</li><li>h2 Related</li></ol>
+  </div>
+  <div class="sr-panel sr-soup" aria-hidden="true">
+    <p class="sr-head">Screen reader: landmarks</p>
+    <p class="sr-none">none found</p>
+    <p class="sr-head">Headings</p>
+    <p class="sr-none">none found</p>
+  </div>
+</body>
+</html>

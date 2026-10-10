@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D9 · The modal you should be using</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-nobackdrop.css state-open.css" data-labels="Before|After|Open, no backdrop|Open">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <header class="topbar">
+    <strong class="logo">◆ Projects</strong>
+    <span class="user">Ada L.</span>
+  </header>
+
+  <main class="page">
+    <h1>Your projects</h1>
+    <p class="lead">Delete one: a real modal, Esc closes it, focus comes back.</p>
+    <ul class="projects">
+      <li class="project">
+        <div><h2>Website relaunch</h2><p>12 tasks · updated today</p></div>
+        <button onclick="dlg.showModal()">Delete</button>
+      </li>
+      <li class="project">
+        <div><h2>Newsletter redesign</h2><p>5 tasks · updated yesterday</p></div>
+        <button disabled>Delete</button>
+      </li>
+      <li class="project">
+        <div><h2>Docs migration</h2><p>31 tasks · updated last week</p></div>
+        <button disabled>Delete</button>
+      </li>
+    </ul>
+  </main>
+
+  <dialog id="dlg">
+    <form method="dialog">
+      <h2>Delete “Website relaunch”?</h2>
+      <button>Cancel</button> <button>Delete</button>
+    </form>
+  </dialog>
+
+  <script>
+    // Nur für Aufnahmen/Schalter: Zustands-Stylesheets öffnen den Dialog per showModal() (kein Klick, kein Timing).
+    (() => {
+      const opened = ['state-open.css', 'state-nobackdrop.css'];
+      const link = document.querySelector('link[data-styles]');
+      const sync = () => {
+        const want = opened.includes(link.getAttribute('href'));
+        if (want && !dlg.open) dlg.showModal();
+        if (!want && dlg.open) dlg.close();
+      };
+      addEventListener('DOMContentLoaded', () => {
+        sync();
+        new MutationObserver(sync).observe(link, { attributes: true, attributeFilter: ['href'] });
+      });
+    })();
+  </script>
+</body>
+</html>

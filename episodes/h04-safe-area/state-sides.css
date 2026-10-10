@@ -1,0 +1,5 @@
+/* Zustand „unten und seitlich“ – wie after.css; hervorgehoben: safe-area-inset-bottom (Home-Balken)
+   und im Querformat safe-area-inset-left / -right. */
+@import url("after.css");
+
+.z-bottom, .landscape .z-left, .landscape .z-right { display: flex; }

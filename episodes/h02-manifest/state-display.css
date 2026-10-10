@@ -1,0 +1,11 @@
+/* Zustand Fokus display: standalone – App-Fenster ohne Adressleiste und Tabs. Die übrigen Zeilen und Marker treten zurück. */
+@import url("after.css");
+
+.json li:not([data-f="display"]) { opacity: 0.35; }
+.json li[data-f="display"] { background: rgb(217 70 239 / 0.22); box-shadow: inset 4px 0 0 #d946ef; }
+.previews [data-f]:not([data-f="display"])::after { opacity: 0.25; }
+.previews [data-f="display"] { box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #d946ef; border-radius: 0.6rem; }
+.previews [data-f="display"]::after { scale: 1.25; }
+/* Zum Vergleich: die Adressleiste, die es im Standalone-Modus NICHT gibt, durchgestrichen einblenden */
+.urlbar { display: block; opacity: 0.6; text-decoration: line-through; box-shadow: none; }
+.urlbar::after { display: none; }

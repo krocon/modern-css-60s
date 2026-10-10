@@ -1,0 +1,6 @@
+/* Before – ohne @property ist --angle nur ein Stück Text: der Browser kann nicht interpolieren,
+   die Animation „springt“ höchstens einmal auf halber Strecke – von 0deg auf 1turn, was gleich aussieht. Der Rahmen steht still. */
+/* kein @property: --angle ist nur Text */
+@keyframes spin { to { --angle: 1turn; } }
+.pro { animation: spin 4s linear infinite; }
+.angle-readout output::after { content: "unregistered: just text, no interpolation"; color: light-dark(#b45309, #fbbf24); }

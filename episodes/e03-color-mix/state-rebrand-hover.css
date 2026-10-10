@@ -1,0 +1,4 @@
+/* Zustand – neue Pro-Farbe + Hover: die dunklere Hover-Farbe entsteht ohne neuen Hex-Wert. */
+@import url("state-hover.css");
+
+.pro { --brand: #2563eb; }

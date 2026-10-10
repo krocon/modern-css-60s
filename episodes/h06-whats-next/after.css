@@ -1,0 +1,50 @@
+.gallery { columns: 3; }        /* Fallback */
+@supports (display: grid-lanes) {
+  .gallery {
+    display: grid-lanes;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* After – jedes neue Feature nur per @supports bzw. mit Fallback davor (Progressive Enhancement).
+   Die Zeile „this browser“ in jeder Karte zeigt, was der aktuelle Browser wirklich nutzt. */
+
+/* grid-lanes: Fallback columns – Kacheln dürfen nicht umbrechen */
+.tile { break-inside: avoid; margin-block-end: 0.5rem; }
+@supports (display: grid-lanes) {
+  .tile { margin-block-end: 0; }
+  .f-lanes .support .yes { display: inline; }
+  .f-lanes .support .no { display: none; }
+}
+
+/* if(): Farbe direkt aus der Custom Property --status. Fallback = die erste Zeile (unbekanntes if() wird verworfen). */
+.task {
+  background: var(--surface);
+  background: if(style(--status: done): #ccfbf1; style(--status: late): #ffe4e6; else: #fef3c7);
+  color: #0f172a;
+}
+@supports (color: if(else: red)) {
+  .f-if .support .yes { display: inline; }
+  .f-if .support .no { display: none; }
+}
+
+/* appearance: base-select – das Select komplett selbst gestalten */
+@supports (appearance: base-select) {
+  select, ::picker(select) { appearance: base-select; }
+  select { border: 2px solid #d946ef; border-radius: 999px; background: var(--surface); font-weight: 700; }
+  select::picker-icon { color: #d946ef; }
+  select .ic { display: inline-grid; place-items: center; inline-size: 1.7rem; block-size: 1.7rem; margin-inline-end: 0.4rem;
+    border-radius: 50%; background: #a21caf; color: #ffffff; font-size: 0.95rem; }
+  ::picker(select) { border: 2px solid #d946ef; border-radius: 0.75rem; padding: 0.25rem; }
+  option:checked { background: #fdf4ff; }
+  .f-select .support .yes { display: inline; }
+  .f-select .support .no { display: none; }
+}
+
+/* text-box: Leerraum über Großbuchstaben (cap) und unter der Grundlinie (alphabetic) abschneiden */
+@supports (text-box: trim-both cap alphabetic) {
+  .trim .txt { text-box: trim-both cap alphabetic; }
+  .pill { padding-block: 0.9rem; }
+  .f-trim .support .yes { display: inline; }
+  .f-trim .support .no { display: none; }
+}

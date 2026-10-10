@@ -1,0 +1,32 @@
+.tile {
+  inline-size: min(100%, 36rem);
+  padding: max(1rem, 4vw);
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem);
+  border-radius: calc(1rem + 1vw);
+  border-color: light-dark(#f0abfc, #a21caf);
+  background: color-mix(in oklch, Canvas, #d4f 8%);
+}
+
+/* After – sechs Funktionen, null Media Queries:
+   min() Breite · max() Innenabstand · clamp() Schrift · calc() Ecken ·
+   light-dark() Rahmen (folgt color-scheme, also auch dem ☀/☾-Schalter) · color-mix() Tönung aus Canvas + Magenta. */
+.tile { border-width: 3px; border-style: solid; }
+
+.page {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  gap: var(--space-4);
+  min-block-size: 100dvh;
+  padding: var(--space-4);
+}
+.hint { color: var(--text-muted); font-size: var(--step-0); }
+
+.tile { display: grid; gap: 0.75em; }
+.kicker { color: var(--brand); font-weight: 700; font-size: 0.8em; text-transform: uppercase; letter-spacing: 0.06em; }
+.tile h1 { font-size: 2em; }
+.text { color: var(--text-muted); }
+.fns { display: flex; flex-wrap: wrap; gap: 0.4em; padding: 0; list-style: none; font-size: 0.75em; }
+.fns li { padding: 0.3em 0.7em; border: 1px solid var(--border); border-radius: 999px; background: var(--surface); color: var(--text-muted); }
+.fns code { color: var(--brand); font-weight: 700; }
+.btn { justify-self: start; padding: 0.6em 1.3em; border-radius: 999px; background: var(--brand); color: var(--on-brand); font-weight: 700; text-decoration: none; }

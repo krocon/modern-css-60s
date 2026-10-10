@@ -1,0 +1,5 @@
+/* Schritt 2 – sticky ohne Hintergrund, seitlich gescrollt:
+   Die Namen bleiben stehen, aber die Zahlen scheinen durch. */
+@import url("before.css");
+.table-wrap { overflow-x: auto; }
+th:first-child { position: sticky; left: 0; }

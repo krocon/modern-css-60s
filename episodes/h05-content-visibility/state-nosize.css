@@ -1,0 +1,8 @@
+/* Zustand ohne contain-intrinsic-size – übersprungene Abschnitte haben keine Platzhalter-Höhe (praktisch 0 px).
+   Die Seite wird scheinbar viel kürzer, der Scrollbalken springt beim Scrollen. */
+@import url("after.css");
+
+.post { contain-intrinsic-size: none; }
+.map li:nth-child(n+4) { block-size: 1px; background: #94a3b8; outline: 0; }
+.panel { --thumb: 62%; }
+.warn { display: block; }

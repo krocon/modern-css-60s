@@ -1,0 +1,6 @@
+/* Zustand Desktop – Chrome/Edge zeigen ein Install-Symbol in der Adressleiste, danach ein kleiner Dialog (eigener Nachbau). */
+@import url("demo.css");
+
+.device:not(.desktop) { opacity: 0.3; filter: grayscale(1); scale: 0.94; }
+.desktop .dialog { display: grid; }
+.desktop .install { background: #fdf4ff; color: #a21caf; box-shadow: 0 0 0 2px #d946ef; }

@@ -1,0 +1,5 @@
+/* px · 20 px – Simulation: Nutzer stellt 20 px ein. html { font-size: 16px } und alle px-Werte
+   überstimmen die Einstellung: NICHTS wächst. Nur die Anzeige oben ändert sich. */
+@import url("before.css");
+.setting-value::after { content: "Large (20 px) → nothing changes!"; color: #dc2626; }
+.post::after { content: "h1 = 40 px · text = 18 px"; color: #dc2626; }

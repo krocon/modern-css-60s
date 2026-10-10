@@ -1,0 +1,6 @@
+/* Momentaufnahme: Morph zur Hälfte – „Kyoto“ wächst gerade von der Kachel zur Detail-Ansicht. */
+@import url("after.css");
+.trip.is-open { grid-column: span 2; grid-row: span 2; order: 0; display: block; }
+.trip.is-open .photo { block-size: 13rem; }
+.trip.is-open h2 { font-size: var(--step-2); }
+.trips:has(.is-open) .trip:not(.is-open) .photo { block-size: 6.5rem; }

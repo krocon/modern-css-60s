@@ -1,0 +1,38 @@
+/* page.css – Seiten-Optik und die zwei Ansichten (Liste / Detail). Das Thema der Folge steht in after.css. */
+.page {
+  max-inline-size: 72rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.page h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.trips {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(14rem, 100%), 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+.trip {
+  overflow: hidden;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  cursor: pointer;
+}
+.photo { inline-size: 100%; block-size: 9rem; }
+.body { padding: var(--space-3); }
+.trip h2 { font-size: var(--step-1); }
+.trip h2 button { all: unset; cursor: pointer; }
+.trip h2 button:focus-visible { outline: 3px solid var(--brand); outline-offset: 3px; }
+.meta { color: var(--text-muted); font-size: var(--step--1); }
+.more { display: none; margin-block-start: var(--space-3); font-size: var(--step-1); max-inline-size: 40rem; }
+
+/* Detail-Ansicht: die offene Karte über die ganze Breite, die anderen werden klein */
+.trip.is-open { grid-column: 1 / -1; order: -1; display: grid; grid-template-columns: 3fr 2fr; }
+.trip.is-open .photo { block-size: 15rem; }
+.trip.is-open .body { padding: var(--space-4); }
+.trip.is-open h2 { font-size: var(--step-3); }
+.trip.is-open .more { display: block; }
+.trips:has(.is-open) .trip:not(.is-open) .photo { block-size: 4rem; }

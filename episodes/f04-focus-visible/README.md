@@ -3,13 +3,19 @@
 **DE:** Der einfachste Barrierefreiheits-Gewinn in CSS
 
 🎬 Episode 044 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 044 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/f04-focus-visible/
 
-## Core idea
+## Core CSS (`after.css`)
 
-:focus-visible statt outline: none, Bedienung per Tab
-
-_Demo coming soon / Demo folgt._
+```css
+:focus-visible {
+  outline: 4px solid var(--brand);
+  outline-offset: 4px;
+}
+.nav a:focus-visible {
+  background: var(--brand-soft);
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2022 · [caniuse](https://caniuse.com/?search=focus-visible) · [Web Fe
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

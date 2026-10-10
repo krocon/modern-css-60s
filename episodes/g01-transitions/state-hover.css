@@ -1,0 +1,9 @@
+/* Momentaufnahme: Karte „Pro“ fertig gehovert (Ende der Transition). */
+@import url("after.css");
+.card:nth-child(2) {
+  transition: none;
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgb(0 0 0 / .2);
+}
+.card:nth-child(2)::after { display: block; }
+.frames li:nth-child(6) .mini { outline: 3px solid var(--accent); outline-offset: 3px; }

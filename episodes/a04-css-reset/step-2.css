@@ -1,0 +1,4 @@
+/* Schritt 2 – + margin: 0 und line-height: Keine Zufallsabstände mehr, der Header sitzt bündig. */
+@import url("step-1.css");
+* { margin: 0; }
+body { line-height: 1.5; }

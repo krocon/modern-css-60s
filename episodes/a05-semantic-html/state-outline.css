@@ -1,0 +1,54 @@
+/* Screenreader-Sicht (semantisch) – jede Landmark mit Rolle beschriftet, daneben die Liste, die ein Screenreader anbietet. */
+@import url("after.css");
+.semantic :is(header, nav, main, article, aside, footer, h1, h2) {
+  position: relative;
+  outline: 2px solid var(--lm);
+  outline-offset: 3px;
+}
+.semantic :is(header, nav, main, article, aside, footer, h1, h2)::before {
+  position: absolute;
+  inset-block-start: -0.7rem;
+  inset-inline-start: 0.5rem;
+  z-index: 1;
+  padding: 0.05rem 0.45rem;
+  border-radius: 0.3rem;
+  background: var(--lm);
+  color: #ffffff;
+  font: 700 0.75rem/1.4 var(--font-mono);
+  white-space: nowrap;
+}
+.semantic header  { --lm: #2563eb; }
+.semantic header::before  { content: "<header> → banner"; }
+.semantic nav     { --lm: #7c3aed; }
+.semantic nav::before     { content: "<nav> → navigation"; }
+.semantic main    { --lm: #0f766e; outline-offset: -4px; }
+.semantic main::before    { content: "<main> → main"; inset-block-start: 0.3rem; }
+.semantic article { --lm: #b45309; }
+.semantic article::before { content: "<article>"; }
+.semantic aside   { --lm: #be185d; }
+.semantic aside::before   { content: "<aside> → complementary"; }
+.semantic footer  { --lm: #475569; }
+.semantic footer::before  { content: "<footer> → contentinfo"; }
+.semantic :is(h1, h2) { --lm: #64748b; outline-style: dashed; }
+.semantic h1::before { content: "h1"; }
+.semantic h2::before { content: "h2"; }
+
+.sr-semantic {
+  display: block;
+  position: fixed;
+  inset-block-end: var(--space-4);
+  inset-inline-end: var(--space-4);
+  inline-size: 19rem;
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  border: 1px solid #475569;
+  background: #0f172a;
+  color: #e2e8f0;
+  box-shadow: 0 1rem 2rem rgb(0 0 0 / 0.3);
+  font: 0.9rem/1.5 var(--font-mono);
+}
+.sr-head { color: #f0abfc; font-weight: 700; }
+.sr-panel ol { margin-block: var(--space-1) var(--space-2); padding-inline-start: 1.4rem; }
+.sr-none { margin-block: var(--space-1) var(--space-2); color: #fca5a5; }
+body { padding: 1.25rem 0.75rem; }
+.semantic :is(h1, h2)::before { inset-inline-start: auto; inset-inline-end: 0.5rem; }

@@ -1,0 +1,20 @@
+/* Zustand „offline mit Service Worker“ – fetch scheitert, catch() liefert offline.html aus dem Cache (caches.match).
+   Statt der Fehlerseite des Browsers erscheint die eigene Offline-Seite. */
+@import url("demo.css");
+
+.view-app { display: none; }
+.view-offline { display: grid; }
+.net .on, .where .on { display: none; }
+.net .off, .where .off { display: inline; }
+
+.a-net { color: #d97706; opacity: 0.6; }
+.a-net span { text-decoration: line-through; }
+.b-net { border-color: #d97706; background: color-mix(in srgb, #f59e0b 14%, var(--surface-2)); }
+.b-net .ok { display: none; }
+.b-net .ko { display: block; color: #b45309; }
+
+.a-cache { opacity: 1; color: #d946ef; }
+.a-cache .t-add { display: none; }
+.a-cache .t-match { display: inline; background: #d946ef; color: #ffffff; }
+.b-cache { border-color: #d946ef; background: color-mix(in srgb, #d946ef 18%, var(--surface-2)); box-shadow: 0 0 0 4px rgb(217 70 239 / 0.25); }
+.b-cache .full { color: #a21caf; }

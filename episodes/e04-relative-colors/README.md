@@ -3,13 +3,19 @@
 **DE:** Eine komplette Farbpalette aus einer Variable
 
 🎬 Episode 036 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 036 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e04-relative-colors/
 
-## Core idea
+## Core CSS (`after.css`)
 
-oklch(from var(--brand) calc(l + .2) c h)
-
-_Demo coming soon / Demo folgt._
+```css
+:root {
+  --brand: #a21caf;
+  --pale: oklch(from var(--brand) calc(l + .3) c h);
+  --deep: oklch(from var(--brand) calc(l - .2) c h);
+  --soft: oklch(from var(--brand) l c h / 15%);
+  --alt: oklch(from var(--brand) l c calc(h + 180));
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=relative%20color) · [Web
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

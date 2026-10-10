@@ -1,0 +1,3 @@
+/* Zustand: Abgang eingefroren – hidePopover() läuft, allow-discrete hält ihn sichtbar, bis er ausgeblendet ist. */
+@import url("after.css");
+.toast:popover-open { opacity: 0.3; }

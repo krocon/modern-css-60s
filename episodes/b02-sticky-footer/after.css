@@ -1,0 +1,9 @@
+body {
+  min-block-size: 100dvh;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+
+/* After – der Body ist ein Grid mit drei Zeilen: Header und Footer so hoch wie nötig,
+   main bekommt den Rest (1fr). Mindestens 100dvh hoch → der Footer sitzt immer unten,
+   auf langen Seiten rutscht er einfach mit dem Inhalt nach unten. */

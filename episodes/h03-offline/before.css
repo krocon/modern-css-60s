@@ -1,0 +1,20 @@
+/* Vorher – kein Service Worker, Flugmodus: Der Browser zeigt nur seine eigene Fehlerseite.
+   Nichts fängt die Anfrage ab, der Cache bleibt leer. */
+@import url("demo.css");
+
+.view-app { display: none; }
+.view-error { display: grid; }
+.net .on, .where .on { display: none; }
+.net .off, .where .off { display: inline; }
+
+.b-sw { border-style: dashed; border-color: var(--border); opacity: 0.5; }
+.b-sw .sw-yes { display: none; }
+.b-sw .sw-none { display: block; }
+.a-reg, .a-cache, .b-cache { opacity: 0.3; }
+.a-reg, .a-cache { color: var(--text-muted); }
+.b-cache .full { display: none; }
+.b-cache .empty { display: block; }
+.a-net { color: #d97706; }
+.b-net { border-color: #d97706; background: color-mix(in srgb, #f59e0b 14%, var(--surface-2)); }
+.b-net .ok { display: none; }
+.b-net .ko { display: block; color: #b45309; }

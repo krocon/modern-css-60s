@@ -1,0 +1,41 @@
+/* Before – die Browser nach Marke sortiert: elf gleich aussehende Kacheln.
+   „Chrome“ und „Chrome auf dem iPhone“ wirken identisch – dass dahinter verschiedene Engines stecken, sieht man nicht. */
+.page {
+  max-inline-size: 76rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-5);
+  display: grid;
+  gap: var(--space-3);
+  grid-template-columns: repeat(auto-fill, minmax(min(13rem, 100%), 1fr));
+  align-content: start;
+}
+.intro { grid-column: 1 / -1; margin-block-end: var(--space-3); }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.12em; }
+.intro h1 { font-size: var(--step-4); margin-block: var(--space-1); }
+.lead { color: var(--text-muted); font-size: var(--step-1); }
+.intro::after {
+  content: "11 browsers. 11 different engines?";
+  display: block;
+  margin-block-start: var(--space-3);
+  font-weight: 700;
+  color: #b45309;
+}
+
+/* Gruppen auflösen: alle Browser landen als gleiche Kacheln im Grid */
+.engines, .engine, .iphone, .browsers { display: contents; }
+.engine h2, .iphone h2, .by, .note, .webkit li:nth-child(2) { display: none; }
+.browsers { padding: 0; list-style: none; }
+.browsers li {
+  display: grid;
+  place-content: center;
+  min-block-size: 5.5rem;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  border: 1px solid var(--border);
+  font-size: var(--step-1);
+  font-weight: 700;
+  text-align: center;
+}
+.browsers small { display: none; }
+.iphone li::after { content: "on iPhone"; font-size: var(--step--1); font-weight: 400; color: var(--text-muted); }

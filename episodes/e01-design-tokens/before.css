@@ -1,0 +1,75 @@
+.hero    { background: #0f766e; } /* neu */
+.button  { background: #a21caf; } /* vergessen */
+.badge   { color: #a21caf; }
+a        { color: #a21caf; }
+/* … noch 16 Stellen mit #a21caf */
+
+/* Before – Hex-Werte stehen überall einzeln. Rebranding auf Petrol halb erledigt:
+   Hero ist neu, Buttons, Links, Badges, Rahmen sind noch Magenta. */
+:root { color-scheme: light; }
+body { background: #fdfbff; color: #1e1b2e; }
+
+.site-header {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  border-block-end: 3px solid #a21caf;
+}
+.logo { display: flex; align-items: center; gap: var(--space-2); font-size: var(--step-2); font-weight: 800; text-decoration: none; }
+.nav { display: flex; gap: var(--space-4); margin-inline-start: auto; font-weight: 600; }
+.nav a { color: #1e1b2e; text-decoration-color: #0f766e; text-decoration-thickness: 3px; text-underline-offset: 6px; }
+
+.button {
+  display: inline-block;
+  padding: 0.6rem 1.25rem;
+  border-radius: 999px;
+  color: #fdfbff;
+  font-weight: 700;
+  text-decoration: none;
+}
+.button-light { background: #fdfbff; color: #a21caf; }
+
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+
+.hero {
+  display: grid;
+  justify-items: start;
+  gap: var(--space-3);
+  padding: var(--space-6) var(--space-5);
+  border-radius: calc(var(--radius) * 2);
+  color: #fdfbff;
+}
+.hero h1 { font-size: var(--step-4); }
+.hero p { font-size: var(--step-1); }
+.hero .badge { background: #fdfbff; color: #0f766e; border-color: #0f766e; }
+
+.badge {
+  display: inline-block;
+  padding: 0.2rem 0.75rem;
+  border: 2px solid #a21caf;
+  border-radius: 999px;
+  font-size: var(--step--1);
+  font-weight: 700;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: var(--space-4);
+  margin-block-start: var(--space-5);
+}
+.card {
+  display: grid;
+  justify-items: start;
+  align-content: start;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 2px solid #0f766e;
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fdfbff;
+}
+.card:last-child { border-color: #a21caf; }
+.card h2 { font-size: var(--step-1); }
+.card p { opacity: 0.75; }
+.card a { font-weight: 700; }

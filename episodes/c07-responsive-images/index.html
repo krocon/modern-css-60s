@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C7 · Sharp images on every screen, loaded only when needed</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-scrolled.css" data-labels="Before|After|After · scrolled">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">Travel diary</p>
+      <h1>Iceland in 7 days</h1>
+    </header>
+
+    <div class="hero">
+      <!-- Vorher: eine große Datei für alle Geräte -->
+      <div class="old">
+        <img src="hero-l.svg" alt="Glacier lake at dawn">
+      </div>
+      <!-- Nachher: der Browser wählt die passende Datei -->
+      <div class="new">
+        <picture>
+          <source srcset="hero-l.svg" media="(width>=60em)">
+          <source srcset="hero-m.svg" media="(width>=36em)">
+          <img src="hero-s.svg" alt="Glacier lake at dawn"
+               width="480" height="600" fetchpriority="high">
+        </picture>
+      </div>
+    </div>
+
+    <article class="story">
+      <p>Day one starts at the glacier lagoon. Icebergs drift past the black beach while the sun barely sets. The gallery further down only matters to readers who scroll that far.</p>
+    </article>
+
+    <section class="gallery">
+      <h2>Gallery</h2>
+      <div class="old grid"> <!-- ?old: eigene Cache-Adresse, damit die Vorher-Variante die lazy-Bilder nicht vorlädt -->
+        <img src="gallery-1.svg?old" alt="Beach">
+        <img src="gallery-2.svg?old" alt="Northern lights">
+        <img src="gallery-3.svg?old" alt="Waterfall">
+      </div>
+      <div class="new grid">
+        <img src="gallery-1.svg" loading="lazy" alt="Beach">
+        <img src="gallery-2.svg" loading="lazy" alt="Northern lights">
+        <img src="gallery-3.svg" loading="lazy" alt="Waterfall">
+      </div>
+    </section>
+  </main>
+
+  <aside class="net" aria-live="polite">
+    <p class="net-title">Images on this page</p>
+    <ul class="net-list"></ul>
+    <p class="net-note">Live from the browser: <code>currentSrc</code> per image. SVGs stand in for photos.</p>
+  </aside>
+
+  <script>
+    // Zeigt live, welche Datei jedes sichtbare <img> geladen hat (currentSrc) – oder dass es (lazy) noch wartet.
+    (() => {
+      const list = document.querySelector('.net-list');
+      const file = u => u ? u.split('/').pop().split('?')[0] : '';
+      const label = img => img.closest('picture') ? 'hero · picture' : img.closest('.hero') ? 'hero · img' : img.alt.toLowerCase();
+      function render() {
+        list.replaceChildren(...[...document.querySelectorAll('.page img')]
+          .filter(img => img.closest('.old, .new') && getComputedStyle(img.closest('.old, .new')).display !== 'none')
+          .map(img => {
+            const ok = img.complete && img.naturalWidth > 0;
+            const tags = [img.loading === 'lazy' && 'lazy', img.fetchPriority === 'high' && 'fetchpriority high'].filter(Boolean).join(' · ');
+            const li = document.createElement('li');
+            li.className = ok ? 'ok' : 'wait';
+            li.innerHTML = `<b></b><span></span><i></i>`;
+            li.children[0].textContent = label(img);
+            li.children[1].textContent = ok ? '✓ ' + file(img.currentSrc) : '⏸ not loaded';
+            li.children[2].textContent = tags || 'eager';
+            return li;
+          }));
+      }
+      document.addEventListener('load', render, true);
+      addEventListener('resize', render);
+      document.querySelector('link[data-styles]').addEventListener('load', render);
+      render();
+    })();
+  </script>
+</body>
+</html>

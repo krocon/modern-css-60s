@@ -1,0 +1,2 @@
+/* Schritt 1 – nur box-sizing: Breite inklusive Padding und Rahmen. Die Karten bleiben in ihrer Spalte. */
+*, *::before, *::after { box-sizing: border-box; }

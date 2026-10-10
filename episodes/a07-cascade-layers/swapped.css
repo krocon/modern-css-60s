@@ -1,0 +1,11 @@
+/* Swapped – gleiche Regeln, nur utilities und components in der @layer-Zeile vertauscht.
+   Jetzt steht components zuletzt und gewinnt: die Löschen-Buttons sind wieder lila. */
+@layer reset, base, utilities, components;
+@import url("after.css");
+@layer components {
+  .l-utilities { order: 3; background: #1e293b; color: inherit; }
+  .l-utilities::after { content: none; }
+  .l-components { order: 4; background: #7c3aed; color: #ffffff; }
+  .l-components code { color: #ede9fe; }
+  .l-components::after { content: "wins ✓"; }
+}

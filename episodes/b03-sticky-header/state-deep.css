@@ -1,0 +1,4 @@
+/* Zustand: weit nach unten gescrollt – der Header klebt immer noch (wie after.css). */
+@import url("after.css");
+
+:root { --demo-scroll: 1200; }

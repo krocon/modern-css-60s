@@ -1,0 +1,3 @@
+/* Momentaufnahme: transform-Animation zur Hälfte – das Menü gleitet über den Text, der Text bleibt, wo er ist. */
+@import url("after.css");
+.drawer { transition: none; transform: translateX(-50%); opacity: .5; }

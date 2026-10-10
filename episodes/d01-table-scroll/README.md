@@ -3,13 +3,13 @@
 **DE:** Responsive Tabellen, Teil 1: Scrollen mit fester Spalte
 
 🎬 Episode 023 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 023 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d01-table-scroll/
 
-## Core idea
+## Core CSS (`after.css`)
 
-overflow-x: auto am Wrapper, position: sticky an der ersten Spalte
-
-_Demo coming soon / Demo folgt._
+```css
+.table-wrap { overflow-x: auto; }
+```
 
 ## Browser support
 
@@ -22,4 +22,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=sticky) · [W
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

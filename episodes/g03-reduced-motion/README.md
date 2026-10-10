@@ -3,13 +3,19 @@
 **DE:** Rücksicht auf Nutzer, denen Bewegung schadet
 
 🎬 Episode 048 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 048 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/g03-reduced-motion/
 
-## Core idea
+## Core CSS (`after.css`)
 
-@media (prefers-reduced-motion: reduce)
-
-_Demo coming soon / Demo folgt._
+```css
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=prefers-reduc
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

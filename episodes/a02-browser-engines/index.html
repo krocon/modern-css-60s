@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A2 · Why every iPhone browser is secretly Safari</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-blink.css state-webkit.css state-gecko.css state-iphone.css" data-labels="Before|After|Blink|WebKit|Gecko|iPhone">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">Rendering engines</p>
+      <h1>Which engine draws your page?</h1>
+      <p class="lead">The engine turns HTML and CSS into pixels. The browser is the app around it.</p>
+    </header>
+
+    <div class="engines">
+      <section class="engine blink" aria-labelledby="e-blink">
+        <h2 id="e-blink">Blink</h2>
+        <p class="by">Google · Chromium project</p>
+        <ul class="browsers">
+          <li>Chrome <small>desktop · Android</small></li>
+          <li>Edge</li>
+          <li>Opera</li>
+          <li>Samsung Internet</li>
+          <li>Brave · Vivaldi</li>
+        </ul>
+      </section>
+
+      <section class="engine webkit" aria-labelledby="e-webkit">
+        <h2 id="e-webkit">WebKit</h2>
+        <p class="by">Apple</p>
+        <ul class="browsers">
+          <li>Safari <small>Mac · iPhone · iPad</small></li>
+          <li>Every browser on iPhone</li>
+        </ul>
+      </section>
+
+      <section class="engine gecko" aria-labelledby="e-gecko">
+        <h2 id="e-gecko">Gecko</h2>
+        <p class="by">Mozilla</p>
+        <ul class="browsers">
+          <li>Firefox <small>desktop · Android</small></li>
+        </ul>
+      </section>
+    </div>
+
+    <section class="iphone" aria-labelledby="e-iphone">
+      <h2 id="e-iphone">On iPhone</h2>
+      <ul class="browsers">
+        <li>Safari</li>
+        <li>Chrome</li>
+        <li>Firefox</li>
+        <li>Edge</li>
+      </ul>
+      <p class="note">Since iOS 17.4, apps in the EU may ship other engines. In practice, the big browsers still use WebKit.</p>
+    </section>
+  </main>
+</body>
+</html>

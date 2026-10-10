@@ -1,0 +1,4 @@
+/* Zustand – after.css mit sichtbaren Grid-Zellen: Die Label-Spalte ist genau so breit wie das längste Label. */
+@import url("after.css");
+.form > * { outline: 2px dashed color-mix(in srgb, var(--brand) 70%, transparent); outline-offset: 2px; }
+.form > label { background: color-mix(in srgb, var(--brand) 12%, transparent); }

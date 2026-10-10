@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B5 · Align everything inside your cards with subgrid</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- page.css = nur Optik. Wie die Karten innen ausgerichtet sind, entscheidet das umschaltbare Stylesheet. -->
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css flex-auto.css state-lines.css after.css" data-labels="Before|margin-top: auto|Row lines|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Camping gear</h1>
+    <p class="lead">Three cards, different text lengths – every row still lines up.</p>
+
+    <section class="cards" aria-label="Products">
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 3 2 20h20L12 3Zm0 6 5 9H7l5-9Z"/></svg>
+        </div>
+        <h2>Trail tent</h2>
+        <p>Two people, 1.9 kg.</p>
+        <a class="button" href="#">View tent</a>
+      </article>
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M6 3h12a3 3 0 0 1 3 3v12a3 3 0 0 1-3 3H6a3 3 0 0 1-3-3V6a3 3 0 0 1 3-3Zm1 4v2h10V7H7Zm0 4v2h10v-2H7Zm0 4v2h6v-2H7Z"/></svg>
+        </div>
+        <h2>Ultralight down sleeping bag for cold mountain nights</h2>
+        <p>Comfortable down to −5 °C and packs to the size of a loaf of bread.</p>
+        <a class="button" href="#">View bag</a>
+      </article>
+      <article class="card">
+        <div class="thumb" aria-hidden="true">
+          <svg viewBox="0 0 24 24"><path d="M12 2c2 3 4 5 4 8a4 4 0 0 1-8 0c0-1.5.7-2.8 1.5-4 .3 1.5 1 2.5 2.5 3-1-2.5-1-4.5 0-7ZM4 16h16v2H4v-2Zm2 3h12l-1 3H7l-1-3Z"/></svg>
+        </div>
+        <h2>Camp stove</h2>
+        <p>Boils a litre of water in three minutes, runs on standard gas cartridges and folds into its own pot.</p>
+        <a class="button" href="#">View stove</a>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

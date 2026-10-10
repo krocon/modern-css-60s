@@ -1,0 +1,6 @@
+/* Zustand „Delete“ – Fokus auf die Buttons mit der Utility-Klasse .bg-danger. */
+@import url("after.css");
+@layer utilities {
+  .card h2, .card p, .actions .btn:not(.bg-danger) { opacity: 0.35; }
+  .bg-danger { outline: 3px solid var(--danger); outline-offset: 3px; }
+}

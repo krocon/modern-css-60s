@@ -1,0 +1,10 @@
+/* Before – transition ohne @starting-style und ohne allow-discrete: display: none → block passiert sofort,
+   die Transition hat keinen Startwert und läuft nie. Der Dialog ploppt auf (und verschwindet beim Schließen schlagartig). */
+dialog {
+  transition: opacity .4s, translate .4s;
+  &:not([open]) { opacity: 0; translate: 0 2rem; }
+  /* kein Startwert aus display: none */
+}
+.frames { --f1: 0; --f2: 1; --f3: 1; --f4: 1; --f5: 1; }
+.frames li:nth-child(2) .screen { outline: 3px solid #f59e0b; outline-offset: 3px; }
+.frames figcaption::after { content: " – without: it pops"; color: #b45309; }

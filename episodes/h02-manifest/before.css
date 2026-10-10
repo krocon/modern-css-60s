@@ -1,0 +1,20 @@
+/* Vorher – kein Manifest: Der Browser rät. Seitentitel als Name (abgeschnitten), ein Buchstabe als Icon,
+   kein Startbild, Adressleiste bleibt, Statusleiste grau. */
+@import url("demo.css");
+
+.json, .code > .file, .hint { display: none; }
+.guess { display: grid; }
+.previews [data-f]::after, .callout { display: none; }
+
+.ico img { display: none; }
+.ico em { display: grid; place-items: center; inline-size: 100%; aspect-ratio: 1; border-radius: 22%; background: #64748b; color: #ffffff; font: 800 1.4rem/1 var(--font-sans); font-style: normal; }
+.label .short { display: none; }
+.label .long { display: inline; }
+.app.mine .label { overflow: hidden; }
+
+.splash .ico, .splash strong { display: none; }
+.splash { background: #ffffff; }
+.status { background: #e2e8f0; color: #0f172a; }
+.status .tag { display: none; }
+.urlbar { display: block; }
+.site-bar { margin-block-start: 0; }

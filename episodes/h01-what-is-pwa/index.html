@@ -1,0 +1,110 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H1 · What is a PWA? Your website as an app</title>
+  <!-- Das macht die Seite installierbar: Manifest + Icon (+ https bzw. localhost) -->
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <meta name="theme-color" content="#a21caf">
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-android.css state-iphone.css state-desktop.css state-needs.css after.css" data-labels="Just a tab|Android|iPhone|Desktop|Ingredients|Installed">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H1 What is a PWA?
+    Die Geräte unten sind eigene, neutrale HTML/CSS-Nachbauten (keine Screenshots).
+    Zum echten Installieren die Seite über https:// öffnen (z. B. GitHub Pages) – per Doppelklick (file://) bietet kein Browser die Installation an.
+    Support (Stand 2026): Chromium-Browser auf Android und Desktop installieren direkt, Safari auf iPhone/iPad über Teilen → „Zum Home-Bildschirm“,
+    Safari auf dem Mac über „Zum Dock hinzufügen“, Firefox am Desktop nur eingeschränkt. Für maximale Abdeckung zusätzlich PNG-Icons (192 und 512 px) ergänzen.
+  -->
+  <main class="page">
+    <header class="intro">
+      <div>
+        <p class="kicker">Progressive Web App</p>
+        <h1>One website, installed like an app</h1>
+        <p class="lead">Own icon, own window, no app store. Same HTML – the browser does the rest.</p>
+      </div>
+      <ul class="needs" aria-label="What you need">
+        <li>https://</li>
+        <li>manifest.webmanifest</li>
+        <li>an icon</li>
+        <li class="opt">service worker (offline)</li>
+      </ul>
+    </header>
+
+    <section class="devices" aria-label="Install on three platforms">
+      <!-- Android -->
+      <figure class="device phone android">
+        <div class="screen">
+          <div class="statusbar"><span>9:41</span><span class="sb-icons" aria-hidden="true"></span></div>
+          <div class="browser">
+            <div class="urlbar"><span class="url">notes.example</span><span class="menu" aria-hidden="true">⋮</span></div>
+            <div class="site">
+              <p class="site-bar"><img src="icon.svg" alt=""> Pocket Notes</p>
+              <ul class="notes"><li>Buy oat milk</li><li>Record episode 54</li><li>Call Ada at 3</li></ul>
+            </div>
+          </div>
+          <div class="home" aria-label="Home screen">
+            <span class="app"><i></i>Mail</span><span class="app"><i></i>Photos</span><span class="app"><i></i>Clock</span><span class="app"><i></i>Music</span>
+            <span class="app"><i></i>Maps</span><span class="app"><i></i>Files</span><span class="app mine"><img src="icon.svg" alt="">Notes</span>
+          </div>
+          <div class="sheet" role="dialog" aria-label="Install app">
+            <p class="sheet-title">Install app</p>
+            <p class="sheet-app"><img src="icon.svg" alt=""><span><b>Pocket Notes</b><small>notes.example</small></span></p>
+            <p class="sheet-actions"><span>Cancel</span><span class="primary">Install</span></p>
+          </div>
+        </div>
+        <figcaption><b>Android</b> Chrome: “Install app”</figcaption>
+      </figure>
+
+      <!-- iPhone -->
+      <figure class="device phone iphone">
+        <div class="screen">
+          <div class="statusbar"><span>9:41</span><span class="sb-icons" aria-hidden="true"></span></div>
+          <div class="browser">
+            <div class="urlbar"><span class="url">notes.example</span></div>
+            <div class="site">
+              <p class="site-bar"><img src="icon.svg" alt=""> Pocket Notes</p>
+              <ul class="notes"><li>Buy oat milk</li><li>Record episode 54</li><li>Call Ada at 3</li></ul>
+            </div>
+            <div class="toolbar"><span>‹</span><span>›</span><span class="share" aria-label="Share"></span><span>⧉</span></div>
+          </div>
+          <div class="home" aria-label="Home screen">
+            <span class="app"><i></i>Mail</span><span class="app"><i></i>Photos</span><span class="app"><i></i>Clock</span><span class="app"><i></i>Music</span>
+            <span class="app"><i></i>Maps</span><span class="app"><i></i>Files</span><span class="app mine"><img src="icon.svg" alt="">Notes</span>
+          </div>
+          <div class="sheet share-sheet" role="dialog" aria-label="Share">
+            <p class="sheet-app"><img src="icon.svg" alt=""><span><b>Pocket Notes</b><small>notes.example</small></span></p>
+            <ul class="rows"><li>Copy</li><li>Add Bookmark</li><li class="hit">Add to Home Screen <span aria-hidden="true">⊞</span></li></ul>
+          </div>
+        </div>
+        <figcaption><b>iPhone</b> Safari: Share → “Add to Home Screen”</figcaption>
+      </figure>
+
+      <!-- Desktop -->
+      <figure class="device desktop">
+        <div class="window">
+          <div class="tabs"><span class="dots" aria-hidden="true"><i></i><i></i><i></i></span><span class="tab">Inbox</span><span class="tab active"><img src="icon.svg" alt=""> Pocket Notes</span><span class="tab">News</span></div>
+          <div class="urlbar"><span class="url">https://notes.example</span><span class="install" aria-label="Install">⊕</span></div>
+          <div class="titlebar"><img src="icon.svg" alt=""> Pocket Notes<span class="dots" aria-hidden="true"><i></i><i></i><i></i></span></div>
+          <div class="site">
+            <p class="site-bar"><img src="icon.svg" alt=""> Pocket Notes</p>
+            <ul class="notes"><li>Buy oat milk</li><li>Record episode 54</li><li>Call Ada at 3</li><li>Plan season 2</li></ul>
+          </div>
+          <div class="dialog" role="dialog" aria-label="Install app">
+            <p class="sheet-title">Install app?</p>
+            <p class="sheet-app"><img src="icon.svg" alt=""><span><b>Pocket Notes</b><small>notes.example</small></span></p>
+            <p class="sheet-actions"><span>Cancel</span><span class="primary">Install</span></p>
+          </div>
+        </div>
+        <figcaption><b>Desktop</b> Chrome / Edge: install icon in the address bar</figcaption>
+      </figure>
+    </section>
+  </main>
+</body>
+</html>

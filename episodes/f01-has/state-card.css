@@ -1,0 +1,14 @@
+/* Zustand „Karte ungültig“ für die Video-Bühne.
+   Ehrlich: :user-invalid greift erst nach einer echten Eingabe – die gibt es im Video nicht.
+   Darum hier dieselben Regeln wie in after.css, nur mit :invalid (die vorbefüllte E-Mail ist schon beim Laden ungültig).
+   Im Browser echt: after.css wählen, E-Mail ändern und Feld verlassen → gleiches Bild. */
+@import url("after.css");
+
+.card:has(input:invalid) {
+  border-color: var(--danger);
+  background: var(--danger-soft);
+  color: var(--danger);
+}
+.card:has(input:invalid) input { border-color: var(--danger); }
+.card:has(input:invalid) .hint { display: none; }
+.card:has(input:invalid) .error { display: block; }

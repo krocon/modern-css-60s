@@ -1,0 +1,70 @@
+:root {
+  --brand: #a21caf;
+  --pale: oklch(from var(--brand) calc(l + .3) c h);
+  --deep: oklch(from var(--brand) calc(l - .2) c h);
+  --soft: oklch(from var(--brand) l c h / 15%);
+  --alt: oklch(from var(--brand) l c calc(h + 180));
+}
+
+/* After – Relative Farben: alles wird aus --brand berechnet (l, c, h = Kanäle der Ausgangsfarbe).
+   Ändert man nur --brand (state-teal.css, state-orange.css), rechnet sich die ganze Palette neu. */
+.brand-value::after { content: ": #a21caf"; }
+
+.ladder span:nth-child(1) { background: oklch(from var(--brand) .95 calc(c * .25) h); }
+.ladder span:nth-child(2) { background: oklch(from var(--brand) .85 calc(c * .5) h); }
+.ladder span:nth-child(3) { background: oklch(from var(--brand) .75 calc(c * .8) h); }
+.ladder span:nth-child(4) { background: oklch(from var(--brand) .65 c h); }
+.ladder span:nth-child(5) { background: oklch(from var(--brand) .55 c h); }
+.ladder span:nth-child(6) { background: oklch(from var(--brand) .45 c h); }
+.ladder span:nth-child(7) { background: oklch(from var(--brand) .35 calc(c * .8) h); }
+.ladder span:nth-child(8) { background: oklch(from var(--brand) .25 calc(c * .6) h); }
+
+:root { color-scheme: light; }
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+.page > h1 { font-size: var(--step-4); color: var(--deep); }
+.lead { margin-block: var(--space-2) var(--space-4); color: var(--text-muted); font-size: var(--step-1); }
+.lead code { color: var(--text); font-weight: 700; white-space: nowrap; }
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+  gap: var(--space-3);
+}
+.swatch {
+  display: grid;
+  align-items: end;
+  min-block-size: 9rem;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #fff;
+}
+.pale { background: var(--pale); color: var(--deep); }
+.brand { background: var(--brand); }
+.deep { background: var(--deep); }
+.soft { background: var(--soft); color: var(--deep); }
+.alt { background: var(--alt); }
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  gap: var(--space-4);
+  margin-block-start: var(--space-4);
+}
+.ladder { display: grid; grid-template-columns: repeat(8, 1fr); border-radius: var(--radius); overflow: hidden; }
+.ladder span { display: grid; place-items: end center; min-block-size: 10rem; padding-block-end: var(--space-2); font-size: var(--step--1); font-weight: 700; color: #fff; }
+.ladder span:nth-child(-n + 3) { color: var(--deep); }
+
+.notice {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-inline-start: 6px solid var(--brand);
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+.notice h2 { font-size: var(--step-2); color: var(--deep); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-start: var(--space-2); }
+.btn { padding: 0.6rem 1.2rem; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 700; text-decoration: none; }
+.btn-alt { background: transparent; border: 2px solid var(--alt); color: oklch(from var(--alt) calc(l - .15) c h); }

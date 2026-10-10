@@ -1,0 +1,7 @@
+/* align-items: center – nur senkrecht zentriert (Block-Achse), waagerecht noch links. */
+body,
+.avatar,
+.icon {
+  display: grid;
+  align-items: center;
+}

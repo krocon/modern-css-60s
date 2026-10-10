@@ -1,0 +1,26 @@
+/* Momentaufnahme: Einblend-Animation nach 0 ms von 1000 ms (0 %).
+   Jede Kachel startet 100 ms später; --p = wie weit sie schon ist (ease-out). */
+@import url("after.css");
+.tile {
+  animation: none;
+  opacity: var(--p);
+  translate: 0 calc((1 - var(--p)) * 2rem);
+}
+.tile:nth-child(1) { --p: 0.0; }
+.tile:nth-child(2) { --p: 0.0; }
+.tile:nth-child(3) { --p: 0.0; }
+.tile:nth-child(4) { --p: 0.0; }
+.tile:nth-child(5) { --p: 0.0; }
+.tile:nth-child(6) { --p: 0.0; }
+/* Hinweis im Bild: hier steht noch alles auf dem from-Keyframe */
+.tiles { min-block-size: 18rem; border: 2px dashed var(--border); border-radius: var(--radius); }
+.tiles::before {
+  content: "from { opacity: 0; translate: 0 2rem }";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  font-family: var(--font-mono);
+  font-size: var(--step-1);
+  color: var(--brand);
+}

@@ -1,0 +1,9 @@
+/* Before – Hover ohne transition: die Karte springt in einem einzigen Frame ans Ziel. */
+.card:hover {
+  /* keine transition: springt in 1 Frame */
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgb(0 0 0 / .2);
+}
+.frames { --f1: 0; --f2: 1; --f3: 1; --f4: 1; --f5: 1; --f6: 1; }
+.frames li:nth-child(2) .mini { outline: 3px solid #f59e0b; outline-offset: 3px; }
+.frames figcaption::after { content: " – no transition: it jumps"; color: #b45309; }

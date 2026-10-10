@@ -1,0 +1,9 @@
+/* lvh – großes Viewport: gerechnet ohne Leisten (wie vh auf dem Handy). Mit Leisten zu hoch. */
+.hero {
+  min-block-size: 100lvh;
+}
+
+.phone { --use: var(--sim-lvh); }
+.ruler-lvh, .unit-lvh { --on: 1; color: #dc2626; }
+.status { color: #dc2626; }
+.status::after { content: "100lvh · bars visible → button hidden ✗"; }

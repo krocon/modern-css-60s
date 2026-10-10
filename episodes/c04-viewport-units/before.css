@@ -1,0 +1,12 @@
+/* Before – 100vh. Auf dem Handy meint vh das GROSSE Viewport (ohne Leisten).
+   Sind die Leisten sichtbar, ist der Hero zu hoch – der Button verschwindet unter der unteren Leiste. */
+.hero {
+  min-block-size: 100vh;
+}
+
+/* Simulation (sim.css): vh = lvh */
+.phone { --use: var(--sim-vh); }
+.ruler-lvh, .unit-lvh { --on: 1; color: #dc2626; }
+.ruler-lvh b::after { content: " = vh"; }
+.status { color: #dc2626; }
+.status::after { content: "100vh · bars visible → button hidden ✗"; }

@@ -1,0 +1,4 @@
+/* Before – die Suche liefert eine Forenantwort von 2019: „geht nicht, nimm JavaScript“.
+   Kein :has(), das Feld bleibt neutral – und die drei Werkzeuge kennst du (noch) nicht. */
+.tools { display: none; }
+.old-answer { margin-block-start: var(--space-4); }

@@ -1,0 +1,4 @@
+/* Zustand – after.css, gescrollt, Wrapper mit Tastatur-Fokus (tabindex="0"):
+   so sieht der Fokusring aus, wenn man mit Tab hineinspringt und mit den Pfeiltasten scrollt. */
+@import url("after.css");
+.table-wrap { outline: 3px solid var(--brand); outline-offset: 3px; }

@@ -3,13 +3,20 @@
 **DE:** 6 CSS-Funktionen, die Media Queries ersetzen
 
 🎬 Episode 040 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 040 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e08-css-functions/
 
-## Core idea
+## Core CSS (`after.css`)
 
-min(), max(), clamp(), calc(), light-dark(), color-mix() in einer Kachel
-
-_Demo coming soon / Demo folgt._
+```css
+.tile {
+  inline-size: min(100%, 36rem);
+  padding: max(1rem, 4vw);
+  font-size: clamp(1rem, 0.8rem + 1vw, 1.4rem);
+  border-radius: calc(1rem + 1vw);
+  border-color: light-dark(#f0abfc, #a21caf);
+  background: color-mix(in oklch, Canvas, #d4f 8%);
+}
+```
 
 ## Browser support
 
@@ -22,4 +29,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=clamp) · [Web Features E
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

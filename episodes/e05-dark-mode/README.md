@@ -3,13 +3,19 @@
 **DE:** Dark Mode, der automatisch dem System folgt
 
 🎬 Episode 037 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 037 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/e05-dark-mode/
 
-## Core idea
+## Core CSS (`after.css`)
 
-color-scheme: light dark + @media (prefers-color-scheme: dark)
-
-_Demo coming soon / Demo folgt._
+```css
+:root {
+  color-scheme: light dark;
+  --surface: #ffffff;  --text: #0f172a;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --surface: #0f172a; --text: #e2e8f0; }
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=prefers-color
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

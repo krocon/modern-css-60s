@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D2 · Responsive tables, part 2: turn rows into cards</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css no-labels.css" data-labels="Before|After|No labels">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Your orders</h1>
+    <p class="lead">Wide box: a table. Narrow box: every row becomes a card.</p>
+
+    <!-- Die Beschriftung für die Karten steht im HTML: data-label an jeder Zelle -->
+    <div class="orders">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Order</th>
+            <th scope="col">Date</th>
+            <th scope="col">Product</th>
+            <th scope="col">Qty</th>
+            <th scope="col">Total</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td data-label="Order">#4711</td>
+            <td data-label="Date">Oct 2, 2026</td>
+            <td data-label="Product">Mechanical keyboard</td>
+            <td data-label="Qty">1</td>
+            <td data-label="Total">€129.00</td>
+            <td data-label="Status">Shipped</td>
+          </tr>
+          <tr>
+            <td data-label="Order">#4712</td>
+            <td data-label="Date">Oct 5, 2026</td>
+            <td data-label="Product">USB-C cable, 2 m</td>
+            <td data-label="Qty">3</td>
+            <td data-label="Total">€36.00</td>
+            <td data-label="Status">Delivered</td>
+          </tr>
+          <tr>
+            <td data-label="Order">#4718</td>
+            <td data-label="Date">Oct 8, 2026</td>
+            <td data-label="Product">Monitor arm</td>
+            <td data-label="Qty">1</td>
+            <td data-label="Total">€89.90</td>
+            <td data-label="Status">Processing</td>
+          </tr>
+          <tr>
+            <td data-label="Order">#4720</td>
+            <td data-label="Date">Oct 9, 2026</td>
+            <td data-label="Product">Desk lamp</td>
+            <td data-label="Qty">2</td>
+            <td data-label="Total">€58.00</td>
+            <td data-label="Status">Processing</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</body>
+</html>

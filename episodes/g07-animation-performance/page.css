@@ -1,0 +1,74 @@
+/* page.css – Seiten-Optik (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css / before.css. */
+.app { display: flex; min-block-size: 100dvh; }
+.drawer {
+  flex: none;
+  overflow: hidden;
+  background: light-dark(#1e1b4b, #3b0764);
+  color: #e0e7ff;
+  box-shadow: .5rem 0 2rem rgb(0 0 0 / .25);
+}
+.drawer > * { inline-size: 16rem; padding-inline: var(--space-4); }
+.logo { display: flex; justify-content: space-between; align-items: center; padding-block: .9rem; font-weight: 800; font-size: var(--step-1); color: #f0abfc; }
+.close { padding: .25rem .6rem; border: 0; border-radius: .4rem; background: rgb(255 255 255 / .12); color: #e0e7ff; cursor: pointer; }
+.drawer ul { list-style: none; display: grid; gap: .25rem; }
+.drawer a { display: block; padding: .6rem .75rem; border-radius: .5rem; color: inherit; text-decoration: none; font-weight: 600; }
+.drawer li:first-child a { background: rgb(255 255 255 / .1); }
+
+.main { flex: 1; min-inline-size: 0; }
+.bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: .75rem var(--space-4);
+  border-block-end: 1px solid var(--border);
+  color: var(--text-muted);
+}
+.menu-btn {
+  padding: .45rem .9rem;
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  background: var(--surface-2);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+.post, .pipeline { padding-inline: var(--space-5); }
+.post { padding-block: var(--space-5) var(--space-4); }
+.post h1 { font-size: var(--step-4); }
+.post p { margin-block-start: var(--space-3); font-size: var(--step-1); line-height: 1.6; }
+
+/* Erklär-Grafik: Rendering-Pipeline. Welche Schritte pro Frame laufen, setzt before.css / after.css. */
+.pipeline { padding-block-end: var(--space-5); }
+.pipeline figcaption { color: var(--text-muted); font-weight: 600; }
+.pipeline ol {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+  padding: 0;
+  list-style: none;
+  counter-reset: step;
+}
+.pipeline li {
+  position: relative;
+  padding: .9rem .5rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  text-align: center;
+  font-weight: 800;
+  font-size: var(--step-1);
+}
+.pipeline li + li::before {
+  content: "→";
+  position: absolute;
+  inset-inline-start: -1.05rem;
+  inset-block-start: 50%;
+  translate: 0 -50%;
+  color: var(--text-muted);
+  font-weight: 400;
+}
+.pipeline .is-hot { border-color: #f59e0b; background: light-dark(#fef3c7, #422006); color: light-dark(#92400e, #fbbf24); }
+.pipeline .is-cool { border-color: var(--accent); background: light-dark(#ccfbf1, #042f2e); color: light-dark(#115e59, #5eead4); }
+.pipeline .is-skipped { opacity: .35; text-decoration: line-through; }
+.verdict { margin-block-start: var(--space-3); font-weight: 700; font-size: var(--step-1); }

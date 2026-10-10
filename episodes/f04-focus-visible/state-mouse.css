@@ -1,0 +1,9 @@
+/* Zustand für die Video-Bühne: Mausklick auf „Subscribe“. Der Button hat Fokus, aber :focus-visible greift nicht –
+   der Browser weiß: Maus-Nutzer brauchen hier keinen Ring. Im Browser echt: after.css wählen und den Button anklicken. */
+@import url("after.css");
+
+.subscribe { filter: brightness(0.9); }
+.cursor { display: block; }
+.kbd-hint { display: flex; }
+.kbd-hint .key::before { content: "Click"; }
+.kbd-hint .target::before { content: "Mouse focus – no ring needed"; }

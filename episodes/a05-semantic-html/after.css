@@ -1,0 +1,4 @@
+.soup { display: none; }
+
+/* After – die semantische Fassung: header, nav, main, article, aside, footer.
+   Sieht aus wie die div-Suppe, liefert Screenreadern aber Landmarks und Überschriften. */

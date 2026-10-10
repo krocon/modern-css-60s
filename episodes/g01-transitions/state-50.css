@@ -1,0 +1,8 @@
+/* Momentaufnahme: Karte „Pro“ nach 100 ms der Hover-Transition (ease → 80 % des Wegs). */
+@import url("after.css");
+.card:nth-child(2) {
+  transition: none;
+  transform: translateY(-9.6px);
+  box-shadow: 0 12.8px 25.6px rgb(0 0 0 / .16);
+}
+.card:nth-child(2)::after { display: block; }

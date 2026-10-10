@@ -1,0 +1,8 @@
+/* Before – der alte Weg mit Floats: Spaltenbreiten in Prozent, Footer per clear.
+   Der Margin an main macht die Summe größer als 100 % → die Aside rutscht nach unten. */
+nav   { float: left; width: 20%; }
+main  { float: left; width: 60%; margin: 0 1rem; }
+aside { float: left; width: 20%; }
+footer { clear: both; }
+
+.layout > * { margin-block-end: var(--space-3); }

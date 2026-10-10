@@ -1,0 +1,90 @@
+/* page.css – Seiten-Optik (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css. */
+.page {
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.page h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+.card {
+  position: relative;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.card h2 { font-size: var(--step-1); color: var(--brand); }
+.price { font-size: var(--step-3); font-weight: 800; }
+.price small { font-size: var(--step--1); font-weight: 400; color: var(--text-muted); }
+.card ul { padding-inline-start: 1.1rem; color: var(--text-muted); }
+.btn {
+  justify-self: start;
+  margin-block-start: var(--space-2);
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+/* Erklär-Grafik: Position der Karte in sechs Frames. Die Werte (--f1 … --f6) setzt das jeweilige Stylesheet. */
+.frames {
+  margin-block-start: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+.frames figcaption { color: var(--text-muted); font-size: var(--step--1); font-weight: 600; }
+.frames ol {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: var(--space-2);
+  margin-block-start: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+.frames li {
+  display: grid;
+  justify-items: center;
+  align-content: end;
+  gap: var(--space-1);
+  block-size: 5.75rem;
+  border-block-end: 2px solid var(--border);
+}
+.frames small { color: var(--text-muted); font-size: .75rem; }
+.mini {
+  inline-size: 2.5rem;
+  block-size: 1.75rem;
+  border-radius: .3rem;
+  background: var(--brand);
+  translate: 0 calc(var(--p, 0) * -2rem);
+  box-shadow: 0 calc(var(--p, 0) * .6rem) calc(var(--p, 0) * 1rem) rgb(0 0 0 / .3);
+}
+.frames li:nth-child(1) .mini { --p: var(--f1, 0); }
+.frames li:nth-child(2) .mini { --p: var(--f2, 0); }
+.frames li:nth-child(3) .mini { --p: var(--f3, 0); }
+.frames li:nth-child(4) .mini { --p: var(--f4, 0); }
+.frames li:nth-child(5) .mini { --p: var(--f5, 0); }
+.frames li:nth-child(6) .mini { --p: var(--f6, 0); }
+
+/* Mauszeiger für die Momentaufnahmen im Video (Klasse wird nur in state-*.css sichtbar) */
+.card::after {
+  content: "";
+  position: absolute;
+  inset-block-end: 2.2rem;
+  inset-inline-end: 2.5rem;
+  inline-size: 1.6rem;
+  block-size: 1.6rem;
+  background: url("cursor.svg") no-repeat center / contain;
+  display: none;
+}

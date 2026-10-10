@@ -1,0 +1,4 @@
+/* Zustand – wieder nur EINE Zeile: --brand wird Orange. */
+@import url("after.css");
+
+:root { --brand: #c2410c; }

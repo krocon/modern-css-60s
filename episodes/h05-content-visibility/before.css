@@ -1,0 +1,4 @@
+/* Vorher – ohne content-visibility: Der Browser berechnet Layout und Darstellung für alle 40 Abschnitte sofort,
+   auch für die ganz unten, die beim Laden niemand sieht. Render-Karte: 40 von 40 gerendert. */
+.post { padding: var(--space-4); }
+.count .n { color: #d97706; }

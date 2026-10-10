@@ -1,0 +1,13 @@
+.drawer {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
+}
+.menu-open .drawer { transform: none; opacity: 1; }
+
+/* After – das Menü liegt über dem Inhalt und wird nur verschoben (transform) und eingeblendet (opacity):
+   kein Layout, kein Repaint pro Frame – das erledigt der Compositor (oft auf der GPU). */
+.drawer { position: fixed; inset-block: 0; inset-inline-start: 0; z-index: 10; }
+.pipeline :is(.step-layout, .step-paint) { opacity: .35; text-decoration: line-through; }
+.pipeline .step-composite { border-color: var(--accent); background: light-dark(#ccfbf1, #042f2e); color: light-dark(#115e59, #5eead4); }
+.verdict::before { content: "transform + opacity: Layout and Paint skipped – only Composite."; color: var(--accent); }

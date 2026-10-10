@@ -3,13 +3,20 @@
 **DE:** Akkordeon ganz ohne JavaScript
 
 🎬 Episode 032 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 032 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d10-accordion/
 
-## Core idea
+## Core CSS (`after.css`)
 
-details name=faq öffnet immer nur eins
-
-_Demo coming soon / Demo folgt._
+```css
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+details[open] { border-color: var(--brand); }
+details[open] summary { color: var(--brand); }
+summary::after { content: "›"; transition: rotate 0.2s; }
+details[open] summary::after { rotate: 90deg; }
+```
 
 ## Browser support
 
@@ -22,4 +29,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=details) · [Web Features
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

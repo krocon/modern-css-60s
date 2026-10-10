@@ -3,13 +3,19 @@
 **DE:** Deine erste Keyframe-Animation
 
 🎬 Episode 047 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 047 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/g02-keyframes/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Einblend-Animation für Kacheln mit animation-delay pro Kachel
-
-_Demo coming soon / Demo folgt._
+```css
+@keyframes fade-up {
+  from { opacity: 0; translate: 0 2rem; }
+}
+.tile {
+  animation: fade-up .5s ease-out both;
+  animation-delay: calc(var(--i) * 100ms);
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=css-animation
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

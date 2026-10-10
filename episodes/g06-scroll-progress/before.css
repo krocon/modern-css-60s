@@ -1,0 +1,2 @@
+/* Before – ohne Scroll-Timeline gibt es keinen Balken. Der alte Weg wäre ein Scroll-Listener in JavaScript
+   (siehe old-way.js), der bei jedem Scroll-Event die Breite neu berechnet. */

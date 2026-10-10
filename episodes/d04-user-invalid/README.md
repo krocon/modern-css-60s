@@ -3,13 +3,13 @@
 **DE:** Fehlermeldungen, die nicht zu früh meckern
 
 🎬 Episode 026 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 026 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d04-user-invalid/
 
-## Core idea
+## Core CSS (`after.css`)
 
-:user-invalid + aria-describedby, Meldung erst nach Eingabe
-
-_Demo coming soon / Demo folgt._
+```css
+.error { display: none; }
+```
 
 ## Browser support
 
@@ -22,4 +22,4 @@ Baseline 2023 · [caniuse](https://caniuse.com/?search=user-invalid) · [Web Fea
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

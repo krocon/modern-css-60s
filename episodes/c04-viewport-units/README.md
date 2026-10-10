@@ -3,13 +3,16 @@
 **DE:** 100vh ist auf dem Handy kaputt – nimm das
 
 🎬 Episode 019 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 019 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/c04-viewport-units/
 
-## Core idea
+## Core CSS (`after.css`)
 
-dvh, svh, lvh im iPhone-Simulator
-
-_Demo coming soon / Demo folgt._
+```css
+.hero {
+  min-block-size: 100vh;   /* Fallback */
+  min-block-size: 100dvh;  /* folgt den Leisten */
+}
+```
 
 ## Browser support
 
@@ -22,4 +25,4 @@ Baseline 2022 · [caniuse](https://caniuse.com/?search=dvh) · [Web Features Exp
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

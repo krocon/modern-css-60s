@@ -3,13 +3,18 @@
 **DE:** Der gleiche Cover-Effekt – als echtes Bild
 
 🎬 Episode 021 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 021 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/c06-object-fit/
 
-## Core idea
+## Core CSS (`after.css`)
 
-img mit object-fit: cover + aspect-ratio: 16/9; warum besser für SEO und Alt-Text
-
-_Demo coming soon / Demo folgt._
+```css
+.card img {
+  inline-size: 100%;
+  block-size: auto;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+```
 
 ## Browser support
 
@@ -22,4 +27,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=object-fit) �
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G8 · Animated gradient borders with @property</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Momentaufnahmen der Drehung (Winkel) für das Video. -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-90.css state-180.css state-270.css"
+        data-labels="Before|After|90°|180°|270°">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Pricing</p>
+      <h1>Go Pro</h1>
+      <p class="lead">The Pro border spins – but only if <code>--angle</code> is a registered <code>&lt;angle&gt;</code>.</p>
+    </header>
+    <section class="plans" aria-label="Plans">
+      <article class="plan">
+        <h2>Basic</h2>
+        <p class="price">€0</p>
+        <ul><li>1 project</li><li>Community support</li></ul>
+        <a class="btn" href="#basic">Start free</a>
+      </article>
+      <article class="plan pro">
+        <p class="tag">Most popular</p>
+        <h2>Pro</h2>
+        <p class="price">€12</p>
+        <ul><li>Unlimited projects</li><li>Custom domains</li></ul>
+        <a class="btn" href="#pro">Get Pro</a>
+      </article>
+      <article class="plan">
+        <h2>Team</h2>
+        <p class="price">€39</p>
+        <ul><li>10 seats</li><li>Priority support</li></ul>
+        <a class="btn" href="#team">Contact us</a>
+      </article>
+    </section>
+    <p class="angle-readout">--angle: <output></output></p>
+  </main>
+</body>
+</html>

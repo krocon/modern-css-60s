@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D10 · Accordion with zero JavaScript</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-none.css state-q2.css state-q3.css" data-labels="Before|After|All closed|Q2 open|Q3 open">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Frequently asked questions</h1>
+    <p class="lead">Open a question – the previous one closes. Zero lines of JavaScript.</p>
+
+    <section class="faq" aria-label="FAQ">
+      <details name="faq" open>
+        <summary>Can I cancel anytime?</summary>
+        <p>Yes – one click in your account settings.</p>
+      </details>
+      <details name="faq">
+        <summary>Do you offer refunds?</summary>
+        <p>Within 30 days, no questions asked.</p>
+      </details>
+      <details name="faq">
+        <summary>Can I switch plans later?</summary>
+        <p>Any time. We prorate the difference to the day.</p>
+      </details>
+      <details name="faq">
+        <summary>Can I export my data?</summary>
+        <p>You get a ZIP with everything: JSON, CSV and all your uploads.</p>
+      </details>
+      <details name="faq">
+        <summary>Is there a student discount?</summary>
+        <p>Yes, 50 % off with a valid student email address.</p>
+      </details>
+    </section>
+  </main>
+
+  <script>
+    // Nur für Aufnahmen/Schalter – das Akkordeon selbst braucht kein JS.
+    // state-q2/q3 öffnen die passende Frage (die offene schließt sich dank name="faq" von selbst),
+    // before.css simuliert den alten Zustand: ohne name, alle offen.
+    (() => {
+      const faq = [...document.querySelectorAll('.faq details')];
+      const link = document.querySelector('link[data-styles]');
+      const sync = () => {
+        const css = link.getAttribute('href');
+        const before = css === 'before.css';
+        faq.forEach(d => before ? d.removeAttribute('name') : d.setAttribute('name', 'faq'));
+        if (before) faq.forEach(d => { d.open = true; });
+        if (css === 'state-none.css') faq.forEach(d => { d.open = false; });
+        const n = { 'after.css': 1, 'state-q2.css': 2, 'state-q3.css': 3 }[css];
+        if (n) faq[n - 1].open = true;
+      };
+      addEventListener('DOMContentLoaded', () => {
+        sync();
+        new MutationObserver(sync).observe(link, { attributes: true, attributeFilter: ['href'] });
+      });
+    })();
+  </script>
+</body>
+</html>

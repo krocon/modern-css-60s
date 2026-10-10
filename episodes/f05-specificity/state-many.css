@@ -1,0 +1,8 @@
+/* Zustand: mehr Klassen helfen nicht. .page .hero .button = 0-3-0 – verliert trotzdem gegen #buy (1-0-0),
+   weil von links verglichen wird: Die ID-Spalte entscheidet, bevor Klassen gezählt werden. */
+@import url("before.css");
+
+.page .hero .button { background: var(--brand); } /* 0-3-0 */
+
+.r2 { --b: 3; --sel: ".page .hero .button"; }
+.verdict::before { content: "Still IDs first: 1 > 0 → three classes can’t beat one ID."; }

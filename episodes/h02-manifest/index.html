@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pocket Notes – Modern CSS demo (H2 · The manifest file)</title>
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="icon" href="icon.svg">
+  <meta name="theme-color" content="#a21caf">
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-name.css state-icons.css state-display.css state-colors.css after.css" data-labels="No manifest|name|icons|display|colors|Manifest">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H2 The manifest file
+    Links: der Inhalt von manifest.webmanifest (als Text nachgebildet, damit die Seite auch per Doppelklick läuft).
+    Rechts: wo jedes Feld auftaucht – Startbildschirm, Startbild (Splash, v. a. Android) und App-Fenster. Eigene, neutrale Nachbauten.
+    Support teilweise: Chromium-Browser (Android, Desktop) nutzen das Manifest fürs Installieren, Safari liest nur einen Teil der Felder.
+    Tipp: Für maximale Abdeckung zusätzlich PNG-Icons in 192 und 512 px eintragen.
+  -->
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">manifest.webmanifest</p>
+      <h1>Name, icon, colors – in one JSON file</h1>
+    </header>
+
+    <div class="stage">
+      <section class="code" aria-label="manifest.webmanifest">
+        <p class="file">manifest.webmanifest</p>
+        <ol class="json">
+          <li>{</li>
+          <li data-f="name">  "name": "Pocket Notes",<b>1</b></li>
+          <li data-f="name">  "short_name": "Notes",<b>1</b></li>
+          <li data-f="icons">  "icons": [{ "src": "icon.svg", "sizes": "any" }],<b>2</b></li>
+          <li data-f="display">  "display": "standalone",<b>3</b></li>
+          <li data-f="colors">  "theme_color": "#a21caf",<b>4</b></li>
+          <li data-f="colors">  "background_color": "#ffffff",<b>4</b></li>
+          <li>  "start_url": "./"</li>
+          <li>}</li>
+        </ol>
+        <div class="guess">
+          <p class="file">index.html – no manifest</p>
+          <pre>&lt;title&gt;Pocket Notes – Modern CSS demo&lt;/title&gt;
+&lt;link rel="icon" href="favicon.ico"&gt;</pre>
+          <p class="guess-note">The browser has to guess: title as name, a letter as icon, no colors.</p>
+        </div>
+        <p class="hint">Linked in the head: <code>&lt;link rel="manifest" href="manifest.webmanifest"&gt;</code></p>
+      </section>
+
+      <section class="previews" aria-label="Where the fields show up">
+        <figure class="shot">
+          <div class="screen home">
+            <span class="app"><i></i>Mail</span><span class="app"><i></i>Photos</span><span class="app"><i></i>Clock</span>
+            <span class="app"><i></i>Music</span><span class="app"><i></i>Maps</span>
+            <span class="app mine"><span class="ico" data-f="icons"><img src="icon.svg" alt=""><em>P</em></span><span class="label" data-f="name"><span class="short">Notes</span><span class="long">Pocket Notes – Modern CSS demo</span></span></span>
+          </div>
+          <figcaption>Home screen</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="screen splash" data-f="colors">
+            <span class="ico" data-f="icons"><img src="icon.svg" alt=""><em>P</em></span>
+            <strong data-f="name">Pocket Notes</strong>
+            <span class="loading">loading …</span>
+          </div>
+          <figcaption>Splash (start)</figcaption>
+        </figure>
+
+        <figure class="shot">
+          <div class="screen app-window">
+            <div class="status" data-f="colors"><span>9:41</span><span>●●</span></div>
+            <div class="urlbar" data-f="display"><span>🔒 notes.example</span></div>
+            <p class="callout" data-f="display">no address bar, no tabs</p>
+            <p class="site-bar">Pocket Notes</p>
+            <ul class="notes"><li>Buy oat milk</li><li>Record episode 55</li><li>Call Ada at 3</li></ul>
+          </div>
+          <figcaption>App window</figcaption>
+        </figure>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

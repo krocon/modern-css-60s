@@ -1,0 +1,13 @@
+.tip { margin-block: 0.75rem 0; }
+@supports (anchor-name: --a) {
+  .link-btn { anchor-name: --a; }
+  .tip { position: absolute; position-anchor: --a; }
+  .tip { position-area: top; margin: 0 0 0.5rem; }
+}
+
+/* After – Fallback zuerst (Hinweis als Zeile unter der Toolbar), dann das Enhancement in @supports:
+   Browser mit Anchor Positioning hängen die Blase an den Link-Button. */
+.status { --state: #d97706; --msg: "✗ no anchor positioning → fallback: hint below the toolbar"; }
+@supports (anchor-name: --a) {
+  .status { --state: #0d9488; --msg: "✓ @supports (anchor-name) → hint anchored to the button"; }
+}

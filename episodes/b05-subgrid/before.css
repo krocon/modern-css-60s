@@ -1,0 +1,8 @@
+/* Before – jede Karte stapelt ihren Inhalt für sich (Flex-Spalte).
+   Unterschiedlich lange Titel und Texte → Text und Buttons stehen in jeder Karte woanders. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+.button { align-self: flex-start; }

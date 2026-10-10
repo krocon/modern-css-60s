@@ -1,0 +1,62 @@
+:root {
+  color-scheme: light dark;
+  --surface: #ffffff;  --text: #0f172a;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --surface: #0f172a; --text: #e2e8f0; }
+}
+
+/* After – folgt dem System: helle Werte als Standard, die Media Query überschreibt sie bei dunklem System.
+   color-scheme: light dark lässt Formularfelder und Scrollbalken mitziehen.
+   Hinweis: prefers-color-scheme folgt dem Betriebssystem, NICHT dem ☀/☾-Schalter der Demo.
+   Weitere Tokens nach demselben Muster: */
+:root { --card: #f1f5f9; --muted: #475569; --brand: #a21caf; --line: #e2e8f0; }
+@media (prefers-color-scheme: dark) {
+  :root { --card: #1e293b; --muted: #94a3b8; --brand: #f0abfc; --line: #334155; }
+}
+.system::after { content: "☀ light"; }
+@media (prefers-color-scheme: dark) {
+  .system::after { content: "☾ dark"; }
+}
+
+body { background: var(--surface); color: var(--text); }
+.bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-5);
+  border-block-end: 1px solid var(--line);
+}
+.logo { font-size: var(--step-2); color: var(--brand); }
+.system { padding: 0.4rem 1rem; font-size: var(--step-1); border: 1px solid var(--line); border-radius: 999px; background: var(--card); color: var(--muted); font-weight: 600; }
+.system::after { color: var(--text); }
+
+.page {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(22rem, 100%), 1fr));
+  gap: var(--space-5);
+  align-items: start;
+  max-inline-size: 72rem;
+  margin-inline: auto;
+  padding: var(--space-5);
+}
+.post { display: grid; gap: var(--space-3); }
+.meta { color: var(--muted); font-weight: 600; }
+.post h1 { font-size: var(--step-4); }
+.post p:not(.meta) { font-size: var(--step-1); }
+blockquote { padding-inline-start: var(--space-3); border-inline-start: 4px solid var(--brand); color: var(--muted); font-style: italic; font-size: var(--step-1); }
+
+.card {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--line);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--card);
+}
+.card h2 { font-size: var(--step-2); }
+label { display: grid; gap: var(--space-1); font-weight: 600; }
+.check { display: flex; align-items: center; gap: var(--space-2); font-weight: 400; }
+input, select { padding: 0.5rem 0.75rem; accent-color: var(--brand); }
+input[type="checkbox"] { inline-size: 1.25rem; block-size: 1.25rem; }
+button { justify-self: start; padding: 0.625rem 1.25rem; border: 0; border-radius: 999px; background: var(--brand); color: var(--surface); font-weight: 700; }

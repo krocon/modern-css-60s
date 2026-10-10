@@ -1,0 +1,5 @@
+/* Zustand Fokus if – wie after.css, nur diese Karte im Vordergrund, die anderen abgeblendet. */
+@import url("after.css");
+
+.feat:not(.f-if) { opacity: 0.3; filter: grayscale(1); }
+.f-if { border-color: #d946ef; box-shadow: 0 0 0 4px rgb(217 70 239 / 0.25); background: var(--surface); }

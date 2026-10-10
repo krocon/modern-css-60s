@@ -1,0 +1,10 @@
+@keyframes fade-up {
+  from { opacity: 0; translate: 0 2rem; }
+}
+.tile {
+  animation: fade-up .5s ease-out both;
+  animation-delay: calc(var(--i) * 100ms);
+}
+
+/* After – eine Keyframe-Animation: nur „from“ (unsichtbar, 2rem tiefer), das Ziel ist der normale Zustand.
+   „both“ hält den from-Zustand schon während der Verzögerung; --i kommt aus dem HTML (style="--i: 2"). */

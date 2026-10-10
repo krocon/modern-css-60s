@@ -1,0 +1,7 @@
+/* Before – Media Query: die Karte fragt den BILDSCHIRM. Auf dem Desktop wird sie überall quer,
+   auch in der 20rem schmalen Sidebar – dort wird der Text zerquetscht. */
+.card { display: grid; gap: 1rem; }
+
+@media (width > 48rem) {
+  .card { grid-template-columns: 12rem 1fr; }
+}

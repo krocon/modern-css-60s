@@ -1,0 +1,6 @@
+/* Zustand „System dunkel“ mit before.css – SIMULIERT für die Video-Bühne:
+   Die Bühne kann das Betriebssystem nicht auf dunkel stellen. Wir zeigen nur die Anzeige „System: dark“.
+   before.css hat keinen Dark Mode, also ändert sich an der Seite nichts – genau das ist das Problem. */
+@import url("before.css");
+
+.system::after { content: "☾ dark"; }

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D6 · accent-color: style every checkbox with one line</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css hack.css after.css state-teal.css state-yellow.css" data-labels="Before|Old hack|After|Teal|Yellow">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>One line, every control</h1>
+    <p class="lead">Checkboxes, radios, sliders and progress bars – all in your brand color.</p>
+
+    <form class="panel" onsubmit="return false">
+      <fieldset>
+        <legend>Email me about</legend>
+        <label><input type="checkbox" checked> New episodes</label>
+        <label><input type="checkbox" checked> Replies to my comments</label>
+        <label><input type="checkbox"> Product news</label>
+      </fieldset>
+      <fieldset>
+        <legend>Your plan</legend>
+        <label><input type="radio" name="plan"> Free</label>
+        <label><input type="radio" name="plan" checked> Pro</label>
+        <label><input type="radio" name="plan"> Team</label>
+      </fieldset>
+      <label class="field">Notification volume <input type="range" value="70"></label>
+      <label class="field">Profile complete <progress max="100" value="60">60 %</progress></label>
+    </form>
+  </main>
+</body>
+</html>

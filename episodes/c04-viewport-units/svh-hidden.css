@@ -1,0 +1,6 @@
+/* svh · Leisten weg – svh bleibt klein: unten entsteht eine Lücke, der nächste Abschnitt schaut hervor. */
+@import url("svh.css");
+.phone { --bar-top: 0px; --bar-bottom: 0px; }
+.ruler-svh, .unit-svh { color: #d97706; }
+.status { color: #d97706; }
+.status::after { content: "100svh · bars hidden → gap below"; }

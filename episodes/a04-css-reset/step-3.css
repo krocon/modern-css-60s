@@ -1,0 +1,3 @@
+/* Schritt 3 – + Bilder: display: block und max-inline-size: 100 % – das 760-px-Bild passt in die Karte. */
+@import url("step-2.css");
+img, svg { display: block; max-inline-size: 100%; }

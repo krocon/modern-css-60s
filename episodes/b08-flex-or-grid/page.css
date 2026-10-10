@@ -1,0 +1,55 @@
+/* page.css – gemeinsame Optik aller Zustände. Ob Navigation und Galerie Flex oder Grid sind,
+   steht NUR in before/after.css (und den Zustands-Dateien). */
+.page { max-inline-size: 76rem; margin-inline: auto; padding: 4rem var(--space-4) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+/* Die zwei Spalten dieser Seite sind selbst ein Grid (schmal: untereinander) */
+.compare { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(26rem, 100%), 1fr)); gap: var(--space-4); }
+
+.col {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+/* Spaltenbeschriftung – Text kommt aus dem jeweiligen Stylesheet */
+.col::before {
+  justify-self: start;
+  padding: 0.35rem 0.75rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font: 700 0.95rem/1 var(--font-mono);
+}
+
+.row { gap: 0.75rem; padding: 0; list-style: none; }
+.nav a {
+  padding: 0.5rem 0.9rem;
+  border-radius: 999px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--text);
+  font-weight: 600;
+  text-align: center;
+  text-decoration: none;
+}
+.nav a:first-child { background: var(--text); color: var(--surface); border-color: transparent; }
+
+.tile {
+  display: flex;
+  align-items: end;
+  min-block-size: 5rem;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.6rem;
+  color: #ffffff;
+  font-weight: 700;
+  background: linear-gradient(150deg, var(--brand), var(--accent));
+}
+.tile:nth-child(2) { background: linear-gradient(150deg, #6366f1, var(--brand)); }
+.tile:nth-child(3) { background: linear-gradient(150deg, #f59e0b, #ef4444); }
+.tile:nth-child(4) { background: linear-gradient(150deg, #0ea5e9, #6366f1); }
+.tile:nth-child(5) { background: linear-gradient(150deg, #10b981, #0f766e); }

@@ -1,0 +1,24 @@
+/* page.css – Seitenlayout (Main + Sidebar) und Kartenlook für alle Zustände.
+   Die Karte selbst (gestapelt oder quer) steuert before.css (@media) bzw. after.css (@container). */
+.page { max-inline-size: 80rem; margin-inline: auto; padding: 3rem var(--space-4) var(--space-6); }
+.intro h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.layout { display: grid; grid-template-columns: 1fr 20rem; gap: var(--space-4); align-items: start; }
+@media (width < 50rem) { .layout { grid-template-columns: 1fr; } }
+main, aside { display: grid; gap: var(--space-4); }
+
+.card {
+  padding: var(--space-3);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.thumb { min-block-size: 8rem; border-radius: calc(var(--radius) - 0.25rem); }
+.thumb-a { background: linear-gradient(160deg, #fde68a, #f97316 55%, #be185d); }
+.thumb-b { background: linear-gradient(160deg, #1e1b4b, #6d28d9 60%, #f0abfc); }
+.thumb-c { background: linear-gradient(160deg, #a7f3d0, #14b8a6 55%, #0f766e); }
+.body { display: grid; gap: var(--space-1); align-content: center; }
+.kicker { color: var(--brand); font-weight: 700; font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.08em; }
+.card h2 { font-size: var(--step-2); }
+.card .body p:last-child { color: var(--text-muted); }

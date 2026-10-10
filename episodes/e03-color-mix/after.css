@@ -1,0 +1,62 @@
+.btn { background: var(--brand); }
+.btn:hover {
+  background:
+    color-mix(in oklch, var(--brand), black 15%);
+}
+.starter { --brand: #0d9488; }
+.team    { --brand: #ea580c; }
+
+/* After – color-mix(): pro Karte nur EINE Farbe (--brand). Hover = 15 % Schwarz dazu,
+   Tönungen für Tag, Häkchen-Hintergrund und Rahmen = Markenfarbe + viel Weiß. */
+.pro { --brand: #a21caf; }
+.tag {
+  background: color-mix(in oklch, var(--brand) 15%, white);
+  color: color-mix(in oklch, var(--brand), black 25%);
+}
+.plan:hover { background: color-mix(in oklch, var(--brand) 6%, white); }
+.plan li::before { background: color-mix(in oklch, var(--brand) 18%, white); color: var(--brand); }
+
+:root { color-scheme: light; }
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(17rem, 100%), 1fr));
+  gap: var(--space-4);
+}
+.plan {
+  display: grid;
+  gap: var(--space-3);
+  align-content: start;
+  justify-items: start;
+  padding: var(--space-4);
+  border: 2px solid color-mix(in oklch, var(--brand) 35%, white);
+  border-radius: calc(var(--radius) * 1.5);
+  background: #fff;
+}
+.tag { padding: 0.25rem 0.8rem; border-radius: 999px; font-weight: 700; font-size: var(--step--1); }
+.price { font-size: var(--step-3); font-weight: 800; }
+.price small { font-size: var(--step-0); font-weight: 400; color: var(--text-muted); }
+.plan ul { display: grid; gap: var(--space-2); padding: 0; list-style: none; }
+.plan li { display: flex; align-items: center; gap: var(--space-2); }
+.plan li::before {
+  content: "✓";
+  display: grid;
+  place-items: center;
+  inline-size: 1.5rem;
+  block-size: 1.5rem;
+  border-radius: 50%;
+  font-size: 0.8rem;
+  font-weight: 800;
+}
+.btn {
+  justify-self: stretch;
+  padding: 0.75rem 1.25rem;
+  border-radius: 999px;
+  color: #fff;
+  font-weight: 700;
+  text-align: center;
+  text-decoration: none;
+}

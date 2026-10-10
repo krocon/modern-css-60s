@@ -1,0 +1,4 @@
+/* Screenreader-Sicht, Fokus auf <main> – dorthin springen Screenreader-Nutzer per Tastenkürzel. */
+@import url("state-outline.css");
+.semantic :is(header, footer, aside) { opacity: 0.35; }
+.semantic main { outline-width: 4px; background: color-mix(in srgb, #0f766e 8%, transparent); }

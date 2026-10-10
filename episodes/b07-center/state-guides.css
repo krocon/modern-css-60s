@@ -1,0 +1,18 @@
+/* Zustand – wie after.css, dazu Hilfslinien durch die Mitte von Seite, Avatar und Icons: alles exakt mittig. */
+@import url("after.css");
+
+body, .avatar, .icon { position: relative; }
+body::before, .avatar::before, .icon::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(var(--guide), var(--guide)) center / 2px 100% no-repeat,
+    linear-gradient(var(--guide), var(--guide)) center / 100% 2px no-repeat;
+  pointer-events: none;
+}
+body { --guide: color-mix(in srgb, var(--brand) 70%, transparent); }
+body::before { position: fixed; z-index: 0; }
+.card { position: relative; z-index: 1; }
+.avatar, .icon { --guide: #f59e0b; }
+.avatar > *, .icon > * { position: relative; }

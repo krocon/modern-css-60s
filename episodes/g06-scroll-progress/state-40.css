@@ -1,0 +1,5 @@
+/* Momentaufnahme: Seite zu 40 % gescrollt (bei 1280×720 = 362px). Im Video läuft keine Animation und es wird
+   nicht gescrollt – darum setzen wir den Balken fest auf 0.4 und schieben den Artikel um die Scroll-Strecke nach oben. */
+@import url("after.css");
+.progress { animation: none; scale: 0.4 1; }
+.page { translate: 0 -362px; }

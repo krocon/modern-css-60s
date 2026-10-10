@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G7 · Only animate these 2 properties</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Momentaufnahmen „Menü halb / ganz offen“ für das Video. -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css state-width-50.css state-width-open.css after.css state-50.css state-open.css"
+        data-labels="width|width 50 %|width open|transform|transform 50 %|transform open">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <div class="app">
+    <nav class="drawer" aria-label="Main">
+      <p class="logo">◆ Docs <button type="button" class="close" aria-label="Close menu" onclick="document.body.classList.remove('menu-open')">✕</button></p>
+      <ul>
+        <li><a href="#start">Getting started</a></li>
+        <li><a href="#guides">Guides</a></li>
+        <li><a href="#api">API reference</a></li>
+        <li><a href="#changelog">Changelog</a></li>
+        <li><a href="#support">Support</a></li>
+      </ul>
+    </nav>
+    <div class="main">
+      <header class="bar">
+        <button type="button" class="menu-btn" aria-label="Toggle menu" onclick="document.body.classList.toggle('menu-open')">☰ Menu</button>
+        <span>Animation performance</span>
+      </header>
+      <article class="post">
+        <h1>Smooth menus at 60 fps</h1>
+        <p>Open the menu with the button above and switch the stylesheet: <code>width</code> pushes this text around on every frame,
+          <code>transform</code> slides the menu over it without touching the layout. Same menu, same 300 ms – very different work for the browser.</p>
+        <p>Watch the line breaks of this paragraph while the menu opens. If they jump around, the browser is running layout again and again.</p>
+      </article>
+      <figure class="pipeline">
+        <figcaption>Work per frame while the menu moves:</figcaption>
+        <ol>
+          <li class="step-style">Style</li>
+          <li class="step-layout">Layout</li>
+          <li class="step-paint">Paint</li>
+          <li class="step-composite">Composite</li>
+        </ol>
+        <p class="verdict"></p>
+      </figure>
+    </div>
+  </div>
+</body>
+</html>

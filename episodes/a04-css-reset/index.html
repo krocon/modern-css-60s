@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A4 · The 10-line CSS reset I use everywhere</title>
+  <!-- Bewusst ohne ../../shared/base.css: base.css enthält selbst schon einen Reset. -->
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- Nur der Reset wechselt. Er steht VOR den Komponenten, damit diese gewinnen. -->
+  <link rel="stylesheet" href="after.css" data-styles="before.css step-1.css step-2.css step-3.css after.css" data-labels="No reset|+ box-sizing|+ margin|+ img|Full reset">
+  <link rel="stylesheet" href="components.css">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <header class="top">
+    <h1>Weekend Workshop</h1>
+  </header>
+  <main class="grid">
+    <article class="card">
+      <img src="cover.svg" alt="">
+      <h2>Modern CSS in one day</h2>
+      <p>Grid, container queries and cascade layers – hands-on, with real projects instead of slides.</p>
+      <ul class="tags">
+        <li>Grid</li>
+        <li>:has()</li>
+        <li>@layer</li>
+      </ul>
+    </article>
+    <aside class="card signup">
+      <h2>Save your seat</h2>
+      <p>12 seats left. We send one email, no spam.</p>
+      <form class="row" onsubmit="return false">
+        <input type="email" placeholder="you@example.com" aria-label="Email">
+        <button>Sign up</button>
+      </form>
+    </aside>
+  </main>
+</body>
+</html>

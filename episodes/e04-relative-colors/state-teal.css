@@ -1,0 +1,5 @@
+/* Zustand – nur --brand geändert (Petrol). Alle Stufen, Rollen und Buttons rechnen sich neu. */
+@import url("after.css");
+
+:root { --brand: #0d9488; }
+.brand-value::after { content: ": #0d9488"; }

@@ -3,13 +3,17 @@
 **DE:** Hör auf, Schriftgrößen in px anzugeben
 
 🎬 Episode 016 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 016 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/c01-rem/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Browser-Schriftgröße auf 20 px stellen: px bleibt, rem wächst mit
-
-_Demo coming soon / Demo folgt._
+```css
+html { font-size: 100%; }   /* Nutzer-Wert */
+.post h1 { font-size: 2.5rem; }
+.post p  { font-size: 1.125rem; }
+.post    { padding: 2rem; gap: 1rem; }
+.post    { border: 1px solid var(--border); }
+```
 
 ## Browser support
 
@@ -22,4 +26,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=rem) · [Web 
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

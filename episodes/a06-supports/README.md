@@ -3,13 +3,18 @@
 **DE:** Frag den Browser direkt im CSS, was er kann
 
 🎬 Episode 006 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 006 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/a06-supports/
 
-## Core idea
+## Core CSS (`after.css`)
 
-@supports (anchor-name: --a) mit sichtbarem Fallback
-
-_Demo coming soon / Demo folgt._
+```css
+.tip { margin-block: 0.75rem 0; }
+@supports (anchor-name: --a) {
+  .link-btn { anchor-name: --a; }
+  .tip { position: absolute; position-anchor: --a; }
+  .tip { position-area: top; margin: 0 0 0.5rem; }
+}
+```
 
 ## Browser support
 
@@ -22,4 +27,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=%40supports) 
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

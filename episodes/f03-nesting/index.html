@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F3 · Native CSS nesting – no Sass required</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-hover.css" data-labels="Flat|Nested|Nested + hover">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <h1>Write the selector once</h1>
+      <p class="lead">Hover a card, then make the window narrower than 40rem. Same look – flat or nested.</p>
+      <p class="source-note"></p>
+    </header>
+    <section class="cards" aria-label="Nesting features">
+      <article class="card">
+        <span class="icon" aria-hidden="true">&amp;</span>
+        <div>
+          <h2>The &amp; selector</h2>
+          <p>Stands for the parent rule. Children go right inside the block.</p>
+          <span class="tag">& h2</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="icon" aria-hidden="true">:h</span>
+        <div>
+          <h2>States in place</h2>
+          <p>Pseudo-classes attach directly to the parent – no space.</p>
+          <span class="tag">&:hover</span>
+        </div>
+      </article>
+      <article class="card">
+        <span class="icon" aria-hidden="true">@</span>
+        <div>
+          <h2>Media queries inside</h2>
+          <p>Below 40rem the card stacks icon and text.</p>
+          <span class="tag">@media (width &lt; 40rem)</span>
+        </div>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

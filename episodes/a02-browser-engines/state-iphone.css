@@ -1,0 +1,8 @@
+/* Zustand „iPhone“ – alle Browser auf dem iPhone tragen das Etikett WebKit. Schmal: nur WebKit-Karte + iPhone-Leiste. */
+@import url("after.css");
+.blink, .gecko { opacity: 0.3; filter: grayscale(1); }
+.iphone { outline: 3px solid var(--engine); outline-offset: 4px; scale: 1.02; }
+.iphone li::after { box-shadow: 0 0 0 3px color-mix(in srgb, var(--engine) 35%, transparent); }
+@media (max-width: 40em) {
+  .blink, .gecko, .lead { display: none; }
+}

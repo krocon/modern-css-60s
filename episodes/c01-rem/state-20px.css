@@ -1,0 +1,7 @@
+/* rem · 20 px – Simulation: Nutzer stellt im Browser „Schriftgröße: Groß (20 px)“ ein.
+   Die Bühne kann die echte Browser-Einstellung nicht ändern, darum: html 125 % (= 16 px × 1.25 = 20 px).
+   Alles in rem wächst mit – Text, Abstände, Button. */
+@import url("after.css");
+html { font-size: 125%; }
+.setting-value::after { content: "Large (20 px) → 1rem = 20 px"; }
+.post::after { content: "h1 = 50 px · text = 22.5 px"; }

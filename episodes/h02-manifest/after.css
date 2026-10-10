@@ -1,0 +1,3 @@
+/* After – mit Manifest: kurzer Name unter dem Icon, echtes Icon, Startbild in background_color,
+   App-Fenster ohne Adressleiste (display: standalone), Statusleiste in theme_color. Nummern = Feld ↔ Wirkung. */
+@import url("demo.css");

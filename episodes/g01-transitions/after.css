@@ -1,0 +1,12 @@
+.card {
+  transition: transform .2s, box-shadow .2s;
+}
+.card:is(:hover, :focus-within) {
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgb(0 0 0 / .2);
+}
+
+/* After – eine Zeile transition auf dem Ausgangszustand (Timing-Funktion ease ist Standard):
+   der Browser rechnet die Frames dazwischen. Gilt für Hover und Tastatur-Fokus (:focus-within). */
+.frames { --f1: 0; --f2: .3; --f3: .68; --f4: .89; --f5: .98; --f6: 1; }
+.frames figcaption::after { content: " – with transition: .2s"; color: var(--accent); }

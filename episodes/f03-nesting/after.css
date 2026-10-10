@@ -1,0 +1,65 @@
+.card {
+  & h2 { color: var(--brand); }
+  &:hover { border-color: var(--brand); }
+  @media (width < 40rem) {
+    flex-direction: column;
+  }
+}
+
+/* After – native CSS-Verschachtelung: Kinder (& h2), Zustände (&:hover) und die Media Query stehen im Block von .card.
+   Der Browser versteht das direkt – kein Sass, kein Build-Schritt. Optik identisch zu before.css. */
+.page {
+  max-inline-size: 52rem;
+  margin-inline: auto;
+  padding: 3rem var(--space-4) var(--space-6);
+
+  & h1 { font-size: var(--step-4); }
+}
+.lead { margin-block: var(--space-2) var(--space-3); color: var(--text-muted); font-size: var(--step-1); }
+.source-note {
+  display: inline-block;
+  margin-block-end: var(--space-4);
+  padding: 0.25rem 0.75rem;
+  border-radius: 999px;
+  background: var(--accent);
+  color: var(--surface);
+  font: 700 var(--step--1) var(--font-mono);
+
+  &::before { content: "after.css · nested · no build step"; }
+}
+.cards { display: grid; gap: var(--space-3); }
+
+.card {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-4);
+  padding: var(--space-4);
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  transition: translate 0.2s, box-shadow 0.2s, border-color 0.2s;
+
+  &:hover { translate: 0 -0.25rem; box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.15); }
+  & h2 { font-size: var(--step-2); }
+  & p { margin-block-start: var(--space-1); color: var(--text-muted); }
+  & .icon {
+    flex: none;
+    display: grid;
+    place-items: center;
+    inline-size: 4.5rem;
+    aspect-ratio: 1;
+    border-radius: 1rem;
+    background: linear-gradient(135deg, var(--brand), var(--accent));
+    color: #ffffff;
+    font: 800 2rem/1 var(--font-mono);
+  }
+  & .tag {
+    display: inline-block;
+    margin-block-start: var(--space-2);
+    padding: 0.125rem 0.625rem;
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    background: var(--surface);
+    font: 700 var(--step--1) var(--font-mono);
+  }
+}

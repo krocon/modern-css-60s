@@ -1,0 +1,3 @@
+/* Before – normaler Fluss: der Footer folgt direkt auf den Inhalt.
+   Auf kurzen Seiten hängt er mitten im Bild, darunter nur leere Fläche. */
+body { display: block; }

@@ -1,0 +1,54 @@
+/* page.css – Seiten-Optik inklusive Verlaufsrahmen (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css. */
+.page {
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.page h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.plans {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(15rem, 100%), 1fr));
+  gap: var(--space-4);
+  align-items: center;
+}
+.plan {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.plan h2 { font-size: var(--step-1); color: var(--brand); }
+.price { font-size: var(--step-3); font-weight: 800; }
+.plan ul { padding-inline-start: 1.1rem; color: var(--text-muted); }
+.btn {
+  justify-self: start;
+  margin-block-start: var(--space-2);
+  padding: .55rem 1rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font-weight: 700;
+  text-decoration: none;
+}
+.tag { justify-self: start; padding: .15rem .6rem; border-radius: 999px; background: var(--accent); color: var(--surface); font-size: var(--step--1); font-weight: 700; }
+
+/* Der Verlaufsrahmen: conic-gradient als border-box-Hintergrund, die Fläche (padding-box) deckt ihn innen ab */
+.pro {
+  padding-block: var(--space-5);
+  border: 6px solid transparent;
+  border-radius: calc(var(--radius) * 1.5);
+  background:
+    linear-gradient(var(--surface-2) 0 0) padding-box,
+    conic-gradient(from var(--angle, 0deg),
+      transparent 0 35%, #d946ef 60%, #14b8a6 80%, #f59e0b 95%, transparent) border-box,
+    linear-gradient(var(--border) 0 0) border-box;
+}
+
+/* Anzeige des aktuellen Winkels (nur Deko: zeigt, ob --angle als Winkel bekannt ist) */
+.angle-readout { margin-block-start: var(--space-5); text-align: center; font-family: var(--font-mono); color: var(--text-muted); }
+.angle-readout output::after { content: var(--readout, "0deg"); color: var(--brand); font-weight: 700; }

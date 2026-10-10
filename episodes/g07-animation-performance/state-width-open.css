@@ -1,0 +1,3 @@
+/* Momentaufnahme: width-Animation fertig – Menü offen, Inhalt zusammengeschoben. */
+@import url("before.css");
+.drawer { transition: none; width: 16rem; }

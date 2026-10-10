@@ -1,0 +1,4 @@
+/* Zustand „Gecko“ – Firefox auf Desktop und Android (auf dem iPhone nicht!). */
+@import url("after.css");
+.engine:not(.gecko), .iphone { opacity: 0.3; filter: grayscale(1); }
+.gecko { outline: 3px solid var(--engine); outline-offset: 4px; scale: 1.03; }

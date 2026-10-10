@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D3 · Form layout that works on every screen</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-guides.css state-focus.css" data-labels="Before|After|Grid lines|Focus">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Contact us</h1>
+    <p class="lead">Wide screen: labels beside the fields. Phone: labels on top.</p>
+
+    <!-- Labels und Felder sind direkte Kinder des Formulars – kein Wrapper, das Grid ordnet sie paarweise. -->
+    <form class="form" onsubmit="return false">
+      <label for="name">Full name</label>
+      <input id="name" autocomplete="name" value="Ada Lovelace">
+
+      <label for="email">Email address</label>
+      <input id="email" type="email" autocomplete="email" value="ada@example.com">
+
+      <label for="phone">Phone (optional)</label>
+      <input id="phone" type="tel" autocomplete="tel">
+
+      <label for="topic">Topic</label>
+      <select id="topic">
+        <option>Question about an order</option>
+        <option>Feedback</option>
+        <option>Something else</option>
+      </select>
+
+      <label for="message">Message</label>
+      <textarea id="message" rows="3">Where is my mechanical keyboard?</textarea>
+
+      <button>Send message</button>
+    </form>
+  </main>
+</body>
+</html>

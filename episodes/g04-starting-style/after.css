@@ -1,0 +1,14 @@
+dialog {
+  transition: opacity .4s, translate .4s,
+    display .4s, overlay .4s;
+  transition-behavior: allow-discrete;
+  &:not([open]) { opacity: 0; translate: 0 2rem; }
+  @starting-style { opacity: 0; translate: 0 2rem; }
+}
+
+/* After – display und overlay laufen diskret mit (allow-discrete): beim Schließen springt display erst am Ende um.
+   @starting-style liefert die Startwerte beim Öffnen (vorher war der Dialog display: none, es gab keinen Stil). */
+dialog::backdrop { transition: background-color .4s, display .4s allow-discrete, overlay .4s allow-discrete; }
+@starting-style { dialog[open]::backdrop { background-color: transparent; } }
+.frames { --f1: 0; --f2: .41; --f3: .8; --f4: .96; --f5: 1; }
+.frames figcaption::after { content: " – with @starting-style: fades in"; color: var(--accent); }

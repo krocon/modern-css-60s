@@ -1,0 +1,11 @@
+.hero {
+  min-block-size: 100vh;   /* Fallback */
+  min-block-size: 100dvh;  /* folgt den Leisten */
+}
+
+/* After – 100dvh: der Hero ist immer genau so hoch wie der sichtbare Bereich.
+   Simulation (sim.css): Telefon nutzt die nachgerechnete dvh-Höhe, Leisten sichtbar. */
+.phone { --use: var(--sim-dvh); }
+.ruler-dvh, .unit-dvh { --on: 1; color: var(--accent); }
+.status { color: var(--accent); }
+.status::after { content: "100dvh · bars visible → button visible ✓"; }

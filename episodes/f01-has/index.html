@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F1 · :has() – CSS can finally select the parent</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-card.css state-invalid.css" data-labels="Before|After|Card (static)|Card + form (static)">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <h1>Create your account</h1>
+      <p class="lead">Edit the email and leave the field – or press “Create account”. The whole card turns red. No JavaScript.</p>
+      <p class="rule"><code>.card:has(input:user-invalid)</code></p>
+    </header>
+
+    <form class="signup" action="#" onsubmit="return false">
+      <div class="card">
+        <label for="name">Name</label>
+        <input id="name" name="name" autocomplete="name" required value="Ada Lovelace">
+        <p class="hint">As it appears on your invoices.</p>
+      </div>
+      <div class="card">
+        <label for="email">Email</label>
+        <input id="email" name="email" type="email" autocomplete="email" required value="ada.lovelace.dev">
+        <p class="hint">We’ll send the confirmation link here.</p>
+        <p class="error">Missing “@” – try ada@lovelace.dev</p>
+      </div>
+      <div class="card">
+        <label for="password">Password</label>
+        <input id="password" name="password" type="password" autocomplete="new-password" required minlength="8" value="analytical-engine">
+        <p class="hint">At least 8 characters.</p>
+      </div>
+      <div class="actions">
+        <button class="submit">Create account</button>
+        <p class="form-note">Please fix the marked field first.</p>
+      </div>
+    </form>
+  </main>
+</body>
+</html>

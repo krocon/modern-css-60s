@@ -1,0 +1,9 @@
+/* Zustand für die Video-Bühne: Hover der mittleren Karte erzwungen (im Video gibt es keine Maus).
+   Im Browser echt: after.css wählen und mit der Maus über eine Karte fahren. */
+@import url("after.css");
+
+.card:nth-child(2) {
+  border-color: var(--brand);
+  translate: 0 -0.25rem;
+  box-shadow: 0 0.75rem 2rem rgb(0 0 0 / 0.15);
+}

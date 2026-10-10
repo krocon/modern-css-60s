@@ -1,0 +1,4 @@
+/* Zustand: Seite ganz oben (nicht gescrollt) – wie after.css. */
+@import url("after.css");
+
+:root { --demo-scroll: 0; }

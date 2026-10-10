@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D8 · Toast notifications without a library</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-one.css state-enter.css state-exit.css state-stack.css" data-labels="Before|After|1 toast|Enter|Exit|3 toasts">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Toasts without a library</h1>
+    <p class="lead">Click a button. The toast lands in the top layer – above everything, even the cookie banner.</p>
+
+    <section class="card" aria-labelledby="settings">
+      <h2 id="settings">Project settings</h2>
+      <label>Project name <input type="text" value="Website relaunch"></label>
+      <div class="row">
+        <button type="button" onclick="toast('saved')">Save</button>
+        <button type="button" onclick="toast('uploaded')">Upload logo</button>
+        <button type="button" class="ghost" onclick="toast('offline')">Go offline</button>
+      </div>
+    </section>
+  </main>
+
+  <div class="cookie-bar">
+    <p>We only use cookies to remember your theme.</p>
+    <button type="button">OK</button>
+  </div>
+
+  <output class="toast" id="saved" popover="manual">✓ Changes saved</output>
+  <output class="toast" id="uploaded" popover="manual">↑ logo.svg uploaded</output>
+  <output class="toast is-error" id="offline" popover="manual">✕ Connection lost – retrying</output>
+
+  <script>
+    function toast(id) {
+      const t = document.getElementById(id);
+      t.showPopover();
+      setTimeout(() => t.hidePopover(), 4000);
+    }
+
+    // Nur für Aufnahmen/Schalter: Zustands-Stylesheets zeigen Toasts statisch (kein Timer).
+    (() => {
+      const show = { 'state-one.css': ['saved'], 'state-enter.css': ['saved'], 'state-exit.css': ['saved'],
+                     'state-stack.css': ['saved', 'uploaded', 'offline'] };
+      const link = document.querySelector('link[data-styles]');
+      const sync = () => {
+        const ids = show[link.getAttribute('href')] || [];
+        document.querySelectorAll('.toast').forEach(t => {
+          const open = t.matches(':popover-open');
+          if (ids.includes(t.id) && !open) t.showPopover();
+          if (!ids.includes(t.id) && open) t.hidePopover();
+        });
+      };
+      addEventListener('DOMContentLoaded', () => {
+        sync();
+        new MutationObserver(sync).observe(link, { attributes: true, attributeFilter: ['href'] });
+      });
+    })();
+  </script>
+</body>
+</html>

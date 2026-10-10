@@ -1,0 +1,2 @@
+/* Before – keine View Transition: ohne Namen (und ohne die Root-Überblendung) springt die Ansicht hart um. */
+:root, .trip { view-transition-name: none; }

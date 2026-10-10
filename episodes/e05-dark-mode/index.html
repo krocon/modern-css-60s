@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E5 · Dark mode that follows the system automatically</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-before-dark.css state-scheme.css after.css state-dark.css" data-labels="Before|Before · sim. dark|color-scheme only|After|After · sim. dark">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+
+  <header class="bar">
+    <strong class="logo">Nightly Notes</strong>
+    <span class="system">System: </span>
+  </header>
+
+  <main class="page">
+    <article class="post">
+      <p class="meta">5 min read · CSS</p>
+      <h1>Reading at 2 a.m.</h1>
+      <p>Your operating system already knows whether it is day or night. With one media query, your stylesheet knows it too – no toggle, no script.</p>
+      <blockquote>“The best dark mode is the one nobody has to switch on.”</blockquote>
+    </article>
+
+    <form class="card" onsubmit="return false">
+      <h2>Reading settings</h2>
+      <label>Search notes <input type="search" value="dark mode"></label>
+      <label>Font size
+        <select><option>Small</option><option selected>Medium</option><option>Large</option></select>
+      </label>
+      <label class="check"><input type="checkbox" checked> Reduce motion</label>
+      <button>Save</button>
+    </form>
+  </main>
+</body>
+</html>

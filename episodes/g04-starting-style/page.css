@@ -1,0 +1,90 @@
+/* page.css – Seiten-Optik (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css. */
+.page {
+  max-inline-size: 60rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.page h1 { font-size: var(--step-4); margin-block-end: var(--space-4); }
+.panel {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.panel.danger { border-color: light-dark(#fca5a5, #7f1d1d); }
+.panel h2 { font-size: var(--step-1); }
+.panel p { color: var(--text-muted); }
+.btn {
+  padding: .6rem 1.1rem;
+  border: 1px solid var(--border);
+  border-radius: .5rem;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  cursor: pointer;
+}
+.btn-danger { border-color: transparent; background: light-dark(#dc2626, #f87171); color: light-dark(#fff, #1c0606); }
+
+dialog {
+  margin: auto; /* base.css setzt margin: 0 – zentrieren wieder herstellen */
+  inline-size: min(28rem, 100% - 2rem);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 1.5);
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / .35);
+}
+dialog h2 { font-size: var(--step-2); }
+dialog p { margin-block: var(--space-2) var(--space-4); color: var(--text-muted); }
+.actions { display: flex; justify-content: end; gap: var(--space-2); }
+dialog::backdrop { background: rgb(15 23 42 / var(--dim, .5)); }
+
+/* Erklär-Grafik: der Dialog in fünf Frames. --f1 … --f5 (0 = unsichtbar, 1 = fertig) setzt das jeweilige Stylesheet. */
+.frames {
+  margin-block-start: var(--space-5);
+  padding: var(--space-3) var(--space-4);
+  border: 1px dashed var(--border);
+  border-radius: var(--radius);
+}
+.frames figcaption { color: var(--text-muted); font-size: var(--step--1); font-weight: 600; }
+.frames ol {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-block-start: var(--space-2);
+  padding: 0;
+  list-style: none;
+}
+.frames li { display: grid; justify-items: center; gap: var(--space-1); }
+.screen {
+  display: grid;
+  place-items: center;
+  inline-size: 100%;
+  aspect-ratio: 16 / 9;
+  border-radius: .4rem;
+  border: 1px solid var(--border);
+  background: color-mix(in srgb, #0f172a calc(var(--p, 0) * 45%), var(--surface-2));
+}
+.mini {
+  inline-size: 45%;
+  aspect-ratio: 16 / 10;
+  border-radius: .3rem;
+  background: var(--surface);
+  border-block-start: .35rem solid light-dark(#dc2626, #f87171);
+  box-shadow: 0 .3rem .8rem rgb(0 0 0 / .3);
+  opacity: var(--p, 0);
+  translate: 0 calc((1 - var(--p, 0)) * 1.5rem);
+}
+.frames small { color: var(--text-muted); font-size: .75rem; }
+.frames li:nth-child(1) { --p: var(--f1, 0); }
+.frames li:nth-child(2) { --p: var(--f2, 0); }
+.frames li:nth-child(3) { --p: var(--f3, 0); }
+.frames li:nth-child(4) { --p: var(--f4, 0); }
+.frames li:nth-child(5) { --p: var(--f5, 0); }

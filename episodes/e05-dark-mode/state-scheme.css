@@ -1,0 +1,8 @@
+/* Zustand „System dunkel“, nur color-scheme – SIMULIERT für die Video-Bühne:
+   color-scheme: light dark wählt bei dunklem System „dark“. Hier direkt gesetzt, weil die Bühne
+   das System nicht umschalten kann. Ohne die Media Query bleiben deine eigenen Farben hell –
+   nur Browser-Teile (Formularfelder, Scrollbalken) werden dunkel. */
+@import url("after.css");
+
+:root { color-scheme: dark; }
+.system::after { content: "☾ dark"; }

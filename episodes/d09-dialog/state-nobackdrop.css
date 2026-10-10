@@ -1,0 +1,3 @@
+/* Zustand: Dialog offen per showModal(), aber ::backdrop durchsichtig – zeigt, was der Backdrop beiträgt. */
+@import url("after.css");
+dialog::backdrop { background: transparent; backdrop-filter: none; }

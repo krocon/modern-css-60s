@@ -1,0 +1,6 @@
+/* Zustand „Karte + Formular ungültig“ für die Video-Bühne (statisch mit :invalid statt :user-invalid, siehe state-card.css).
+   Zusätzlich fragt das Formular mit form:has() nach: Button gedimmt, Hinweis sichtbar. */
+@import url("state-card.css");
+
+form:has(:invalid) .submit { opacity: 0.4; }
+form:has(:invalid) .form-note { display: block; }

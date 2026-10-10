@@ -1,0 +1,4 @@
+/* Momentaufnahme: Drehung bei 90deg (im Video ist die Animation aus, darum fester Winkel). */
+@import url("after.css");
+.pro { animation: none; --angle: 90deg; }
+.angle-readout output::after { content: "90deg"; }

@@ -1,0 +1,6 @@
+/* Zustand „Stack“ – Fokus auf die Layer-Reihenfolge. */
+@import url("after.css");
+@layer utilities {
+  .cards { opacity: 0.35; }
+  .panel { outline: 3px solid #f0abfc; outline-offset: 4px; scale: 1.04; }
+}

@@ -1,0 +1,9 @@
+/* Zustand „Erstens“ – Fokus auf die Navigation: Flex passt (Inhalt bestimmt die Breite), Grid presst die Links in starre Zellen. */
+@import url("after.css");
+
+.gallery { opacity: 0.2; }
+.nav { outline: 3px solid var(--verdict); outline-offset: 0.5rem; border-radius: 0.25rem; }
+.flex { --verdict: #10b981; }
+.grid { --verdict: #f43f5e; }
+.flex::before { content: "display: flex ✓ nav"; background: #10b981; }
+.grid::before { content: "display: grid ✗ nav"; background: #f43f5e; }

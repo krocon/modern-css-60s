@@ -1,0 +1,20 @@
+/* Before – nur background-image: das Bild kachelt in Originalgröße (800 × 450),
+   und die weiße Schrift steht ohne Abdunklung auf hellem Himmel – kaum lesbar. */
+.hero {
+  background-image: url("cover.svg");
+  color: white;
+}
+.hero {
+  display: grid;
+  align-content: end;
+  justify-items: start;
+  gap: var(--space-3);
+  min-block-size: 34rem;
+  padding: var(--space-6) clamp(1.5rem, 6vw, 5rem);
+}
+.hero .kicker { font-size: var(--step--1); font-weight: 700; letter-spacing: 0.1em; text-transform: uppercase; }
+.hero h1 { font-size: clamp(2.5rem, 1.5rem + 4vw, 4.5rem); max-inline-size: 14ch; }
+.hero .lead { font-size: var(--step-1); max-inline-size: 34rem; }
+.btn { padding: 0.75rem 1.5rem; border-radius: 999px; background: #f97316; color: #fff; font-weight: 700; text-decoration: none; }
+.facts { display: flex; flex-wrap: wrap; gap: var(--space-5); padding: var(--space-4) clamp(1.5rem, 6vw, 5rem); color: var(--text-muted); }
+.facts b { color: var(--text); font-size: var(--step-2); }

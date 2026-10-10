@@ -1,0 +1,3 @@
+/* Zustand: Auftritt eingefroren – kurz nach den @starting-style-Werten (unsichtbar, 2rem tiefer). */
+@import url("after.css");
+.toast:popover-open { opacity: 0.35; translate: 0 1.25rem; }

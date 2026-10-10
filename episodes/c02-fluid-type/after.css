@@ -1,0 +1,23 @@
+.hero h1 {
+  font-size: clamp(2rem, 1rem + 4vw, 4rem);
+}
+.hero p {
+  font-size: clamp(1rem, 0.875rem + 0.5vw, 1.25rem);
+}
+
+/* After – clamp(Minimum, Wunschwert, Maximum): wächst stufenlos mit der Fensterbreite,
+   nie kleiner als 2rem (32 px), nie größer als 4rem (64 px). Der rem-Anteil im Wunschwert hält Zoom am Leben.
+   Darunter: Deko + Messbalken (Breite = gleiche clamp()-Formel × 4). */
+.page { max-inline-size: 64rem; margin-inline: auto; padding: 3.5rem var(--space-4) var(--space-5); }
+.hero { display: grid; gap: var(--space-3); max-inline-size: 48rem; }
+.hero .kicker { font-size: var(--step--1); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--brand); }
+.hero h1 { line-height: 1.05; }
+.hero p { color: var(--text-muted); max-inline-size: 38rem; }
+
+.meter { margin-block-start: var(--space-6); max-inline-size: 22rem; font: 600 0.875rem/1.4 var(--font-mono); color: var(--text-muted); }
+.meter-track { position: relative; block-size: 0.75rem; inline-size: 16rem; border-radius: 999px; background: var(--surface-2);
+  box-shadow: inset 8rem 0 0 color-mix(in srgb, var(--accent) 18%, transparent); }
+.meter-bar { block-size: 100%; inline-size: calc(clamp(2rem, 1rem + 4vw, 4rem) * 4); border-radius: inherit; background: var(--accent); }
+.meter figcaption { display: grid; grid-template-columns: 8rem 8rem; inline-size: 16rem; margin-block-start: var(--space-2); }
+.meter figcaption span:last-child { text-align: end; grid-column: 2; grid-row: 1; }
+.meter-value { grid-column: 1 / -1; margin-block-start: var(--space-2); color: var(--text); font-size: 1.125rem; white-space: nowrap; }

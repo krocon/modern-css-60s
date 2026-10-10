@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G2 · Your first keyframe animation</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Momentaufnahmen der Animation für das Video (dort ist animation aus). -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-0.css state-25.css state-50.css state-75.css"
+        data-labels="Before|After|0 %|25 %|50 %|75 %">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header>
+      <p class="eyebrow">Dashboard · this week</p>
+      <h1>Good morning, Ada</h1>
+      <p class="lead">Reload the page: the tiles fade in one after another – pure CSS.</p>
+    </header>
+    <section class="tiles" aria-label="Key figures">
+      <article class="tile" style="--i: 0">
+        <h2>Revenue</h2>
+        <p class="value">€12.4k</p>
+        <p class="trend">+8 % <span>vs. last week</span></p>
+      </article>
+      <article class="tile" style="--i: 1">
+        <h2>Visitors</h2>
+        <p class="value">8,210</p>
+        <p class="trend">+12 % <span>vs. last week</span></p>
+      </article>
+      <article class="tile" style="--i: 2">
+        <h2>Sign-ups</h2>
+        <p class="value">342</p>
+        <p class="trend">+5 % <span>vs. last week</span></p>
+      </article>
+      <article class="tile" style="--i: 3">
+        <h2>Orders</h2>
+        <p class="value">129</p>
+        <p class="trend down">−2 % <span>vs. last week</span></p>
+      </article>
+      <article class="tile" style="--i: 4">
+        <h2>Avg. session</h2>
+        <p class="value">3:12</p>
+        <p class="trend">+9 % <span>vs. last week</span></p>
+      </article>
+      <article class="tile" style="--i: 5">
+        <h2>Bounce rate</h2>
+        <p class="value">38 %</p>
+        <p class="trend down">−4 % <span>vs. last week</span></p>
+      </article>
+    </section>
+  </main>
+</body>
+</html>

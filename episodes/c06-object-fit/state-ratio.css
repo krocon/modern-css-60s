@@ -1,0 +1,3 @@
+/* Nur aspect-ratio – alle Bilder haben dieselbe Form (16:9), aber ohne object-fit sind sie noch verzerrt. */
+@import url("after.css");
+.card img { object-fit: fill; }

@@ -1,0 +1,307 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H5 · Render long pages faster with one property</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- Layout + Render-Karte (immer aktiv); nur das Stylesheet darunter wechselt -->
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-scrolled.css state-nosize.css state-auto.css" data-labels="Before|After|Scrolled|No intrinsic size|auto">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H5 content-visibility
+    Links: 40 echte Abschnitte (.post) – in after.css mit content-visibility: auto. Der Browser überspringt Layout und Malen,
+    solange ein Abschnitt weit außerhalb des Bildschirms liegt.
+    Rechts: die Render-Karte. Sie ist eine Erklärgrafik: Die Farben kommen aus den Zustands-Stylesheets (gerendert / übersprungen),
+    nicht aus einer Messung. Live im Browser zeigt die Zeile darunter die echte Zahl (Event contentvisibilityautostatechange).
+  -->
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">content-visibility: auto</p>
+      <h1>40 sections – render only what’s on screen</h1>
+    </header>
+
+    <div class="layout">
+      <section class="feed" aria-label="Changelog">
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 1</span> Grid</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day1</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 2</span> Subgrid</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day2</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 3</span> Container queries</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day3</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 4</span> clamp()</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day4</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 5</span> :has()</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day5</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 6</span> light-dark()</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day6</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 7</span> color-mix()</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day7</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 8</span> @layer</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day8</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 9</span> Nesting</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day9</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 10</span> @starting-style</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day10</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 11</span> Popover</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day11</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 12</span> Anchor positioning</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day12</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 13</span> View transitions</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day13</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 14</span> Scroll snap</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day14</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 15</span> aspect-ratio</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day15</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 16</span> text-wrap: balance</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day16</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 17</span> field-sizing</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day17</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 18</span> accent-color</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day18</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 19</span> dvh units</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day19</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 20</span> @property</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day20</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 21</span> Logical properties</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day21</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 22</span> gap for flexbox</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day22</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 23</span> inert</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day23</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 24</span> &lt;dialog&gt;</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day24</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 25</span> details name</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day25</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 26</span> scroll-margin</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day26</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 27</span> object-fit</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day27</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 28</span> min() and max()</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day28</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 29</span> oklch()</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day29</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 30</span> relative colors</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day30</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 31</span> @scope</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day31</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 32</span> @container style()</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day32</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 33</span> scrollbar-gutter</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day33</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 34</span> overscroll-behavior</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day34</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 35</span> content-visibility</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day35</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 36</span> env() safe areas</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day36</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 37</span> Web app manifest</h2>
+        <p>Three paragraphs nobody reads on page load – but the browser still lays them out.</p>
+        <p class="tags"><span>#css</span><span>#day37</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 38</span> Service workers</h2>
+        <p>Below the fold, out of sight, and still costing rendering time without help.</p>
+        <p class="tags"><span>#css</span><span>#day38</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 39</span> Masonry</h2>
+        <p>Scroll down to see it render just before it enters the viewport.</p>
+        <p class="tags"><span>#css</span><span>#day39</span></p>
+      </article>
+      <article class="post">
+        <div class="shot" aria-hidden="true"></div>
+        <h2><span>Day 40</span> if()</h2>
+        <p>A short note from the changelog, with a screenshot and a few tags.</p>
+        <p class="tags"><span>#css</span><span>#day40</span></p>
+      </article>
+      </section>
+
+      <aside class="panel" aria-label="Render map">
+        <p class="panel-title">Render map</p>
+        <p class="count"><b class="n"></b> <span>of 40 sections rendered</span></p>
+        <div class="map-wrap">
+          <ol class="map" aria-hidden="true"><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li><li></li></ol>
+          <span class="frame" aria-hidden="true"></span>
+          <div class="track" aria-hidden="true"><span class="thumb"></span></div>
+          <ul class="legend">
+            <li class="l-on">rendered</li>
+            <li class="l-off">skipped – placeholder height</li>
+            <li class="l-mem">skipped – remembered height</li>
+            <li class="l-frame">your screen</li>
+            <li class="l-thumb">scrollbar</li>
+          </ul>
+        </div>
+        <p class="warn">⚠ Skipped sections are 0 px tall – the page shrinks and the scrollbar jumps.</p>
+        <p class="live" hidden></p>
+      </aside>
+    </div>
+  </main>
+  <script>
+    // Nur im Browser (nicht im Video): echte Zahl der gerade gerenderten Abschnitte
+    if (!location.search.includes('embed')) {
+      const posts = [...document.querySelectorAll('.post')];
+      const live = document.querySelector('.live');
+      const skipped = new Set();
+      const show = () => { live.hidden = false; live.textContent = 'Live in this browser: ' + (posts.length - skipped.size) + ' of ' + posts.length + ' rendered'; };
+      posts.forEach(p => p.addEventListener('contentvisibilityautostatechange', e => {
+        e.skipped ? skipped.add(p) : skipped.delete(p);
+        show();
+      }));
+    }
+  </script>
+</body>
+</html>

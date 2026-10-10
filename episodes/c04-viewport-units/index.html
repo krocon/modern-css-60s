@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C4 · 100vh is broken on mobile. Use this instead</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="sim.css">
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css before-hidden.css svh.css svh-hidden.css lvh.css lvh-hidden.css after.css after-hidden.css"
+        data-labels="100vh|100vh · bars hidden|100svh|100svh · bars hidden|100lvh|100lvh · bars hidden|100dvh|100dvh · bars hidden">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <div class="phone" aria-label="Simulated phone">
+      <div class="screen">
+        <div class="bar bar-top"><span class="url">🔒 bistro-lumen.com</span></div>
+        <div class="viewport">
+          <section class="hero">
+            <div>
+              <p class="hero-kicker">Bistro Lumen</p>
+              <h2>Dinner under the stars</h2>
+              <p>Seasonal food, open until midnight.</p>
+            </div>
+            <a class="cta" href="#">Book a table</a>
+          </section>
+          <section class="next">
+            <h3>Today’s menu</h3>
+            <p>Burrata · Risotto · Tarte Tatin</p>
+          </section>
+        </div>
+        <div class="bar bar-bottom"><span>‹</span><span>›</span><span>⇪</span><span>▢</span></div>
+      </div>
+      <div class="rulers" aria-hidden="true">
+        <div class="ruler ruler-svh"><b>svh</b></div>
+        <div class="ruler ruler-lvh"><b>lvh</b></div>
+        <div class="ruler ruler-dvh"><b>dvh</b></div>
+      </div>
+    </div>
+
+    <div class="info">
+      <p class="kicker">Viewport units · phone simulation</p>
+      <h1>100vh hides your button</h1>
+      <p class="status"></p>
+      <dl class="units">
+        <div class="unit unit-svh"><dt>svh</dt><dd>small viewport – browser bars visible</dd></div>
+        <div class="unit unit-lvh"><dt>lvh</dt><dd>large viewport – bars hidden (like vh)</dd></div>
+        <div class="unit unit-dvh"><dt>dvh</dt><dd>dynamic – follows the bars</dd></div>
+      </dl>
+      <p class="note">Simulation: desktop browsers have no collapsing toolbar, so CSS variables play svh, lvh and dvh inside this phone. On a real phone the plain units do the work.</p>
+    </div>
+  </main>
+</body>
+</html>

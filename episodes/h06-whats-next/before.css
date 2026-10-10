@@ -1,0 +1,6 @@
+/* Vorher – neues CSS „blind“ eingesetzt, ohne Fallback, so wie ein Browser ohne Support es sieht:
+   display: grid-lanes unbekannt → Kacheln einfach untereinander; if() unbekannt → keine Farben;
+   kein base-select → natives Select; kein text-box → Leerraum über und unter dem Text. */
+.gallery { display: block; align-self: stretch; }
+.tile { margin-block-end: 0.5rem; }
+.feat .support .no { color: #b45309; }

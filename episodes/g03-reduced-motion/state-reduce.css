@@ -1,0 +1,9 @@
+/* Simuliert die Systemeinstellung „Bewegung reduzieren“: dieselben Regeln wie in after.css, nur ohne Media Query
+   (das Video kann die Einstellung nicht umschalten). */
+@import url("after.css");
+*, ::before, ::after {
+  animation-duration: .01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: .01ms !important;
+}
+.motion-status::after { content: "reduced motion"; color: var(--accent); }

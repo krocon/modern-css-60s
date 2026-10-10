@@ -1,0 +1,3 @@
+/* After – online mit Service Worker: Jeder Seitenaufruf geht durch sw.js ans Netz (fetch).
+   Die Offline-Seite liegt schon im Cache bereit, wird aber nicht gebraucht. */
+@import url("demo.css");

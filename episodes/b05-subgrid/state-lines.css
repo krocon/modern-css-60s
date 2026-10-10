@@ -1,0 +1,9 @@
+/* Zustand – wie after.css, dazu Hilfslinien: jede Zeile des Subgrids ist gestrichelt umrandet.
+   Man sieht: die Zeilen sind in allen Karten gleich hoch. */
+@import url("after.css");
+
+.card > * {
+  outline: 2px dashed var(--brand);
+  outline-offset: 3px;
+}
+.card > .thumb { outline-color: var(--text); }

@@ -1,0 +1,50 @@
+/* page.css – Optik der Seite (fest eingebunden). Positionierung des Hinweises macht NUR das gewechselte Stylesheet. */
+.page { max-inline-size: 52rem; margin-inline: auto; padding: 3rem var(--space-4) var(--space-5); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.editor {
+  position: relative;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.toolbar { display: flex; flex-wrap: wrap; gap: var(--space-2); padding-block-end: var(--space-3); border-block-end: 1px solid var(--border); }
+.toolbar button {
+  min-inline-size: 2.75rem;
+  padding: 0.45rem 0.8rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+}
+.toolbar .link-btn { border-color: var(--brand); color: var(--brand); }
+
+.tip {
+  inline-size: fit-content;
+  padding: 0.4rem 0.8rem;
+  border-radius: 0.5rem;
+  background: #0f172a;
+  color: #f8fafc;
+  font-size: var(--step--1);
+  font-weight: 600;
+  box-shadow: 0 0.5rem 1.25rem rgb(0 0 0 / 0.25);
+  outline: 1px solid #475569;
+}
+
+.doc { padding-block-start: var(--space-3); }
+.doc h2 { font-size: var(--step-2); margin-block-end: var(--space-2); }
+.doc p + p { margin-block-start: var(--space-2); }
+
+.status {
+  margin-block-start: var(--space-4);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius);
+  border-inline-start: 6px solid var(--state, #64748b);
+  background: var(--surface-2);
+  font-family: var(--font-mono);
+  font-weight: 700;
+}
+.status::before { content: var(--msg, ""); color: var(--state, inherit); }

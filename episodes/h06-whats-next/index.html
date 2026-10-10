@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H6 · Season finale: CSS features coming next</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- Layout (immer aktiv); nur das Stylesheet darunter wechselt -->
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-if.css state-lanes.css state-select.css state-trim.css after.css" data-labels="No fallback|if()|grid-lanes|base-select|text-box|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H6 Season finale
+    Alle vier Features sind (Stand Herbst 2026) eingeschränkt verfügbar – deshalb jedes nur per @supports bzw. mit Fallback davor:
+      if()                 – bisher nur Chromium
+      display: grid-lanes  – Safari seit 26.4, Chromium/Firefox noch in Arbeit (Fallback hier: columns)
+      appearance: base-select – bisher nur Chromium
+      text-box             – Chrome und Safari, Firefox noch nicht
+    Die Zeile „this browser“ in jeder Karte kommt aus @supports – sie zeigt ehrlich, was dein Browser gerade nutzt.
+    Status vor der Aufnahme auf caniuse.com / im Web Features Explorer prüfen.
+  -->
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">Season finale · coming next</p>
+      <h1>Four CSS features on their way</h1>
+    </header>
+
+    <div class="features">
+      <!-- 1) if() -->
+      <section class="feat f-if" aria-labelledby="t-if">
+        <header><h2 id="t-if"><code>if()</code></h2><span class="badge">Chromium only</span></header>
+        <p class="what">A condition right inside a value.</p>
+        <div class="demo tasks">
+          <article class="task done"><b>Ship demo</b><small>done</small></article>
+          <article class="task open"><b>Write script</b><small>open</small></article>
+          <article class="task late"><b>Record finale</b><small>late</small></article>
+        </div>
+        <p class="snippet"><code>background: if(style(--status: done): …; else: …)</code></p>
+        <p class="support"><span class="yes">✓ Enhanced in this browser</span><span class="no">↺ Fallback in this browser</span></p>
+      </section>
+
+      <!-- 2) grid-lanes -->
+      <section class="feat f-lanes" aria-labelledby="t-lanes">
+        <header><h2 id="t-lanes"><code>display: grid-lanes</code></h2><span class="badge">Safari only</span></header>
+        <p class="what">Masonry: tiles stack without gaps.</p>
+        <div class="demo gallery">
+          <span class="tile t1">1</span><span class="tile t2">2</span><span class="tile t3">3</span>
+          <span class="tile t4">4</span><span class="tile t5">5</span><span class="tile t6">6</span>
+        </div>
+        <p class="support"><span class="yes">✓ Enhanced in this browser</span><span class="no">↺ Fallback (columns) in this browser</span></p>
+      </section>
+
+      <!-- 3) appearance: base-select -->
+      <section class="feat f-select" aria-labelledby="t-select">
+        <header><h2 id="t-select"><code>appearance: base-select</code></h2><span class="badge">Chromium only</span></header>
+        <p class="what">A <code>&lt;select&gt;</code> you can style – icons included.</p>
+        <div class="demo picker">
+          <label for="theme">Theme</label>
+          <select id="theme">
+            <button><selectedcontent></selectedcontent></button>
+            <option value="dark" selected><span class="ic" aria-hidden="true">☾</span> Dark</option>
+            <option value="light"><span class="ic" aria-hidden="true">☀</span> Light</option>
+            <option value="auto"><span class="ic" aria-hidden="true">◐</span> Auto</option>
+          </select>
+        </div>
+        <p class="support"><span class="yes">✓ Enhanced in this browser</span><span class="no">↺ Native select in this browser</span></p>
+      </section>
+
+      <!-- 4) text-box-trim -->
+      <section class="feat f-trim" aria-labelledby="t-trim">
+        <header><h2 id="t-trim"><code>text-box: trim-both</code></h2><span class="badge">No Firefox yet</span></header>
+        <p class="what">Cuts the space above caps and below the baseline.</p>
+        <div class="demo trim">
+          <span class="pill"><span class="txt">SEASON 2</span></span>
+          <span class="big"><span class="txt">Hello</span></span>
+        </div>
+        <p class="support"><span class="yes">✓ Enhanced in this browser</span><span class="no">↺ Fallback in this browser</span></p>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="500" height="800" viewBox="0 0 500 800" preserveAspectRatio="none">
+  <!-- Hochformat 5:8 – Motiv sitzt im oberen Drittel (für object-position). -->
+  <rect width="500" height="800" fill="#fce7f3"/>
+  <rect y="520" width="500" height="280" fill="#f9a8d4"/>
+  <circle cx="250" cy="230" r="170" fill="#d97706"/>
+  <circle cx="250" cy="230" r="150" fill="#ec4899"/>
+  <circle cx="250" cy="230" r="55" fill="#fce7f3"/>
+  <g stroke-width="12" stroke-linecap="round">
+    <path d="M170 150l20 10M320 140l10 20M150 260l20-8M340 290l18 6M220 330l20 4M300 340l12-14M200 190l6 18M300 190l18-6" stroke="#fde047"/>
+    <path d="M190 120l18 6M350 220l4 18M160 210l14 12M260 360l18-2M270 110l16 10" stroke="#38bdf8"/>
+  </g>
+</svg>

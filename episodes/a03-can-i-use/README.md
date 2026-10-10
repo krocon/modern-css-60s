@@ -3,13 +3,16 @@
 **DE:** Kann ich dieses CSS nutzen? Check in 10 Sekunden
 
 🎬 Episode 003 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 003 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/a03-can-i-use/
 
-## Core idea
+## Core CSS (`after.css`)
 
-caniuse vs. Baseline-Badge vs. MDN am Beispiel :has()
-
-_Demo coming soon / Demo folgt._
+```css
+.field:has(input:invalid) {
+  border-color: var(--bad);
+  background: var(--bad-bg);
+}
+```
 
 ## Browser support
 
@@ -22,4 +25,4 @@ _Demo coming soon / Demo folgt._
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

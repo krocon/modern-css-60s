@@ -1,0 +1,5 @@
+/* Zustand – nur --brand geändert (Orange). */
+@import url("after.css");
+
+:root { --brand: #ea580c; }
+.brand-value::after { content: ": #ea580c"; }

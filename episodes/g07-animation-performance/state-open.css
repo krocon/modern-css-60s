@@ -1,0 +1,3 @@
+/* Momentaufnahme: transform-Animation fertig – Menü offen über dem Inhalt. */
+@import url("after.css");
+.drawer { transition: none; transform: none; opacity: 1; }

@@ -3,13 +3,13 @@
 **DE:** Flüssige Ansichtswechsel mit View Transitions
 
 🎬 Episode 050 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 050 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/g05-view-transitions/
 
-## Core idea
+## Core CSS (`after.css`)
 
-document.startViewTransition() + view-transition-name
-
-_Demo coming soon / Demo folgt._
+```css
+.trip { view-transition-name: var(--vt); }
+```
 
 ## Browser support
 
@@ -22,4 +22,4 @@ Baseline 2025 · [caniuse](https://caniuse.com/?search=view%20transitions) · [W
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

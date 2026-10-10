@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F2 · :is() and :where() – shorter selectors, no specificity fights</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css is.css after.css" data-labels="Selector list|:is()|:where()">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <div class="preview" aria-label="Preview">
+      <article class="prose">
+        <h2>Shorter selectors</h2>
+        <p>Group selectors with <a href="#">:is()</a> and keep your defaults light with <a href="#">:where()</a>.</p>
+        <a class="button" href="#">Subscribe</a>
+      </article>
+      <aside class="sidebar">
+        <h2>Related</h2>
+        <ul>
+          <li><a href="#">Native nesting</a></li>
+          <li><a href="#">Specificity</a></li>
+        </ul>
+      </aside>
+      <footer class="footer"><a href="#">Imprint</a> · <a href="#">RSS feed</a></footer>
+    </div>
+
+    <section class="inspector" aria-label="Styles for a.button">
+      <p class="inspector-title">Styles for <code>a.button</code></p>
+      <p class="spec-head" aria-hidden="true"><span>ID</span><span>CLS</span><span>TYPE</span></p>
+
+      <div class="rule rule-button">
+        <code class="sel">.button</code>
+        <span class="spec" title="Specificity 0-1-0"><b>0</b><b>1</b><b>0</b></span>
+        <code class="decl">color: var(--on-brand);</code>
+      </div>
+      <div class="rule rule-list">
+        <code class="sel">.prose a, .sidebar a, .footer a</code>
+        <span class="spec" title="Specificity 0-1-1"><b>0</b><b>1</b><b>1</b></span>
+        <code class="decl">color: var(--brand);</code>
+      </div>
+      <div class="rule rule-is">
+        <code class="sel">:is(.prose, .sidebar, .footer) a</code>
+        <span class="spec" title="Specificity 0-1-1"><b>0</b><b>1</b><b>1</b></span>
+        <code class="decl">color: var(--brand);</code>
+      </div>
+      <div class="rule rule-where">
+        <code class="sel">:where(.prose, .sidebar, .footer) a</code>
+        <span class="spec" title="Specificity 0-0-1"><b>0</b><b>0</b><b>1</b></span>
+        <code class="decl">color: var(--brand);</code>
+      </div>
+
+      <p class="verdict verdict-lose">0-1-1 beats 0-1-0 – the link color wins, the button text disappears.</p>
+      <p class="verdict verdict-win">0-0-1 loses to 0-1-0 – <code>.button</code> wins, no <code>!important</code> needed.</p>
+    </section>
+  </main>
+</body>
+</html>

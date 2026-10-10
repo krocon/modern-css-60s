@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>F5 · Why your CSS isn't working: specificity</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-many.css after.css state-where.css" data-labels="1-0-0 vs 0-1-0|1-0-0 vs 0-3-0|Tie|:where()">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <section class="hero">
+      <div class="card">
+        <p class="kicker">Spring sale</p>
+        <h1>Why is my button gray?</h1>
+        <a id="buy" class="button buy" href="#">Buy now</a>
+      </div>
+    </section>
+
+    <section class="calc" aria-label="Specificity calculator">
+      <p class="calc-title">Who styles <code>a#buy.button.buy</code>? Compare columns left to right.</p>
+      <div class="rules">
+        <div class="rule r1">
+          <p class="rule-head"><span>Rule 1 · earlier</span><span class="badge"></span></p>
+          <code class="sel"></code>
+          <div class="cols">
+            <div class="col col-a"><span class="n"></span><span class="dots"></span><span class="cap">IDs</span></div>
+            <div class="col col-b"><span class="n"></span><span class="dots"></span><span class="cap">Classes</span></div>
+            <div class="col col-c"><span class="n"></span><span class="dots"></span><span class="cap">Elements</span></div>
+          </div>
+          <code class="decl"></code>
+        </div>
+        <p class="vs" aria-hidden="true">vs</p>
+        <div class="rule r2">
+          <p class="rule-head"><span>Rule 2 · later</span><span class="badge"></span></p>
+          <code class="sel"></code>
+          <div class="cols">
+            <div class="col col-a"><span class="n"></span><span class="dots"></span><span class="cap">IDs</span></div>
+            <div class="col col-b"><span class="n"></span><span class="dots"></span><span class="cap">Classes</span></div>
+            <div class="col col-c"><span class="n"></span><span class="dots"></span><span class="cap">Elements</span></div>
+          </div>
+          <code class="decl"></code>
+        </div>
+      </div>
+      <p class="verdict"></p>
+    </section>
+  </main>
+</body>
+</html>

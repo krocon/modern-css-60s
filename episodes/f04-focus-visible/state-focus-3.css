@@ -1,0 +1,12 @@
+/* Zustand für die Video-Bühne: simulierter Tastaturfokus (Tab) auf „Subscribe“.
+   Gleicher Stil wie :focus-visible in after.css – im Video gibt es keine echte Tastatur.
+   Im Browser echt: after.css wählen und Tab drücken. */
+@import url("after.css");
+
+.subscribe {
+  outline: 4px solid var(--brand);
+  outline-offset: 4px;
+}
+.kbd-hint { display: flex; }
+.kbd-hint .key::before { content: "Tab ⇥"; }
+.kbd-hint .target::before { content: "Focus: Subscribe"; }

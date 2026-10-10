@@ -1,0 +1,10 @@
+/* Before – das Menü wird über width aufgezogen: es schiebt den Inhalt zur Seite,
+   der Text bricht in jedem Frame neu um (Layout + Paint pro Frame → ruckelt). */
+.drawer {
+  width: 0;
+  transition: width .3s;
+}
+.menu-open .drawer { width: 16rem; }
+
+.pipeline :is(.step-layout, .step-paint) { border-color: #f59e0b; background: light-dark(#fef3c7, #422006); color: light-dark(#92400e, #fbbf24); }
+.verdict::before { content: "width: Layout + Paint on every single frame."; color: light-dark(#b45309, #fbbf24); }

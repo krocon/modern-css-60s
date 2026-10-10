@@ -1,0 +1,4 @@
+/* Zustand – nur EINE Zeile geändert: --brand wird Petrol. Header, Hero, Buttons, Badges, Karten folgen. */
+@import url("after.css");
+
+:root { --brand: #0f766e; }

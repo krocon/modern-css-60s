@@ -1,0 +1,15 @@
+/* Zustand – Hover erzwungen auf der Pro-Karte (im Video laufen keine echten Mausbewegungen).
+   Dieselben Regeln wie .plan:hover / .btn:hover in after.css, plus ein gezeichneter Mauszeiger. */
+@import url("after.css");
+
+.pro { background: color-mix(in oklch, var(--brand) 6%, white); }
+.pro .btn { position: relative; background: color-mix(in oklch, var(--brand), black 15%); }
+.pro .btn::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 55%;
+  inset-inline-start: 62%;
+  inline-size: 28px;
+  block-size: 32px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 32'%3E%3Cpath d='M3 2l20 18-9 1 5 9-4 2-5-9-7 6z' fill='%23111' stroke='%23fff' stroke-width='2' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat;
+}

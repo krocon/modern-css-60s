@@ -1,0 +1,8 @@
+/* Zustand Fokus name + short_name: langer Name im Startbild/Install-Dialog, kurzer unter dem Icon. Die übrigen Zeilen und Marker treten zurück. */
+@import url("after.css");
+
+.json li:not([data-f="name"]) { opacity: 0.35; }
+.json li[data-f="name"] { background: rgb(217 70 239 / 0.22); box-shadow: inset 4px 0 0 #d946ef; }
+.previews [data-f]:not([data-f="name"])::after { opacity: 0.25; }
+.previews [data-f="name"] { box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #d946ef; border-radius: 0.6rem; }
+.previews [data-f="name"]::after { scale: 1.25; }

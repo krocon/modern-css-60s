@@ -1,0 +1,94 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B3 · Why your sticky header doesn't stick</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- page.css = nur Optik. Ob der Header klebt, entscheidet das umschaltbare Stylesheet. -->
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css no-top.css state-top.css state-deep.css after.css" data-labels="Before (overflow: hidden)|No top|Top|Deep|After (overflow: clip)">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+
+  <div class="app">
+    <header class="site-header">
+      <a class="logo" href="#">North<span>bound</span></a>
+      <nav aria-label="Main">
+        <a href="#" aria-current="page">Journal</a>
+        <a href="#">Routes</a>
+        <a href="#">Gear</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <p class="kicker">Road trip · 9 days</p>
+      <h1>Nine days along the northern coast</h1>
+      <p class="lead">Scroll down: the header should stay on top the whole way.</p>
+    </section>
+
+    <main class="journal">
+      <section>
+        <p class="day">Day 1</p>
+        <h2>Leaving the city</h2>
+        <p>We packed the van at dawn and followed the river north. By noon the traffic was gone and the road turned into a thin grey line between fields.</p>
+      </section>
+      <section>
+        <p class="day">Day 2</p>
+        <h2>The first harbour</h2>
+        <p>Fishing boats, a bakery that opens at five, and a harbour master who knows every boat by its sound. We stayed two nights instead of one.</p>
+      </section>
+      <section>
+        <p class="day">Day 3</p>
+        <h2>Wind and lighthouses</h2>
+        <p>Three lighthouses in one day. The last one lets you climb all the way up, if you can handle the wind and a hundred and twelve steps.</p>
+      </section>
+      <section>
+        <p class="day">Day 4</p>
+        <h2>Rain day</h2>
+        <p>Rain all day, so we read, cooked soup on the camping stove and planned the rest of the route on a paper map like it was 1995.</p>
+      </section>
+      <section>
+        <p class="day">Day 5</p>
+        <h2>The long beach</h2>
+        <p>Eleven kilometres of sand and almost nobody on it. We walked until the tide turned and then raced it back to the dunes.</p>
+      </section>
+      <section>
+        <p class="day">Day 6</p>
+        <h2>Island hopping</h2>
+        <p>Two ferries, one island without cars and a café that only sells waffles. Bikes are the only way to get around, and that is the point.</p>
+      </section>
+      <section>
+        <p class="day">Day 7</p>
+        <h2>Back inland</h2>
+        <p>Forests replace the coast. The air smells of pine and the evenings get quiet. We found a lake with a wooden jetty and stayed until dark.</p>
+      </section>
+      <section>
+        <p class="day">Day 8</p>
+        <h2>Home again</h2>
+        <p>Nine days, one flat tyre, zero regrets. The van needs a wash, the map needs new folds, and we already know where we go next year.</p>
+      </section>
+    </main>
+
+    <footer class="site-footer">© 2026 Northbound journal</footer>
+  </div>
+
+  <script>
+    // Nur für die Video-Bühne (?embed=1): Die Scroll-Position kommt aus dem aktiven Stylesheet (--demo-scroll),
+    // damit jeder Zustand ohne Zeitabhängigkeit gleich aussieht. Im normalen Browser scrollst du selbst.
+    (() => {
+      if (!new URLSearchParams(location.search).has('embed')) return;
+      const link = document.querySelector('link[data-styles]');
+      const apply = () => {
+        const y = parseFloat(getComputedStyle(document.documentElement).getPropertyValue('--demo-scroll')) || 0;
+        window.scrollTo(0, y);
+      };
+      link.addEventListener('load', apply);
+      window.addEventListener('load', apply);
+    })();
+  </script>
+</body>
+</html>

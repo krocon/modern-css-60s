@@ -1,0 +1,9 @@
+body,
+.avatar,
+.icon {
+  display: grid;
+  place-items: center;
+}
+
+/* After – display: grid + place-items: center. Funktioniert für die ganze Seite (body, mindestens 100dvh hoch
+   aus base.css), für die Initialen im Kreis und für jedes Icon im Button. Keine Größen, kein translate. */

@@ -3,13 +3,19 @@
 **DE:** Warum dein Sticky Header nicht klebt
 
 🎬 Episode 010 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 010 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/b03-sticky-header/
 
-## Core idea
+## Core CSS (`after.css`)
 
-position: sticky + die overflow-Falle
-
-_Demo coming soon / Demo folgt._
+```css
+.site-header {
+  position: sticky;
+  top: 0;
+}
+.app {
+  overflow-x: clip;
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=sticky) · [W
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

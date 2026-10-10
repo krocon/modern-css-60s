@@ -1,0 +1,5 @@
+/* Magic number – der alte Trick: Höhe von Header + Footer von 100vh abziehen.
+   Passt nur, solange beide genau so hoch bleiben. Bricht der Header um (Handy), rutscht der Footer aus dem Bild. */
+main {
+  min-height: calc(100vh - 8rem);
+}

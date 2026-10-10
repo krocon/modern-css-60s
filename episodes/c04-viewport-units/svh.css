@@ -1,0 +1,9 @@
+/* svh – kleines Viewport: gerechnet mit sichtbaren Leisten. Passt bei sichtbaren Leisten immer. */
+.hero {
+  min-block-size: 100svh;
+}
+
+.phone { --use: var(--sim-svh); }
+.ruler-svh, .unit-svh { --on: 1; color: var(--accent); }
+.status { color: var(--accent); }
+.status::after { content: "100svh · bars visible → fits ✓"; }

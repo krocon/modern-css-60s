@@ -1,0 +1,39 @@
+/* page.css – gemeinsame Optik aller Zustände. Zentriert wird NUR in after.css (bzw. teilweise in den Zwischenzuständen). */
+body {
+  background:
+    radial-gradient(circle at 20% 15%, color-mix(in srgb, var(--brand) 18%, transparent), transparent 45%),
+    radial-gradient(circle at 85% 90%, color-mix(in srgb, var(--accent) 18%, transparent), transparent 45%),
+    var(--surface);
+}
+.card {
+  inline-size: min(24rem, 100% - 2rem);
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: calc(var(--radius) * 2);
+  background: var(--surface-2);
+  box-shadow: 0 1.5rem 3rem rgb(0 0 0 / 0.12);
+  text-align: center;
+}
+.avatar {
+  inline-size: 6rem;
+  block-size: 6rem;
+  margin: 0 auto var(--space-3);
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--brand), var(--accent));
+  color: #ffffff;
+  font-size: var(--step-3);
+  font-weight: 800;
+  line-height: 1.2;
+}
+.card h1 { font-size: var(--step-3); }
+.role { margin-block: var(--space-1) var(--space-4); color: var(--text-muted); }
+.links { display: flex; justify-content: center; gap: var(--space-3); }
+.icon {
+  inline-size: 3.25rem;
+  block-size: 3.25rem;
+  border-radius: 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  color: var(--brand);
+}
+.icon svg { inline-size: 1.5rem; fill: currentColor; }

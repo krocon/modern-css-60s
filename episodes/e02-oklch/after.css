@@ -1,0 +1,44 @@
+.tile {
+  /* L = Helligkeit, C = Buntheit, H = Farbton */
+  background: oklch(58% 0.11 var(--h));
+}
+.danger  { --h: 25; }
+.warning { --h: 70; }
+.success { --h: 145; }
+.info    { --h: 235; }
+.primary { --h: 270; }
+.accent  { --h: 330; }
+
+/* After – OKLCH: gleiche L-Zahl = gleich hell fürs Auge. Nur H (Farbton) ändert sich,
+   Kontrast zu Weiß bleibt überall bei ca. 4,3 : 1. */
+.formula::before { content: "oklch(58% 0.11 H)"; }
+.danger  .ratio::after { content: "4.5 : 1"; }
+.warning .ratio::after { content: "4.4 : 1"; }
+.success .ratio::after { content: "4.1 : 1"; }
+.info    .ratio::after { content: "4.2 : 1"; }
+.primary .ratio::after { content: "4.4 : 1"; }
+.accent  .ratio::after { content: "4.5 : 1"; }
+
+:root { color-scheme: light; }
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+.formula { padding: 0.1em 0.4em; border-radius: 0.3em; background: var(--surface-2); color: var(--text); font-weight: 700; }
+
+.tiles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(20rem, 100%), 1fr));
+  gap: var(--space-3);
+}
+.tile {
+  display: grid;
+  align-content: space-between;
+  min-block-size: 11rem;
+  padding: var(--space-4);
+  border-radius: calc(var(--radius) * 1.5);
+  color: #fff;
+}
+.tile h2 { font-size: var(--step-3); }
+.ratio { font-size: var(--step-1); font-weight: 600; }
+.ratio::before { content: "Contrast "; font-weight: 400; }
+.note { margin-block-start: var(--space-3); color: var(--text-muted); }

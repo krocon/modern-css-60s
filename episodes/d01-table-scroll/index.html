@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D1 · Responsive tables, part 1: scroll with a sticky column</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css wrap-scrolled.css nobg-scrolled.css state-scrolled.css focus-scrolled.css"
+        data-labels="Before|After|Wrapper only|No background|Scrolled|Focus">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Sales by rep, 2026</h1>
+    <p class="lead">Narrow screen? Scroll the table sideways – the names stay put.</p>
+
+    <!-- tabindex="0": per Tastatur scrollbar · role + aria-labelledby: Screenreader kennt den Bereich -->
+    <h2 class="table-title" id="sales-caption">Revenue per quarter, in € thousand</h2>
+    <div class="table-wrap" tabindex="0" role="region" aria-labelledby="sales-caption">
+      <table aria-labelledby="sales-caption">
+        <thead>
+          <tr>
+            <th scope="col">Sales rep</th>
+            <th scope="col">Region</th>
+            <th scope="col">Q1</th>
+            <th scope="col">Q2</th>
+            <th scope="col">Q3</th>
+            <th scope="col">Q4</th>
+            <th scope="col">Total</th>
+            <th scope="col">Target</th>
+            <th scope="col">Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><th scope="row">Ada Lovelace</th><td>North</td><td>128</td><td>141</td><td>133</td><td>162</td><td>564</td><td>520</td><td>Ahead</td></tr>
+          <tr><th scope="row">Grace Hopper</th><td>West</td><td>119</td><td>124</td><td>138</td><td>149</td><td>530</td><td>540</td><td>Close</td></tr>
+          <tr><th scope="row">Alan Turing</th><td>South</td><td>97</td><td>112</td><td>105</td><td>131</td><td>445</td><td>480</td><td>Behind</td></tr>
+          <tr><th scope="row">Hedy Lamarr</th><td>East</td><td>143</td><td>139</td><td>151</td><td>170</td><td>603</td><td>560</td><td>Ahead</td></tr>
+          <tr><th scope="row">Linus Torvalds</th><td>North</td><td>88</td><td>94</td><td>102</td><td>115</td><td>399</td><td>420</td><td>Close</td></tr>
+          <tr><th scope="row">Margaret Hamilton</th><td>West</td><td>132</td><td>127</td><td>140</td><td>158</td><td>557</td><td>500</td><td>Ahead</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+
+  <script>
+    // Demo-Zustand für die Video-Bühne: Stylesheets mit „scrolled“ im Namen zeigen die Tabelle seitlich gescrollt.
+    // Kein Timer – gesetzt, sobald das Stylesheet geladen ist (auch beim Umschalten im Browser).
+    (() => {
+      const link = document.querySelector('link[data-styles]');
+      const wrap = document.querySelector('.table-wrap');
+      const apply = () => {
+        const scrolled = /scrolled\.css$/.test(link.getAttribute('href'));
+        wrap.scrollLeft = scrolled ? (wrap.scrollWidth - wrap.clientWidth) * 0.55 : 0;
+      };
+      link.addEventListener('load', apply);
+      addEventListener('load', apply);
+    })();
+  </script>
+</body>
+</html>

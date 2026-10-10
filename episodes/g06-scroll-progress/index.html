@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G6 · A reading progress bar with zero JS</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Momentaufnahmen beim Scrollen (Video), fallback.css = so sieht es in Firefox aus. -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-0.css state-40.css state-80.css fallback.css"
+        data-labels="Before|After|Scroll 0 %|Scroll 40 %|Scroll 80 %|Fallback">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <div class="progress" aria-hidden="true"></div>
+  <header class="site">
+    <strong>CSS Notes</strong>
+    <span>6 min read</span>
+  </header>
+  <main class="page">
+    <article class="post">
+      <p class="eyebrow">Animation · Part 6</p>
+      <h1>When scrolling became the clock</h1>
+      <p class="lead">A short history of motion in CSS – and why this page needs no JavaScript for its progress bar.</p>
+        <h2>Before CSS could move</h2>
+        <p>In the early days, every moving thing on a web page was a GIF, a plugin or a loop of JavaScript timers. Hover effects meant swapping images, and anything smooth was out of reach.</p>
+        <p>Then transitions arrived. One line told the browser to fill in the frames between two states, and suddenly buttons, menus and cards could glide instead of jump.</p>
+        <h2>Keyframes take over</h2>
+        <p>Keyframe animations went further: named sequences that run on their own, loop, pause and reverse. Spinners, skeleton screens and gentle fade-ins became pure CSS.</p>
+        <p>But they all shared one thing: a clock. An animation started, ran for a number of milliseconds and stopped. Scrolling had nothing to do with it.</p>
+        <h2>Scroll becomes the clock</h2>
+        <p>Scroll-driven animations change exactly that. Instead of time, the scroll position of a container – or of the whole page – moves the animation forward and backward.</p>
+        <p>The progress bar at the top of this page is the classic example. At the top of the article it is empty, at the bottom it is full, and in between it follows your scrolling exactly.</p>
+        <p>No scroll listener, no requestAnimationFrame, no layout reads on the main thread. The browser connects the timeline to the animation and does the rest.</p>
+        <h2>Progressive enhancement</h2>
+        <p>Not every browser supports scroll timelines yet. That is fine: wrapped in @supports, the bar simply does not appear there, and the article reads exactly the same.</p>
+        <p>That is the whole idea of progressive enhancement. The page works everywhere, and browsers that can do more get a little extra on top.</p>
+        <p>Try it: scroll down slowly, then jump back to the top. The bar follows every movement – without a single line of JavaScript.</p>
+    </article>
+  </main>
+</body>
+</html>

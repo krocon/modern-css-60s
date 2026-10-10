@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A7 · End the specificity war with @layer</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css swapped.css state-stack.css state-danger.css" data-labels="No layers|Layers|Swapped order|Stack|Delete">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <h1>Who wins the cascade?</h1>
+      <p class="lead">The delete buttons carry one utility class: <code>.bg-danger</code>.</p>
+    </header>
+
+    <div class="layout">
+      <ul class="cards">
+        <li class="card">
+          <h2>Ada Lovelace</h2>
+          <p>Admin · joined 2024</p>
+          <div class="actions"><button class="btn">Edit</button><button class="btn bg-danger">Delete</button></div>
+        </li>
+        <li class="card">
+          <h2>Grace Hopper</h2>
+          <p>Editor · joined 2025</p>
+          <div class="actions"><button class="btn">Edit</button><button class="btn bg-danger">Delete</button></div>
+        </li>
+        <li class="card">
+          <h2>Alan Turing</h2>
+          <p>Viewer · joined 2026</p>
+          <div class="actions"><button class="btn">Edit</button><button class="btn bg-danger">Delete</button></div>
+        </li>
+      </ul>
+
+      <aside class="panel" aria-label="How the cascade decides">
+        <div class="stack">
+          <p class="panel-title">Layer order <span>last one wins</span></p>
+          <ol>
+            <li class="l-reset">reset</li>
+            <li class="l-base">base</li>
+            <li class="l-components">components <code>.card .actions .btn</code></li>
+            <li class="l-utilities">utilities <code>.bg-danger</code></li>
+          </ol>
+        </div>
+        <div class="spec">
+          <p class="panel-title">No layers <span>specificity decides</span></p>
+          <ol>
+            <li class="win"><code>.card .actions .btn</code> <b>0,3,0</b></li>
+            <li class="lose"><code>.bg-danger</code> <b>0,1,0</b></li>
+          </ol>
+        </div>
+      </aside>
+    </div>
+  </main>
+</body>
+</html>

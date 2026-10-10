@@ -1,0 +1,10 @@
+.post {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 22rem;
+}
+
+/* After – content-visibility: auto: Abschnitte weit außerhalb des Bildschirms überspringt der Browser bei Layout und Malen.
+   contain-intrinsic-size gibt ihnen solange eine Platzhalter-Höhe (22rem ≈ echte Höhe), „auto“ merkt sich die echte Höhe,
+   sobald ein Abschnitt einmal gerendert war. Render-Karte: nur die ersten 3 Abschnitte am Bildschirm sind gerendert. */
+.count .n::before { content: "3"; }
+.map li:nth-child(n+4) { background: var(--skip); outline: 1px solid #94a3b8; outline-offset: -1px; }

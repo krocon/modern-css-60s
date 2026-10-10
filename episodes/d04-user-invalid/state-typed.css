@@ -1,0 +1,9 @@
+/* Zustand „nach dem Tippen“: Name korrekt, E-Mail „ada@“ eingetippt und Feld verlassen, Passwort noch unberührt. */
+/* Nachgestellt: Ein Script kann :user-invalid nicht auslösen. Darum setzt das Inline-Script in index.html
+   die Klasse .demo-touched, und diese Regeln zeigen exakt die Darstellung von :user-invalid / :user-valid aus after.css.
+   Im echten Browser einfach selbst tippen – dann greift die echte Pseudo-Klasse. */
+@import url("after.css");
+.demo-touched:invalid { border-color: var(--error); background: color-mix(in srgb, var(--error) 7%, var(--surface)); }
+.demo-touched:invalid + .error { display: block; }
+.demo-touched:invalid ~ .hint { display: none; }
+.demo-touched:valid { border-color: var(--ok); }

@@ -1,0 +1,3 @@
+/* Zustand: nur die Variable getauscht – alle vier Feldtypen ziehen mit. */
+@import url("after.css");
+:root { --brand: light-dark(#0f766e, #2dd4bf); }

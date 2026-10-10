@@ -1,0 +1,27 @@
+table { inline-size: 100%; }
+th, td { white-space: nowrap; }
+/* 9 Spalten × nowrap = breiter als das Handy */
+
+/* Before – kein Wrapper mit Overflow, keine feste Spalte: Die Tabelle ist breiter als der Bildschirm,
+   sprengt ihren Rahmen, und die ganze Seite scrollt seitlich mit. */
+.page {
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  padding: 5rem var(--space-4) var(--space-6);
+}
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.table-wrap {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+table { inline-size: 100%; border-collapse: collapse; }
+.table-title { margin-block-end: var(--space-2); font-size: var(--step-0); color: var(--text-muted); }
+th, td { padding: 0.75rem 1rem; text-align: end; white-space: nowrap; border-block-start: 1px solid var(--border); }
+thead th { border-block-start: 0; }
+th:first-child, td:nth-child(2) { text-align: start; }
+thead th { color: var(--brand); font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.04em; }
+tbody th { font-weight: 600; }
+td:last-child { font-weight: 600; color: var(--accent); }

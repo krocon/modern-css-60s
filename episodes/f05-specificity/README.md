@@ -3,13 +3,14 @@
 **DE:** Warum dein CSS nicht greift: Spezifität in 60 Sekunden
 
 🎬 Episode 045 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 045 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/f05-specificity/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Punkte-Rechner (0-1-0 vs. 1-0-0) live in DevTools
-
-_Demo coming soon / Demo folgt._
+```css
+.buy    { background: var(--gray); }  /* 0-1-0 */
+.button { background: var(--brand); } /* 0-1-0 */
+```
 
 ## Browser support
 
@@ -21,4 +22,4 @@ all browsers · [Web Features Explorer](https://web-platform-dx.github.io/web-fe
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

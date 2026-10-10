@@ -3,13 +3,13 @@
 **DE:** Schluss mit div-Suppe
 
 🎬 Episode 005 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 005 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/a05-semantic-html/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Gleiche Seite mit header, nav, main, article, footer; Screenreader-Ansicht
-
-_Demo coming soon / Demo folgt._
+```css
+.soup { display: none; }
+```
 
 ## Browser support
 
@@ -21,4 +21,4 @@ all browsers · [Web Features Explorer](https://web-platform-dx.github.io/web-fe
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

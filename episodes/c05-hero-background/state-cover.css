@@ -1,0 +1,3 @@
+/* Nur Cover – Bild füllt per center / cover die Fläche, aber ohne Verlauf bleibt die Schrift unlesbar. */
+@import url("after.css");
+.hero { background: url("cover.svg") center / cover, #312e81; }

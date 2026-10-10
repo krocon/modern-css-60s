@@ -1,0 +1,90 @@
+/* demo.css – gemeinsames Layout aller Zustände: links ein Telefon (eigener, neutraler Nachbau), rechts der Ablauf
+   Seite → Service Worker → Netz oder Cache. Grundzustand = online, Service Worker aktiv (wie after.css).
+   Online/Offline sind Simulationen per Stylesheet – der echte Test braucht https:// oder localhost (siehe index.html). */
+
+.page { max-inline-size: 80rem; margin-inline: auto; padding: 3rem var(--space-5) var(--space-4); }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--brand); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; }
+.intro h1 { font-size: var(--step-3); letter-spacing: -0.02em; }
+.intro { margin-block-end: var(--space-4); }
+
+.stage { display: flex; flex-wrap: wrap; gap: var(--space-6); align-items: start; justify-content: center; }
+
+/* ---------- Telefon ---------- */
+.phone { display: grid; justify-items: center; gap: var(--space-2); }
+.screen {
+  position: relative;
+  inline-size: 16rem;
+  block-size: 30rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  border: 0.5rem solid #0b1020;
+  border-radius: 2.25rem;
+  background: #ffffff;
+  color: #0f172a;
+  box-shadow: 0 1.25rem 2.5rem rgb(15 23 42 / 0.25), 0 0 0 1px #334155;
+}
+.screen::before { content: ""; position: absolute; z-index: 3; inset-block-start: 0.4rem; inset-inline-start: 50%; translate: -50% 0; inline-size: 0.6rem; block-size: 0.6rem; border-radius: 50%; background: #0b1020; }
+.statusbar { display: flex; justify-content: space-between; padding: 0.35rem 1rem 0.2rem; font-size: 0.7rem; font-weight: 700; }
+.net .off, .where .off { display: none; }
+.urlbar { margin: 0.25rem 0.5rem 0.4rem; padding: 0.35rem 0.7rem; border-radius: 999px; background: #eef0f4; font-size: 0.72rem; color: #334155; }
+
+.view { flex: 1; display: none; }
+.view-app { display: block; }
+.site-bar { display: flex; align-items: center; gap: 0.4rem; padding: 0.6rem 0.75rem; background: #a21caf; color: #ffffff; font-weight: 800; font-size: 0.9rem; }
+.site-bar img { inline-size: 1.1rem; border-radius: 0.3rem; }
+.notes { list-style: none; padding: 0.6rem 0.75rem; display: grid; gap: 0.45rem; font-size: 0.8rem; }
+.notes li { padding: 0.5rem 0.6rem; border-radius: 0.5rem; background: #f5f3f7; border-inline-start: 3px solid #d946ef; }
+
+.view-error, .view-offline { place-content: center; justify-items: center; gap: 0.5rem; padding: 1.25rem; text-align: center; font-size: 0.8rem; }
+.view-error { background: #f1f5f9; color: #475569; }
+.err-icon { font-size: 3rem; line-height: 1; color: #94a3b8; }
+.view-error code { padding: 0.2rem 0.5rem; border-radius: 0.3rem; background: #e2e8f0; font-size: 0.65rem; }
+.view-offline { background: #fdf4ff; }
+.view-offline svg { inline-size: 4rem; }
+.view-offline b { font-size: 1.15rem; color: #0f172a; }
+.view-offline .btn { padding: 0.5rem 1.1rem; border-radius: 999px; background: #a21caf; color: #ffffff; font-weight: 700; }
+.view-offline small { font-family: var(--font-mono); font-size: 0.62rem; color: #a21caf; }
+
+.where { font-weight: 800; font-size: var(--step-0); }
+.where .on { color: var(--accent); }
+.where .off { color: #d97706; }
+
+/* ---------- Ablauf ---------- */
+.flow { display: grid; gap: 0.5rem; inline-size: min(100%, 34rem); }
+.box {
+  display: grid;
+  gap: 0.1rem;
+  padding: 0.8rem 1.1rem;
+  border: 2px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+  text-align: center;
+  transition: border-color 0.3s, background 0.3s, opacity 0.3s;
+}
+.box b { font-family: var(--font-mono); font-size: var(--step-1); }
+.box small { color: var(--text-muted); font-weight: 600; }
+.b-sw { border-color: #d946ef; }
+.b-sw .sw-none, .b-net .ko, .b-cache .empty, .a-cache .t-match { display: none; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+
+.arrow { position: relative; display: grid; place-items: center; block-size: 3.5rem; color: var(--text-muted); transition: color 0.3s, opacity 0.3s; }
+.arrow::before { content: ""; position: absolute; inset-block: 0; inset-inline-start: 50%; inline-size: 3px; translate: -50% 0; background: currentColor; }
+.arrow::after { content: ""; position: absolute; inset-block-end: -2px; inset-inline-start: 50%; translate: -50% 0; border: 0.45rem solid transparent; border-block-start-color: currentColor; border-block-end: 0; }
+.arrow span { position: relative; z-index: 1; padding: 0.15rem 0.5rem; border-radius: 0.4rem; background: var(--surface); font-family: var(--font-mono); font-size: var(--step--1); font-weight: 700; }
+
+/* aktive Wege (online: Seite → SW → Netz) */
+.a-reg, .a-net { color: var(--accent); }
+.b-net { border-color: var(--accent); }
+.a-cache { opacity: 0.35; }
+
+.note {
+  margin-block-start: var(--space-3);
+  padding: 0.7rem 1rem;
+  border-radius: var(--radius);
+  border: 1px solid #f59e0b;
+  background: color-mix(in srgb, #f59e0b 14%, transparent);
+  font-size: var(--step--1);
+}
+.note::before { content: "⚠ "; font-weight: 800; }
+.live { font-size: var(--step--1); font-weight: 700; color: var(--accent); }

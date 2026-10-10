@@ -1,0 +1,4 @@
+/* Zustand – nur --brand der Pro-Karte geändert (Blau). Tag, Häkchen, Rahmen folgen automatisch. */
+@import url("after.css");
+
+.pro { --brand: #2563eb; }

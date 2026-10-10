@@ -1,0 +1,9 @@
+/* Momentaufnahme A der Animationen (volle Bewegung) – im Video sind echte Animationen aus. */
+@import url("after.css");
+.track, .hero, .badge, .product { animation: none; }
+.track { translate: -14% 0; }
+.hero { --blob: 30% 35%; }
+.badge { rotate: -12deg; scale: 1.08; }
+.product:nth-child(1) { translate: 0 -1.25rem; }
+.product:nth-child(2) { translate: 0 -.3rem; }
+.product:nth-child(3) { translate: 0 -.8rem; }

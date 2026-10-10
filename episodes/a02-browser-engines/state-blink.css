@@ -1,0 +1,4 @@
+/* Zustand „Blink“ – Chrome, Edge, Opera, Samsung Internet & Co. teilen sich eine Engine. */
+@import url("after.css");
+.engine:not(.blink), .iphone { opacity: 0.3; filter: grayscale(1); }
+.blink { outline: 3px solid var(--engine); outline-offset: 4px; scale: 1.03; }

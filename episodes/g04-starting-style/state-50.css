@@ -1,0 +1,4 @@
+/* Momentaufnahme: Dialog öffnet, 200 ms von 400 ms (ease → 80 %) (Video: Dialog wird per ?css=state-… beim Laden geöffnet, Transitions sind aus). */
+@import url("after.css");
+dialog { transition: none; opacity: .8; translate: 0 calc((1 - .8) * 2rem); }
+dialog::backdrop { transition: none; --dim: calc(.8 * .5); }

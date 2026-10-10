@@ -1,0 +1,6 @@
+/* Zustand iPhone – Safari hat keinen Install-Knopf: Teilen → „Zum Home-Bildschirm“ (eigener Nachbau). Die anderen Geräte abgeblendet. */
+@import url("demo.css");
+
+.device:not(.iphone) { opacity: 0.3; filter: grayscale(1); scale: 0.94; }
+.iphone .share-sheet { display: grid; }
+.iphone .rows .hit { background: #fdf4ff; color: #a21caf; font-weight: 800; box-shadow: inset 3px 0 0 #d946ef; }

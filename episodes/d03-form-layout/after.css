@@ -1,0 +1,44 @@
+.form {
+  display: grid;
+  gap: 0.5rem 1.5rem;
+}
+@media (width >= 40rem) {
+  .form { grid-template-columns: max-content 1fr; }
+}
+
+/* After – ein Grid, eine Media Query. Schmal: eine Spalte, das Label steht über dem Feld.
+   Ab 40rem: zwei Spalten – links so breit wie das längste Label (max-content), rechts der Rest. */
+.page {
+  max-inline-size: 48rem;
+  margin-inline: auto;
+  padding: 5rem var(--space-4) var(--space-6);
+}
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.form {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+label { font-weight: 600; }
+input, select, textarea {
+  min-inline-size: 0;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid var(--border);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  color: var(--text);
+}
+button { justify-self: start; margin-block-start: var(--space-2); padding: 0.625rem 1.25rem; border: 0; border-radius: 999px; background: var(--brand); color: var(--on-brand); font-weight: 700; }
+
+/* Schmal: etwas Luft vor jedem neuen Label, damit Label + Feld als Paar lesbar sind */
+@media (width < 40rem) {
+  label:not(:first-child) { margin-block-start: var(--space-2); }
+}
+/* Breit: Label auf Höhe der ersten Textzeile, Button in die Feld-Spalte */
+@media (width >= 40rem) {
+  label { padding-block: calc(0.5rem + 1px); text-align: end; }
+  button { grid-column: 2; }
+}

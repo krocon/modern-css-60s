@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B8 · Flexbox or grid? The 5-second rule</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- page.css = nur Optik. Welche Spalte Flex oder Grid benutzt, entscheidet das umschaltbare Stylesheet
+       (die Spaltenbeschriftung kommt deshalb auch aus dem CSS). -->
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-nav.css state-gallery.css after.css" data-labels="Before|Nav|Gallery|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Flexbox or grid?</h1>
+    <p class="lead">Same HTML twice – left with flexbox, right with grid.</p>
+    <div class="compare">
+    <section class="col flex" aria-label="Flexbox version">
+      <nav class="row nav" aria-label="Shop menu (Flexbox version)">
+        <a href="#">Home</a>
+        <a href="#">New in</a>
+        <a href="#">Outdoor clothing</a>
+        <a href="#">Sale</a>
+        <a href="#">Help</a>
+      </nav>
+      <ul class="row gallery">
+        <li class="tile"><span>Tents</span></li>
+        <li class="tile"><span>Backpacks</span></li>
+        <li class="tile"><span>Stoves</span></li>
+        <li class="tile"><span>Lamps</span></li>
+        <li class="tile"><span>Boots</span></li>
+      </ul>
+    </section>
+    <section class="col grid" aria-label="Grid version">
+      <nav class="row nav" aria-label="Shop menu (Grid version)">
+        <a href="#">Home</a>
+        <a href="#">New in</a>
+        <a href="#">Outdoor clothing</a>
+        <a href="#">Sale</a>
+        <a href="#">Help</a>
+      </nav>
+      <ul class="row gallery">
+        <li class="tile"><span>Tents</span></li>
+        <li class="tile"><span>Backpacks</span></li>
+        <li class="tile"><span>Stoves</span></li>
+        <li class="tile"><span>Lamps</span></li>
+        <li class="tile"><span>Boots</span></li>
+      </ul>
+    </section>
+    </div>
+  </main>
+</body>
+</html>

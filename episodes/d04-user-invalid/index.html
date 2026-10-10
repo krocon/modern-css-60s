@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D4 · Error messages that don't yell too early</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-typed.css state-submitted.css"
+        data-labels="Before|After|After typing|After submit">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Sign up</h1>
+    <p class="lead">Type something wrong, then leave the field – only then you get the error.</p>
+
+    <form class="form" onsubmit="return false">
+      <div class="field">
+        <label for="name">Full name</label>
+        <input id="name" required autocomplete="name" aria-describedby="name-error">
+        <p class="error" id="name-error">Please tell us your name.</p>
+      </div>
+      <div class="field">
+        <label for="email">Email address</label>
+        <input id="email" type="email" required autocomplete="email" aria-describedby="email-error">
+        <p class="error" id="email-error">Enter an email like ada@example.com.</p>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <input id="password" type="password" required minlength="8" autocomplete="new-password" aria-describedby="password-error password-hint">
+        <p class="error" id="password-error">Your password needs at least 8 characters.</p>
+        <p class="hint" id="password-hint">At least 8 characters.</p>
+      </div>
+      <button>Create account</button>
+    </form>
+  </main>
+
+  <script>
+    // Demo-Zustände für die Video-Bühne (ohne Timer): state-typed.css / state-submitted.css füllen die Felder
+    // und markieren sie mit .demo-touched. Echtes :user-invalid lässt sich per Script nicht auslösen –
+    // die Zustands-Stylesheets stellen es deshalb über diese Klasse nach. Im Browser einfach selbst tippen.
+    (() => {
+      const link = document.querySelector('link[data-styles]');
+      const fields = [...document.querySelectorAll('.form input')];
+      const [name, email] = fields;
+      let demo = false;
+      const apply = () => {
+        const f = link.getAttribute('href');
+        const typed = f === 'state-typed.css', submitted = f === 'state-submitted.css';
+        if (typed || submitted) { name.value = 'Ada Lovelace'; email.value = 'ada@'; demo = true; }
+        else if (demo) { fields.forEach(el => { el.value = ''; }); demo = false; }
+        fields.forEach(el => el.classList.toggle('demo-touched', submitted || (typed && el !== fields[2])));
+      };
+      link.addEventListener('load', apply);
+      addEventListener('load', apply);
+    })();
+  </script>
+</body>
+</html>

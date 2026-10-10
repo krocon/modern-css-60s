@@ -1,0 +1,7 @@
+/* Zustand „Erstens“ – nur display: grid, noch ohne place-items: die Kinder sitzen oben links
+   (die Karte wird sogar auf volle Höhe gestreckt). */
+body,
+.avatar,
+.icon {
+  display: grid;
+}

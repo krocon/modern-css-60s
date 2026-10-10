@@ -1,0 +1,13 @@
+.flex .row { display: flex; flex-wrap: wrap; }
+.flex .tile { flex: 1 1 8rem; }
+
+.grid .row {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+/* After – gleiches HTML, links Flexbox, rechts Grid.
+   Flex: der Inhalt bestimmt die Größe (Links so breit wie ihr Text, letzte Kachel-Reihe wird breit gezogen).
+   Grid: das Raster bestimmt die Größe (feste Spalten – super für die Galerie, starr für die Navigation). */
+.flex::before { content: "display: flex"; }
+.grid::before { content: "display: grid"; }

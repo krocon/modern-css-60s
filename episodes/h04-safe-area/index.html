@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <!-- viewport-fit=cover: Die Seite darf bis in die Ecken – auch unter Kamera und Home-Balken. Ab dann ist env(safe-area-inset-*) Pflicht. -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>H4 · Don't let the iPhone notch eat your content</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- Layout der Telefon-Rahmen (immer aktiv); nur das Stylesheet darunter wechselt -->
+  <link rel="stylesheet" href="demo.css">
+  <link rel="stylesheet" href="after.css" data-styles="state-nocover.css before.css state-insets.css after.css state-sides.css" data-labels="No cover|Cover, no env()|Insets|After|Bottom + sides">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H4 Safe areas
+    Die Telefone sind eigene, neutrale HTML/CSS-Nachbauten. Desktop-Browser melden für env(safe-area-inset-*) den Wert 0,
+    deshalb ersetzen im Rahmen Custom Properties (--sim-top, --sim-bottom, --sim-left, --sim-right) die echten Werte.
+    Der „echte“ Code steht oben in after.css und greift auf einem Gerät mit Notch / Kamera-Insel / Home-Balken.
+  -->
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">env(safe-area-inset-*)</p>
+      <h1>Edge to edge – but not under the camera</h1>
+    </header>
+
+    <div class="stage">
+      <!-- Hochformat, z. B. als installierte PWA -->
+      <figure class="device portrait sim">
+        <div class="screen">
+          <div class="app">
+            <header class="app-bar"><h2>Pocket Notes</h2><span class="btn" aria-hidden="true">+</span></header>
+            <ul class="list">
+              <li><b>Buy oat milk</b><small>Today</small></li>
+              <li><b>Record episode 57</b><small>Today</small></li>
+              <li><b>Call Ada at 3</b><small>Tomorrow</small></li>
+              <li><b>Plan season 2</b><small>Friday</small></li>
+              <li><b>Fix the notch bug</b><small>Done</small></li>
+            </ul>
+            <nav class="tab-bar" aria-label="Tabs"><span class="on"><i>☰</i>Notes</span><span><i>⌕</i>Search</span><span><i>⚙</i>Settings</span></nav>
+          </div>
+          <span class="hw status" aria-hidden="true"><b>9:41</b><i></i></span>
+          <span class="hw island" aria-hidden="true"></span>
+          <span class="hw home" aria-hidden="true"></span>
+          <span class="zone z-top"><b>safe-area-inset-top</b></span>
+          <span class="zone z-bottom"><b>…-bottom</b></span>
+        </div>
+        <figcaption>Portrait · installed app</figcaption>
+      </figure>
+
+      <div class="side">
+        <!-- Querformat im Browser -->
+        <figure class="device landscape sim">
+          <div class="screen">
+            <div class="app">
+              <header class="app-bar"><h2>Pocket Notes</h2><span class="btn" aria-hidden="true">+</span></header>
+              <ul class="list">
+                <li><b>Buy oat milk</b><small>Today</small></li>
+                <li><b>Record episode 57</b><small>Today</small></li>
+                <li><b>Call Ada at 3</b><small>Tomorrow</small></li>
+              </ul>
+              <nav class="tab-bar" aria-label="Tabs"><span class="on"><i>☰</i>Notes</span><span><i>⌕</i>Search</span><span><i>⚙</i>Settings</span></nav>
+            </div>
+            <span class="hw island" aria-hidden="true"></span>
+            <span class="hw home" aria-hidden="true"></span>
+            <span class="zone z-left"><b>…-left</b></span>
+            <span class="zone z-right"><b>…-right</b></span>
+            <span class="zone z-bottom"><b>…-bottom</b></span>
+          </div>
+          <figcaption>Landscape · camera on the left</figcaption>
+        </figure>
+
+        <aside class="legend">
+          <p><code>viewport-fit=cover</code> – the page may use the whole screen.</p>
+          <p><code>env(safe-area-inset-*)</code> – how much of it is covered.</p>
+          <p class="sim-note">Simulated frame: desktop browsers report <code>0</code> for the insets. Open this page on a phone to see the real values.</p>
+        </aside>
+      </div>
+    </div>
+  </main>
+</body>
+</html>

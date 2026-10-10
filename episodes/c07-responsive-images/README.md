@@ -3,13 +3,17 @@
 **DE:** Scharfe Bilder auf jedem Display, geladen erst bei Bedarf
 
 🎬 Episode 022 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 022 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/c07-responsive-images/
 
-## Core idea
+## Core CSS (`after.css`)
 
-picture, srcset, loading=lazy, fetchpriority=high
-
-_Demo coming soon / Demo folgt._
+```css
+/* After – <picture> + srcset: der Browser lädt je nach Breite hero-s/m/l.svg (Handy: Hochformat-Ausschnitt).
+   fetchpriority="high" fürs wichtigste Bild, loading="lazy" für die Galerie weit unten: lädt erst beim Hinscrollen.
+   Die Live-Anzeige rechts zeigt, welche Datei wirklich geladen wurde. */
+.old { display: none; }
+.new.grid { display: grid; }
+```
 
 ## Browser support
 
@@ -22,4 +26,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=fetchpriority) · [Web Fe
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

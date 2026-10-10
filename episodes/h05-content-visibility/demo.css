@@ -1,0 +1,83 @@
+/* demo.css – Layout (immer aktiv, nicht umschaltbar): links der lange Feed mit 40 Abschnitten,
+   rechts die Render-Karte – eine Erklärgrafik. Welche Balken „gerendert“ oder „übersprungen“ sind,
+   bestimmen die Zustands-Stylesheets über --at (Position des Bildschirms) und :nth-child. */
+
+.page { max-inline-size: 80rem; margin-inline: auto; padding: 3rem var(--space-5) var(--space-5); }
+.kicker { font-family: var(--font-mono); font-size: var(--step--1); color: var(--brand); font-weight: 700; letter-spacing: 0.04em; }
+.intro h1 { font-size: var(--step-3); letter-spacing: -0.02em; }
+.intro { margin-block-end: var(--space-4); }
+
+.layout { display: grid; grid-template-columns: minmax(0, 1fr) 24rem; gap: var(--space-5); align-items: start; }
+@media (width < 52rem) { .layout { grid-template-columns: 1fr; } .panel { order: -1; position: static; } }
+
+/* ---------- Feed ---------- */
+.feed { display: grid; gap: var(--space-4); }
+.post { padding: var(--space-4); border: 1px solid var(--border); border-radius: var(--radius); background: var(--surface-2); }
+.shot { block-size: 11rem; border-radius: calc(var(--radius) - 0.25rem); margin-block-end: var(--space-3);
+  background: linear-gradient(135deg, #d946ef, #7e22ce 60%, #1e1b4b); }
+.post:nth-child(4n+2) .shot { background: linear-gradient(135deg, #2dd4bf, #0f766e 60%, #134e4a); }
+.post:nth-child(4n+3) .shot { background: linear-gradient(135deg, #fbbf24, #ea580c 60%, #7c2d12); }
+.post:nth-child(4n+4) .shot { background: linear-gradient(135deg, #93c5fd, #1d4ed8 60%, #1e1b4b); }
+.post h2 { font-size: var(--step-2); }
+.post h2 span { display: block; font-family: var(--font-mono); font-size: var(--step--1); color: var(--brand); }
+.post p { margin-block-start: var(--space-2); color: var(--text-muted); }
+.tags { display: flex; gap: var(--space-2); font-family: var(--font-mono); font-size: var(--step--1); }
+
+/* ---------- Render-Karte ---------- */
+.panel {
+  position: sticky;
+  inset-block-start: 1rem;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface);
+  box-shadow: 0 1rem 2rem rgb(15 23 42 / 0.12);
+  --on: #14b8a6;
+  --mem: #d946ef;
+  --bar: 8px;
+  --at: 0;
+  --rows: 3;
+}
+.panel-title { font-weight: 800; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--step--1); color: var(--text-muted); }
+.count { display: flex; align-items: baseline; gap: 0.5rem; }
+.count .n { font-size: var(--step-4); line-height: 1; color: var(--on); }
+.count .n::before { content: "40"; }
+.count span { font-weight: 600; }
+
+.map-wrap { position: relative; display: grid; grid-template-columns: 7rem 0.6rem 1fr; gap: 0 1rem; align-items: start; margin-block-start: var(--space-2); }
+.map { list-style: none; padding: 0; display: grid; gap: 2px; }
+.map li { block-size: var(--bar); border-radius: 2px; background: var(--on); }
+
+/* Bildschirm-Rahmen über der Karte */
+.frame {
+  position: absolute;
+  inset-inline-start: -0.35rem;
+  inline-size: calc(7rem + 0.7rem);
+  inset-block-start: calc(var(--at) * (var(--bar) + 2px) - 4px);
+  block-size: calc(var(--rows) * (var(--bar) + 2px) + 6px);
+  border: 3px solid var(--text);
+  border-radius: 0.35rem;
+}
+/* Scrollbalken: Höhe ~ Anteil des Bildschirms an der Seitenhöhe */
+.track { position: relative; align-self: stretch; border-radius: 999px; background: var(--surface-2); outline: 1px solid var(--border); }
+.thumb { position: absolute; inset-inline: 0; inset-block-start: var(--thumb-at, 0%); block-size: var(--thumb, 7.5%); border-radius: 999px; background: var(--text-muted); }
+
+.legend { list-style: none; padding: 0; display: grid; gap: 0.6rem; font-size: var(--step--1); font-weight: 600; align-content: start; }
+.legend li { display: flex; align-items: center; gap: 0.5rem; }
+.legend li::before { content: ""; flex: none; inline-size: 1.4rem; block-size: 0.7rem; border-radius: 2px; }
+.l-on::before { background: var(--on); }
+.l-off::before { background: repeating-linear-gradient(135deg, #94a3b8 0 3px, transparent 3px 6px); outline: 1px solid #94a3b8; }
+.l-mem::before { background: repeating-linear-gradient(135deg, var(--mem) 0 3px, transparent 3px 6px); outline: 1px solid var(--mem); }
+.l-frame::before { border: 3px solid var(--text); background: transparent; }
+.l-thumb::before { inline-size: 0.6rem; border-radius: 999px; background: var(--text-muted); margin-inline: 0.4rem; }
+
+/* Zustandsmuster für die Balken – die Stylesheets setzen sie per :nth-child */
+.panel {
+  --skip: repeating-linear-gradient(135deg, #94a3b8 0 3px, transparent 3px 6px);
+  --memo: repeating-linear-gradient(135deg, #d946ef 0 3px, transparent 3px 6px);
+}
+.warn { display: none; padding: 0.5rem 0.75rem; border-radius: 0.5rem; border: 1px solid #f59e0b; background: color-mix(in srgb, #f59e0b 14%, transparent); font-size: var(--step--1); font-weight: 700; }
+
+.live { font-size: var(--step--1); font-weight: 700; color: var(--accent); }

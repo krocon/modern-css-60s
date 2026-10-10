@@ -1,0 +1,4 @@
+/* Before – ohne name: jede Frage klappt einzeln auf, alle bleiben offen, die Seite wird endlos lang.
+   Früher brauchte "nur eine offen" eigenes JS (Klick-Handler, aria-expanded, andere schließen).
+   (Simulation: das Inline-Script entfernt bei before.css das name-Attribut und öffnet alles.) */
+@import url("after.css");

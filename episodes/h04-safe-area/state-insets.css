@@ -1,0 +1,6 @@
+/* Zustand „Safe Area sichtbar“ – wie after.css, dazu die verdeckten Zonen gestreift eingeblendet.
+   Oben: safe-area-inset-top = Statusleiste + Kamera-Insel. */
+@import url("after.css");
+
+.portrait .z-top { display: flex; }
+.portrait .z-bottom, .landscape .zone { display: flex; opacity: 0.35; }

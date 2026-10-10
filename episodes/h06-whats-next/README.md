@@ -3,13 +3,19 @@
 **DE:** Staffelfinale: Diese CSS-Features kommen als Nächstes
 
 🎬 Episode 059 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 059 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/h06-whats-next/
 
-## Core idea
+## Core CSS (`after.css`)
 
-if(), Masonry/grid-lanes, anpassbares select, text-box-trim als Ausblick
-
-_Demo coming soon / Demo folgt._
+```css
+.gallery { columns: 3; }        /* Fallback */
+@supports (display: grid-lanes) {
+  .gallery {
+    display: grid-lanes;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+```
 
 ## Browser support
 
@@ -21,4 +27,4 @@ limited · [Web Features Explorer](https://web-platform-dx.github.io/web-feature
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

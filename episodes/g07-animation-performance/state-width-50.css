@@ -1,0 +1,3 @@
+/* Momentaufnahme: width-Animation zur Hälfte – der Text ist schon umgebrochen. */
+@import url("before.css");
+.drawer { transition: none; width: 8rem; }

@@ -1,0 +1,8 @@
+/* Zustand „gescrollt“ – wie after.css, der Bildschirm steht bei Abschnitt 18.
+   Jetzt sind 18–20 gerendert, 1–3 werden wieder übersprungen. (Simuliert: Abschnitte 1–17 sind ausgeblendet.) */
+@import url("after.css");
+
+.post:nth-child(-n+17) { display: none; }
+.panel { --at: 17; --thumb-at: 42.5%; }
+.map li:nth-child(-n+3) { background: var(--skip); outline: 1px solid #94a3b8; outline-offset: -1px; }
+.map li:nth-child(n+18):nth-child(-n+20) { background: var(--on); outline: 0; }

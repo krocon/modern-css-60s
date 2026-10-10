@@ -1,0 +1,11 @@
+/* Zustand – nur H gedreht (+40°): neue Palette, gleiche Helligkeit, Kontrast bleibt bei ca. 4,3 : 1. */
+@import url("after.css");
+
+.tile { background: oklch(58% 0.11 calc(var(--h) + 40)); }
+.formula::before { content: "oklch(58% 0.11 H + 40)"; }
+.danger  .ratio::after { content: "4.4 : 1"; }
+.warning .ratio::after { content: "4.2 : 1"; }
+.success .ratio::after { content: "4.1 : 1"; }
+.info    .ratio::after { content: "4.4 : 1"; }
+.primary .ratio::after { content: "4.5 : 1"; }
+.accent  .ratio::after { content: "4.5 : 1"; }

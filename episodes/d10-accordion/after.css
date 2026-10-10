@@ -1,0 +1,31 @@
+details {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
+details[open] { border-color: var(--brand); }
+details[open] summary { color: var(--brand); }
+summary::after { content: "›"; transition: rotate 0.2s; }
+details[open] summary::after { rotate: 90deg; }
+
+/* After – <details name="faq">: gleicher name = eine Gruppe, es ist immer nur eine Antwort offen.
+   Klick, Tastatur, Screenreader-Zustand: alles eingebaut, null Zeilen JS. Das CSS gestaltet nur den offenen Zustand. */
+.page { max-inline-size: 46rem; margin-inline: auto; padding: 3rem var(--space-4) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.faq { display: grid; gap: var(--space-3); }
+details { background: var(--surface-2); }
+summary {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  font-size: var(--step-1);
+  font-weight: 700;
+  list-style: none;
+  cursor: pointer;
+}
+summary::-webkit-details-marker { display: none; }
+summary::after { font-size: 1.75rem; line-height: 1; color: var(--brand); }
+details p { padding: 0 var(--space-4) var(--space-4); color: var(--text-muted); font-size: var(--step-1); }

@@ -43,4 +43,7 @@
 /* Eingebettet im Video (?embed=1): nur die Demo selbst */
 .is-embed .demo-toolbar, .is-embed .demo-back { display: none; }
 .is-embed { scrollbar-width: none; }
+/* Im Video steuert die Timeline die Bewegung: Animationen/Transitions der Seite aus (deterministischer Render).
+   Bewegung zeigen Demos über eigene Zustands-Stylesheets (z. B. state-hover.css), zwischen denen das Video überblendet. */
+.is-embed *, .is-embed *::before, .is-embed *::after { animation: none !important; transition: none !important; }
 .is-embed::-webkit-scrollbar { display: none; }

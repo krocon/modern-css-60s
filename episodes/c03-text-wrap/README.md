@@ -3,13 +3,18 @@
 **DE:** Überschriften, die umbrechen wie vom Designer
 
 🎬 Episode 018 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 018 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/c03-text-wrap/
 
-## Core idea
+## Core CSS (`after.css`)
 
-text-wrap: balance (+ pretty als Bonus)
-
-_Demo coming soon / Demo folgt._
+```css
+h1, h2 {
+  text-wrap: balance;
+}
+p {
+  text-wrap: pretty;
+}
+```
 
 ## Browser support
 
@@ -22,4 +27,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=text-wrap) · [Web Featur
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

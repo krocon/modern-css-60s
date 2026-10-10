@@ -1,0 +1,11 @@
+.card .actions .btn { background: var(--btn); }
+.bg-danger { background: var(--danger); }
+
+/* Before – keine Layer: die Spezifität entscheidet. .card .actions .btn (0,3,0) schlägt .bg-danger (0,1,0),
+   die Löschen-Buttons bleiben lila. Der Reflex: !important – und das Wettrüsten beginnt. */
+.stack { display: none; }
+.spec { display: block; }
+.spec .win { background: #7c3aed; color: #ffffff; }
+.spec .win code { color: #ede9fe; }
+.spec .win::after { content: "wins"; }
+.spec .lose { opacity: 0.6; text-decoration: line-through; }

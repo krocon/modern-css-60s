@@ -1,0 +1,56 @@
+/* Before – Anchor ohne Fallback (wie früher absolut positioniert): oben am Rand ist kein Platz,
+   der Tooltip landet halb außerhalb bzw. über dem Button. Früher: getBoundingClientRect + Pixel-Mathe in JS. */
+.tip {
+  position-anchor: --tip;
+  position-area: top;
+}
+button:has(+ :popover-open) { anchor-name: --tip; }
+.tip { inset: auto; margin: 0; }
+
+.topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem var(--space-4);
+  border-block-end: 1px solid var(--border);
+  background: var(--surface-2);
+}
+.logo { color: var(--brand); font-size: var(--step-1); }
+.actions { display: flex; gap: var(--space-2); }
+
+.page { max-inline-size: 52rem; margin-inline: auto; padding: 4rem var(--space-4) var(--space-6); }
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-6); color: var(--text-muted); font-size: var(--step-1); }
+
+.card {
+  margin-block-start: 5rem;
+  padding: var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.card h2 { font-size: var(--step-2); }
+.card p { margin-block: var(--space-1) var(--space-4); color: var(--text-muted); }
+.row { display: flex; flex-wrap: wrap; gap: var(--space-3); }
+
+.tip-btn {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 600;
+  cursor: pointer;
+}
+.tip-btn:has(+ .tip:popover-open) { border-color: var(--brand); color: var(--brand); }
+
+.tip {
+  padding: 0.4rem 0.75rem;
+  border: 0;
+  border-radius: 0.5rem;
+  background: var(--text);
+  color: var(--surface);
+  font-size: var(--step--1);
+  font-weight: 600;
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.2);
+}

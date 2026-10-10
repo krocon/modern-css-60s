@@ -3,13 +3,18 @@
 **DE:** Alles zentrieren mit einer Zeile
 
 🎬 Episode 014 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 014 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/b07-center/
 
-## Core idea
+## Core CSS (`after.css`)
 
-display: grid; place-items: center
-
-_Demo coming soon / Demo folgt._
+```css
+body,
+.avatar,
+.icon {
+  display: grid;
+  place-items: center;
+}
+```
 
 ## Browser support
 
@@ -22,4 +27,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=place-items) 
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

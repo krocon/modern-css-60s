@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>B2 · The footer that always stays at the bottom</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- page.css = nur Optik. Wo der Footer landet, entscheidet das umschaltbare Stylesheet. -->
+  <link rel="stylesheet" href="page.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css magic.css state-rows.css after.css" data-labels="Before|Magic number|Rows|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+
+  <header class="site-header">
+    <a class="logo" href="#">parcel<span>&amp;</span>co</a>
+    <nav aria-label="Main">
+      <a href="#">Shop</a>
+      <a href="#">Track order</a>
+      <a href="#">Help</a>
+      <a href="#">Account</a>
+    </nav>
+  </header>
+
+  <main class="content">
+    <section class="notice">
+      <p class="tick" aria-hidden="true">✓</p>
+      <h1>Order confirmed</h1>
+      <p>Thanks, Sam! Your package ships tomorrow. We sent the tracking link to your inbox.</p>
+      <a class="button" href="#">Track order #4821</a>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <p>© 2026 parcel&amp;co</p>
+    <nav aria-label="Footer">
+      <a href="#">Imprint</a>
+      <a href="#">Privacy</a>
+      <a href="#">Contact</a>
+    </nav>
+  </footer>
+</body>
+</html>

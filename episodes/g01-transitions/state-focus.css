@@ -1,0 +1,8 @@
+/* Momentaufnahme: Tastatur – Fokus auf „Choose Team“, :focus-within hebt die ganze Karte. */
+@import url("after.css");
+.card:nth-child(3) {
+  transition: none;
+  transform: translateY(-12px);
+  box-shadow: 0 16px 32px rgb(0 0 0 / .2);
+}
+.card:nth-child(3) .btn { outline: 3px solid var(--brand); outline-offset: 3px; }

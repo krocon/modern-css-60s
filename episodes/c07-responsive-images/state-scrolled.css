@@ -1,0 +1,4 @@
+/* After · gescrollt – simuliert: Leser ist unten bei der Galerie angekommen (oberer Teil ausgeblendet).
+   Jetzt kommen die lazy-Bilder in die Nähe des Viewports und werden geladen. */
+@import url("after.css");
+.intro, .hero, .story { display: none; }

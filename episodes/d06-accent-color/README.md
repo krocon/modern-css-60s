@@ -3,13 +3,16 @@
 **DE:** Alle Checkboxen mit einer Zeile stylen
 
 🎬 Episode 028 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 028 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/d06-accent-color/
 
-## Core idea
+## Core CSS (`after.css`)
 
-accent-color: var(--brand)
-
-_Demo coming soon / Demo folgt._
+```css
+:root {
+  --brand: light-dark(#a21caf, #e879f9);
+  accent-color: var(--brand);
+}
+```
 
 ## Browser support
 
@@ -22,4 +25,4 @@ Baseline 2022 · [caniuse](https://caniuse.com/?search=accent-color) · [Web Fea
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

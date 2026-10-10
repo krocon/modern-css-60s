@@ -1,0 +1,14 @@
+/* After – installiert: Auf den Telefonen liegt das Icon „Notes“ auf dem Startbildschirm,
+   am Desktop läuft die Seite in einem eigenen Fenster – ohne Tabs und Adressleiste, Titelleiste in theme_color.
+   Gleiche Seite, gleiches HTML. Die Daten dafür stehen in manifest.webmanifest. */
+@import url("demo.css");
+
+/* Telefone: Startbildschirm statt Browser */
+.phone .browser { display: none; }
+.phone .home { display: grid; }
+.phone .statusbar { background: #134e4a; color: #ffffff; }
+.app.mine img { box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #d946ef; }
+
+/* Desktop: eigenes App-Fenster */
+.desktop .tabs, .desktop .urlbar { display: none; }
+.desktop .titlebar { display: flex; }

@@ -1,0 +1,11 @@
+@keyframes grow { to { scale: 1; } }
+@supports (animation-timeline: scroll()) {
+  .progress {
+    animation: grow linear both;
+    animation-timeline: scroll(root);
+  }
+}
+
+/* After – die Scroll-Position der Seite (scroll(root)) treibt die Animation statt der Uhr: oben 0 %, unten 100 %.
+   Reihenfolge: erst die Kurzschreibweise animation, dann animation-timeline (sonst setzt die Kurzschreibweise sie zurück).
+   Ohne Unterstützung (Firefox) greift @supports nicht: kein Balken, der Artikel funktioniert genauso. */

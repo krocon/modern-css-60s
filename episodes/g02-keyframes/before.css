@@ -1,0 +1,16 @@
+/* Before – Einblenden per JavaScript (old-way.js): die Kacheln starten unsichtbar und warten auf die Klasse .show.
+   Lädt das Script spät oder gar nicht, bleibt das Dashboard leer – genau das zeigt dieser Zustand. */
+.tile { opacity: 0; transition: opacity .5s; }
+.tile.show { opacity: 1; }
+
+.tiles { min-block-size: 18rem; border: 2px dashed var(--border); border-radius: var(--radius); }
+.tiles::before {
+  content: "Waiting for JavaScript …";
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  color: light-dark(#b45309, #fbbf24);
+  font-weight: 700;
+  font-size: var(--step-2);
+}

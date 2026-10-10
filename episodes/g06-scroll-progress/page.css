@@ -1,0 +1,32 @@
+/* page.css – Seiten-Optik (bleibt in allen Zuständen gleich). Das Thema der Folge steht in after.css. */
+.progress {
+  position: fixed;
+  inset: 0 0 auto;
+  z-index: 10;
+  block-size: .75rem;
+  background: linear-gradient(90deg, var(--brand), var(--accent));
+  transform-origin: left;
+  scale: 0 1; /* Fallback: ohne Scroll-Timeline unsichtbar */
+}
+.site {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem var(--space-4) .9rem;
+  border-block-end: 1px solid var(--border);
+  background: var(--surface);
+}
+.site span { color: var(--text-muted); font-size: var(--step--1); }
+.page {
+  max-inline-size: 42rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) 6rem;
+}
+.eyebrow { color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: .08em; font-size: var(--step--1); }
+.post h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-3) var(--space-4); color: var(--text-muted); font-size: var(--step-1); }
+.post h2 { margin-block: var(--space-5) var(--space-2); font-size: var(--step-2); }
+.post p + p { margin-block-start: var(--space-3); }
+.post p { font-size: 1.125rem; line-height: 1.7; }

@@ -1,0 +1,7 @@
+/* Zustand „Was du brauchst“ – installiert wie after.css, dazu leuchten die Zutaten oben rechts:
+   https, Manifest, Icon (Service Worker nur für offline, Folge 56). */
+@import url("after.css");
+
+.needs li:not(.opt) { border-color: #d946ef; background: #d946ef; color: #ffffff; box-shadow: 0 0 0 4px rgb(217 70 239 / 0.25); }
+.needs li:not(.opt)::before { color: #ffffff; }
+.needs .opt { border-color: #14b8a6; color: var(--accent); }

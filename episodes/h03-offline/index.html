@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H3 · Make your site work offline in 20 lines</title>
+  <link rel="icon" href="icon.svg">
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css state-register.css state-install.css after.css state-offline.css" data-labels="No SW · offline|register|install|Online|SW · offline">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <!--
+    README · H3 Make your site work offline in 20 lines
+    Dateien: sw.js (Service Worker, ca. 15 Zeilen) + offline.html (alles inline) + 3 Zeilen Registrierung unten.
+    WICHTIG: Service Worker laufen nur über https:// oder http://localhost.
+    Per Doppelklick (file://) wird sw.js NICHT registriert – die Seite zeigt dann nur die Simulation.
+    Echter Test: lokalen Server starten (z. B. `python3 -m http.server` im Repo-Ordner) oder die Live-Demo auf GitHub Pages öffnen,
+    Seite einmal laden, dann DevTools → Network → Offline (oder Flugmodus) und neu laden.
+    Die Zustände (online / offline) sind Simulationen per Stylesheet, damit sie im Video ohne Netzwerk-Tricks sichtbar sind.
+  -->
+  <main class="page">
+    <header class="intro">
+      <p class="kicker">Service worker</p>
+      <h1>Offline? Show your own page.</h1>
+    </header>
+
+    <div class="stage">
+      <!-- Telefon: dieselbe Seite in drei Situationen – das Stylesheet entscheidet, welche sichtbar ist -->
+      <figure class="phone">
+        <div class="screen">
+          <div class="statusbar"><span>9:41</span><span class="net"><span class="on">▂▄▆ 5G</span><span class="off">✈︎</span></span></div>
+          <div class="urlbar">🔒 notes.example</div>
+
+          <div class="view view-app">
+            <p class="site-bar"><img src="icon.svg" alt=""> Pocket Notes</p>
+            <ul class="notes"><li>Buy oat milk</li><li>Record episode 56</li><li>Call Ada at 3</li><li>Test airplane mode</li></ul>
+          </div>
+
+          <div class="view view-error">
+            <span class="err-icon" aria-hidden="true">⌀</span>
+            <p><b>No connection</b></p>
+            <p>The page could not be loaded.</p>
+            <code>NETWORK_ERROR</code>
+          </div>
+
+          <div class="view view-offline">
+            <svg viewBox="0 0 64 64" aria-hidden="true"><rect width="64" height="64" rx="14" fill="#a21caf"/><path d="M14 38a10 10 0 0 1 4-19 14 14 0 0 1 27 3 8 8 0 0 1 3 16z" fill="#fff"/><path d="M16 50 50 14" stroke="#fdf4ff" stroke-width="6" stroke-linecap="round"/><path d="M16 50 50 14" stroke="#a21caf" stroke-width="2.5" stroke-linecap="round"/></svg>
+            <p><b>You’re offline</b></p>
+            <p>Your notes are safe – we’ll be back as soon as you are.</p>
+            <span class="btn">Try again</span>
+            <small>offline.html · from the cache</small>
+          </div>
+        </div>
+        <figcaption class="where"><span class="on">Online</span><span class="off">Offline</span></figcaption>
+      </figure>
+
+      <!-- Ablauf: Seite → Service Worker → Netz oder Cache -->
+      <section class="flow" aria-label="How the service worker answers">
+        <div class="box b-page"><b>index.html</b><small>your page</small></div>
+        <div class="arrow a-reg"><span>register('sw.js')</span></div>
+        <div class="box b-sw"><b>sw.js</b><small class="sw-none">no service worker</small><small class="sw-yes">service worker</small></div>
+        <div class="split">
+          <div class="arrow a-net"><span>fetch()</span></div>
+          <div class="arrow a-cache"><span class="t-add">cache.add()</span><span class="t-match">caches.match()</span></div>
+        </div>
+        <div class="split">
+          <div class="box b-net"><b>Network</b><small class="ok">online ✓</small><small class="ko">offline ✗</small></div>
+          <div class="box b-cache"><b>Cache</b><small class="empty">empty</small><small class="full">offline.html ✓</small></div>
+        </div>
+        <p class="note">Service workers need <code>https://</code> or <code>http://localhost</code>. Double-clicking this file (<code>file://</code>) won’t register <code>sw.js</code>.</p>
+        <p class="live" hidden></p>
+      </section>
+    </div>
+  </main>
+
+  <!-- Registrierung: 3 Zeilen. Nur über http(s) und nicht im Video (embed) – per Doppelklick bleibt es bei der Simulation. -->
+  <script>
+    if ('serviceWorker' in navigator && location.protocol.startsWith('http') && !location.search.includes('embed')) {
+      navigator.serviceWorker.register('sw.js').then(() => show('✓ sw.js registered – go offline and reload'), () => show('sw.js could not be registered'));
+    } else if (!location.search.includes('embed')) {
+      show('Not registered here: open via https:// or http://localhost to try it for real.');
+    }
+    function show(text) { const p = document.querySelector('.live'); p.textContent = 'Live in this browser: ' + text; p.hidden = false; }
+  </script>
+</body>
+</html>

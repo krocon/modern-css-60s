@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A3 · Can I use this CSS? Check in 10 seconds</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="deco.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-caniuse.css state-baseline.css state-mdn.css" data-labels="Before|After|caniuse|Baseline|MDN">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <header class="intro">
+      <div>
+        <p class="kicker">Three ways to check one feature</p>
+        <h1>Can I use <code>:has()</code>?</h1>
+      </div>
+      <div class="feature">
+        <code>.field:has(input:invalid)</code>
+        <label class="field">Email <input type="email" value="ada@" required></label>
+      </div>
+    </header>
+
+    <aside class="old-answer" aria-label="Search result">
+      <p class="q">“Is there a CSS parent selector?”</p>
+      <p class="a">No. CSS can’t select a parent element. You’ll need JavaScript for that.</p>
+      <pre class="workaround"><code>// workaround from the answer
+input.addEventListener('input', () =&gt; {
+  field.classList.toggle('error',
+    !input.checkValidity());
+});</code></pre>
+      <p class="meta">Forum answer · 2019 · top search result</p>
+    </aside>
+
+    <div class="tools">
+      <section class="tool caniuse" aria-labelledby="t-caniuse">
+        <h2 id="t-caniuse">caniuse</h2>
+        <p class="what">Which version, per browser</p>
+        <table>
+          <tbody>
+            <tr><th scope="row">Chrome</th><td class="no">≤ 104</td><td class="yes">105+</td></tr>
+            <tr><th scope="row">Edge</th><td class="no">≤ 104</td><td class="yes">105+</td></tr>
+            <tr><th scope="row">Safari</th><td class="no">≤ 15.3</td><td class="yes">15.4+</td></tr>
+            <tr><th scope="row">Firefox</th><td class="no">≤ 120</td><td class="yes">121+</td></tr>
+            <tr><th scope="row">Safari on iOS</th><td class="no">≤ 15.3</td><td class="yes">15.4+</td></tr>
+            <tr><th scope="row">Samsung Internet</th><td class="no">≤ 19</td><td class="yes">20+</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section class="tool baseline" aria-labelledby="t-baseline">
+        <h2 id="t-baseline">Baseline</h2>
+        <p class="what">One status for all major engines</p>
+        <p class="badge">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="11"/><path d="M6.5 12.5l3.5 3.5 7.5-8"/></svg>
+          <span><strong>Widely available</strong> Baseline 2023</span>
+        </p>
+        <ul class="engines">
+          <li>Chrome</li><li>Edge</li><li>Firefox</li><li>Safari</li>
+        </ul>
+        <p class="since">In every major engine since December 2023, widely available since June 2026.</p>
+      </section>
+
+      <section class="tool mdn" aria-labelledby="t-mdn">
+        <h2 id="t-mdn">MDN</h2>
+        <p class="what">Compatibility table under the docs</p>
+        <table>
+          <caption>Desktop</caption>
+          <thead><tr><th>Chrome</th><th>Edge</th><th>Firefox</th><th>Safari</th></tr></thead>
+          <tbody><tr><td>105</td><td>105</td><td>121</td><td>15.4</td></tr></tbody>
+        </table>
+        <table>
+          <caption>Mobile</caption>
+          <thead><tr><th>Chrome Android</th><th>Firefox Android</th><th>Safari iOS</th><th>Samsung</th></tr></thead>
+          <tbody><tr><td>105</td><td>121</td><td>15.4</td><td>20</td></tr></tbody>
+        </table>
+      </section>
+    </div>
+  </main>
+</body>
+</html>

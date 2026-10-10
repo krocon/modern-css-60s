@@ -1,0 +1,4 @@
+/* After im alten Browser (simuliert) – der @supports-Block greift nicht, nur der Fallback zählt:
+   ein sauberer Hinweis unter der Toolbar. Nichts kaputt. */
+.tip { margin-block: 0.75rem 0; }
+.status { --state: #d97706; --msg: "✗ no anchor positioning → fallback: hint below the toolbar"; }

@@ -1,0 +1,4 @@
+/* Zustand – Graustufen-Test für HSL: dieselbe „50 %“ ergibt völlig verschiedene Grautöne. */
+@import url("before.css");
+
+.tile { filter: grayscale(1); }

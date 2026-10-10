@@ -1,0 +1,4 @@
+/* Zustand: sehr helle Akzentfarbe – der Browser wählt automatisch ein dunkles Häkchen (Kontrast). */
+@import url("after.css");
+:root { --brand: #facc15; }
+.page > h1 { color: light-dark(#854d0e, #facc15); }

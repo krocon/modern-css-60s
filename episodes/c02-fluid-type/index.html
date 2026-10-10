@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C2 · Font sizes that grow with the screen</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css" data-labels="Before|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <section class="hero">
+      <p class="kicker">Fluid typography</p>
+      <h1>One headline for every&nbsp;screen</h1>
+      <p>Drag the window: the text grows and shrinks smoothly between a minimum and a maximum. No breakpoints involved.</p>
+    </section>
+    <figure class="meter" aria-label="Current headline size">
+      <div class="meter-track"><div class="meter-bar"></div></div>
+      <figcaption>
+        <span>min 2rem</span>
+        <output class="meter-value">h1 · viewport</output>
+        <span>max 4rem</span>
+      </figcaption>
+    </figure>
+  </main>
+  <script>
+    // Zeigt die echte berechnete Schriftgröße der h1 und die Fensterbreite an.
+    (() => {
+      const h1 = document.querySelector('.hero h1');
+      const out = document.querySelector('.meter-value');
+      const show = () => {
+        const fs = parseFloat(getComputedStyle(h1).fontSize);
+        out.textContent = `h1 = ${Math.round(fs)} px · viewport ${innerWidth} px`;
+      };
+      new ResizeObserver(show).observe(h1);
+      addEventListener('resize', show);
+      show();
+    })();
+  </script>
+</body>
+</html>

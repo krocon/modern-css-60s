@@ -1,0 +1,90 @@
+:where(#buy) { background: var(--gray); }  /* 0-0-0 */
+.button      { background: var(--brand); } /* 0-1-0 */
+
+/* Zustand :where() – altes ID-Styling, das bleiben muss, in :where() packen: zählt 0-0-0.
+   .button (0-1-0) gewinnt, ganz ohne !important. */
+:root { --gray: light-dark(#64748b, #94a3b8); --hot: light-dark(#fae8ff, #4a1252); }
+.page {
+  display: grid;
+  gap: var(--space-4);
+  max-inline-size: 64rem;
+  margin-inline: auto;
+  padding: 2.5rem var(--space-4) var(--space-6);
+}
+.card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: var(--space-2) var(--space-5);
+  padding: var(--space-4) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.kicker { inline-size: 100%; color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--step--1); }
+.card h1 { flex: 1 1 16rem; font-size: var(--step-3); }
+.button {
+  padding: 0.875rem 2rem;
+  border-radius: 999px;
+  color: light-dark(#ffffff, #0f172a);
+  font-size: var(--step-1);
+  font-weight: 800;
+  text-decoration: none;
+}
+
+/* Punkte-Rechner: Werte kommen als Custom Properties aus dem jeweiligen Stylesheet */
+.calc { display: grid; gap: var(--space-3); }
+.calc-title { color: var(--text-muted); font-weight: 600; }
+.calc-title code { color: var(--brand); }
+.rules { display: flex; flex-wrap: wrap; gap: var(--space-3); align-items: center; }
+.rules .rule { flex: 1 1 18rem; }
+.vs { flex: none; margin-inline: auto; font-size: var(--step-2); font-weight: 800; color: var(--text-muted); }
+.rule {
+  --a: 0; --b: 0; --c: 0;
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border: 3px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.rule-head { display: flex; justify-content: space-between; color: var(--text-muted); font-weight: 700; font-size: var(--step--1); }
+.badge { padding: 0 0.625rem; border-radius: 999px; background: var(--border); color: var(--text); text-transform: uppercase; }
+.badge::before { content: "loses"; }
+.sel { font-size: var(--step-1); font-weight: 800; color: var(--brand); }
+.sel::before { content: var(--sel); }
+.decl { color: var(--text-muted); }
+.decl::before { content: var(--decl); }
+.cols { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--space-2); }
+.col {
+  display: grid;
+  justify-items: center;
+  gap: 0.25rem;
+  padding: var(--space-2);
+  border-radius: 0.5rem;
+  background: var(--surface);
+  counter-reset: n var(--n);
+}
+.col-a { --n: var(--a); }
+.col-b { --n: var(--b); }
+.col-c { --n: var(--c); }
+.n { font: 800 var(--step-3)/1 var(--font-mono); }
+.n::before { content: counter(n); }
+.dots {
+  inline-size: calc(var(--n) * 1.25rem);
+  block-size: 1rem;
+  background: radial-gradient(circle, var(--brand) 0.4rem, transparent 0.45rem) 0 50% / 1.25rem 1rem repeat-x;
+}
+.cap { font-size: var(--step--1); font-weight: 700; color: var(--text-muted); text-transform: uppercase; letter-spacing: 0.05em; }
+.verdict { padding: var(--space-3) var(--space-4); border-radius: 0.5rem; border: 1px solid #334155; background: #0f172a; color: #f8fafc; font-weight: 700; font-size: var(--step-1); }
+
+
+/* Rechner für diesen Zustand: Werte, Gewinner (wins), Verlierer durchgestrichen, entscheidende Spalte markiert */
+.r1 { --sel: ":where(#buy)"; --decl: "background: var(--gray);"; }
+.r2 { --b: 1; --sel: ".button"; --decl: "background: var(--brand);"; }
+.r2 { border-color: var(--accent); }
+.r2 .badge { background: var(--accent); color: var(--surface); }
+.r2 .badge::before { content: "wins"; }
+.r1 .decl { text-decoration: line-through; }
+.col-b { background: var(--hot); outline: 2px solid var(--brand); }
+.verdict::before { content: ":where() counts 0-0-0 → .button wins, no !important needed."; }

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G3 · Respect users who get motion sick</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-a/b = Momentaufnahmen der Animationen, state-reduce = simulierte Systemeinstellung (für das Video). -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-a.css state-b.css state-reduce.css"
+        data-labels="Before|After|Motion A|Motion B|Reduced (simulated)">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <div class="ticker" aria-hidden="true">
+    <div class="track">
+      <span>Free shipping</span><span>30 % off everything</span><span>New summer colors</span><span>Free returns</span>
+      <span>Free shipping</span><span>30 % off everything</span><span>New summer colors</span><span>Free returns</span>
+    </div>
+  </div>
+  <main class="page">
+    <section class="hero">
+      <div>
+        <p class="motion-status">Your system: </p>
+        <h1>Summer Sale</h1>
+        <p class="lead">Light linen, straw hats and sandals – only this week.</p>
+      </div>
+      <p class="badge">−30 %</p>
+    </section>
+    <section class="products" aria-label="Products">
+      <article class="product"><div class="pic pic-1"></div><h2>Linen shirt</h2><p><s>€56</s> €39</p></article>
+      <article class="product"><div class="pic pic-2"></div><h2>Straw hat</h2><p><s>€36</s> €25</p></article>
+      <article class="product"><div class="pic pic-3"></div><h2>Sandals</h2><p><s>€70</s> €49</p></article>
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,5 @@
+/* Zustand – Graustufen-Test für OKLCH: grayscale(1) zeigt nur noch die Helligkeit.
+   Alle sechs Kacheln werden (fast) dasselbe Grau. */
+@import url("after.css");
+
+.tile { filter: grayscale(1); }

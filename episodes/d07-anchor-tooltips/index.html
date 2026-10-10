@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D7 · Tooltips that never go off-screen</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css state-top.css state-edge.css" data-labels="Before|After|Tip: top|Tip: edge">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <header class="topbar">
+    <strong class="logo">◆ Docs</strong>
+    <nav class="actions" aria-label="Document actions">
+      <button class="tip-btn" popovertarget="tip-share">Share</button>
+      <div class="tip" id="tip-share" popover>Invite people to edit</div>
+      <button class="tip-btn" popovertarget="tip-help" aria-label="Help">?</button>
+      <div class="tip" id="tip-help" popover>Keyboard shortcuts</div>
+    </nav>
+  </header>
+
+  <main class="page">
+    <h1>Tooltips that stay on screen</h1>
+    <p class="lead">Click a button. Near the top edge the tooltip flips below – no JavaScript math.</p>
+
+    <article class="card">
+      <h2>Quarterly report.pdf</h2>
+      <p>Updated 2 hours ago · 4 comments · 1.2 MB</p>
+      <div class="row">
+        <button class="tip-btn" popovertarget="tip-copy">Copy link</button>
+        <div class="tip" id="tip-copy" popover>Anyone with the link can view</div>
+        <button class="tip-btn" popovertarget="tip-download">Download</button>
+        <div class="tip" id="tip-download" popover>PDF · 1.2 MB</div>
+        <button class="tip-btn" popovertarget="tip-delete">Delete</button>
+        <div class="tip" id="tip-delete" popover>Moves the file to trash</div>
+      </div>
+    </article>
+  </main>
+
+  <script>
+    // Nur für Aufnahmen/Schalter: Zustands-Stylesheets öffnen den passenden Tooltip (kein Hover, kein Timing).
+    (() => {
+      const open = { 'state-top.css': 'tip-copy', 'state-edge.css': 'tip-share', 'before.css': 'tip-share' };
+      const link = document.querySelector('link[data-styles]');
+      const sync = () => {
+        const id = open[link.getAttribute('href')];
+        const tip = id && document.getElementById(id);
+        if (tip && !tip.matches(':popover-open')) tip.showPopover();
+      };
+      addEventListener('DOMContentLoaded', () => {
+        sync();
+        new MutationObserver(sync).observe(link, { attributes: true, attributeFilter: ['href'] });
+      });
+    })();
+  </script>
+</body>
+</html>

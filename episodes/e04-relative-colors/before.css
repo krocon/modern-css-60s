@@ -1,0 +1,71 @@
+/* Rebranding auf Petrol, von Hand: */
+:root {
+  --brand: #0d9488; /* neu */
+  --pale:  #f0abfc; /* alt … */
+  --deep:  #701a75;
+  --soft:  #a21caf26;
+  --alt:   #15803d;
+}
+
+/* Before – jede Stufe ist ein eigener Hex-Wert. Beim Rebranding wurde nur --brand geändert:
+   Leiter, Rollen, Überschrift und Hinweis-Karte sind noch Magenta. */
+.brand-value::after { content: ": #0d9488"; }
+
+.ladder span:nth-child(1) { background: #fdf4ff; }
+.ladder span:nth-child(2) { background: #fae8ff; }
+.ladder span:nth-child(3) { background: #f0abfc; }
+.ladder span:nth-child(4) { background: #e879f9; }
+.ladder span:nth-child(5) { background: #c026d3; }
+.ladder span:nth-child(6) { background: #a21caf; }
+.ladder span:nth-child(7) { background: #86198f; }
+.ladder span:nth-child(8) { background: #4a044e; }
+
+:root { color-scheme: light; }
+.page { max-inline-size: 72rem; margin-inline: auto; padding: var(--space-5) var(--space-5) var(--space-6); }
+.page > h1 { font-size: var(--step-4); color: var(--deep); }
+.lead { margin-block: var(--space-2) var(--space-4); color: var(--text-muted); font-size: var(--step-1); }
+.lead code { color: var(--text); font-weight: 700; white-space: nowrap; }
+
+.roles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(9rem, 100%), 1fr));
+  gap: var(--space-3);
+}
+.swatch {
+  display: grid;
+  align-items: end;
+  min-block-size: 9rem;
+  padding: var(--space-3);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-weight: 700;
+  color: #fff;
+}
+.pale { background: var(--pale); color: var(--deep); }
+.brand { background: var(--brand); }
+.deep { background: var(--deep); }
+.soft { background: var(--soft); color: var(--deep); }
+.alt { background: var(--alt); }
+
+.split {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(24rem, 100%), 1fr));
+  gap: var(--space-4);
+  margin-block-start: var(--space-4);
+}
+.ladder { display: grid; grid-template-columns: repeat(8, 1fr); border-radius: var(--radius); overflow: hidden; }
+.ladder span { display: grid; place-items: end center; min-block-size: 10rem; padding-block-end: var(--space-2); font-size: var(--step--1); font-weight: 700; color: #fff; }
+.ladder span:nth-child(-n + 3) { color: var(--deep); }
+
+.notice {
+  display: grid;
+  gap: var(--space-2);
+  padding: var(--space-4);
+  border-inline-start: 6px solid var(--brand);
+  border-radius: var(--radius);
+  background: var(--soft);
+}
+.notice h2 { font-size: var(--step-2); color: var(--deep); }
+.actions { display: flex; flex-wrap: wrap; gap: var(--space-2); margin-block-start: var(--space-2); }
+.btn { padding: 0.6rem 1.2rem; border-radius: 999px; background: var(--brand); color: #fff; font-weight: 700; text-decoration: none; }
+.btn-alt { background: transparent; border: 2px solid var(--alt); color: oklch(from var(--alt) calc(l - .15) c h); }

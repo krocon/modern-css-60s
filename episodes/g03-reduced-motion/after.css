@@ -1,0 +1,14 @@
+@media (prefers-reduced-motion: reduce) {
+  *, ::before, ::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}
+
+/* After – wer im System „Bewegung reduzieren“ eingeschaltet hat, bekommt eine ruhige Seite:
+   Animationen springen sofort ans Ende (statt animation: none – Endzustände und animationend bleiben erhalten),
+   Endlosschleifen laufen nur einmal. Testen: DevTools → Rendering → Emulate prefers-reduced-motion. */
+@media (prefers-reduced-motion: reduce) {
+  .motion-status::after { content: "reduced motion"; color: var(--accent); }
+}

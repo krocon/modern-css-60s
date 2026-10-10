@@ -1,0 +1,11 @@
+.link-btn { anchor-name: --a; }
+.tip {
+  position: absolute;
+  position-anchor: --a;
+  position-area: top;
+}
+
+/* Before – Anchor Positioning ohne Abfrage. Im modernen Browser klappt das,
+   ein älterer ignoriert die anchor-Eigenschaften – siehe before-old.css. */
+.tip { margin: 0 0 0.5rem; }
+.status { --state: #d97706; --msg: "⚠ no @supports – only works where anchor positioning exists"; }

@@ -1,0 +1,24 @@
+.app-bar {
+  padding-top: max(1rem, env(safe-area-inset-top));
+}
+.tab-bar {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+.app-bar, .list {
+  padding-left: max(1rem, env(safe-area-inset-left));
+  padding-right: max(1rem, env(safe-area-inset-right));
+}
+
+/* After – viewport-fit=cover + env(): Hintergründe laufen bis in die Ecken, Inhalt bleibt im sicheren Bereich.
+   Kopfzeile unter Statusleiste und Kamera-Insel, Tabs über dem Home-Balken, im Querformat Abstand zur Kamera-Seite.
+   max(1rem, …): Mindestabstand auf Geräten ohne Notch (dort ist env(...) = 0). */
+
+/* Simulation im Telefonrahmen: Desktop-Browser melden env(safe-area-inset-*) = 0.
+   Deshalb stehen hier dieselben Regeln mit den Ersatzwerten --sim-* aus demo.css. */
+.sim .app-bar { padding-top: max(1rem, var(--sim-top)); }
+.sim .tab-bar { padding-bottom: var(--sim-bottom); padding-inline: var(--sim-left) var(--sim-right); }
+.sim .app-bar, .sim .list {
+  padding-left: max(1rem, var(--sim-left));
+  padding-right: max(1rem, var(--sim-right));
+}
+.landscape .app-bar { padding-top: 0.4rem; }

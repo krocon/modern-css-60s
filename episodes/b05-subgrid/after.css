@@ -1,0 +1,10 @@
+.card {
+  display: grid;
+  grid-template-rows: subgrid;
+  grid-row: span 4;
+  gap: 1rem;
+}
+
+/* After – Subgrid: jede Karte belegt 4 Zeilen des Eltern-Grids (.cards) und übernimmt sie.
+   Bild, Titel, Text und Button liegen dadurch in allen Karten einer Reihe auf derselben Linie.
+   Die höchste Zelle einer Zeile bestimmt die Höhe für alle Karten. */

@@ -1,0 +1,4 @@
+/* Schritt 1 – nur overflow-x: auto am Wrapper, seitlich gescrollt:
+   Die Seite bleibt heil, aber die Namen scrollen mit weg. */
+@import url("before.css");
+.table-wrap { overflow-x: auto; }

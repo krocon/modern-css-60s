@@ -1,0 +1,4 @@
+/* Momentaufnahme: Drehung bei 270deg (im Video ist die Animation aus, darum fester Winkel). */
+@import url("after.css");
+.pro { animation: none; --angle: 270deg; }
+.angle-readout output::after { content: "270deg"; }

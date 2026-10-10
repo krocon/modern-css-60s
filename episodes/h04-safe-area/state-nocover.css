@@ -1,0 +1,5 @@
+/* Zustand ohne viewport-fit=cover – der Browser hält die Seite aus den unsicheren Zonen heraus:
+   Inhalt ist sicher, aber die Seite wirkt eingerahmt (Ränder oben, unten und im Querformat links/rechts). */
+.app { inset: var(--sim-top) var(--sim-right) var(--sim-bottom) var(--sim-left); }
+.screen { background: #e2e8f0; }
+.status { color: #0f172a; }

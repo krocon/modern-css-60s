@@ -1,0 +1,23 @@
+/* Zustand „Erstens“ – wie after.css, dazu sichtbar: main und aside sind Container (gestrichelt + Etikett). */
+@import url("after.css");
+
+main, aside {
+  position: relative;
+  padding: var(--space-3);
+  padding-block-start: 2.75rem;
+  outline: 3px dashed var(--brand);
+  outline-offset: -3px;
+  border-radius: var(--radius);
+}
+main::before, aside::before {
+  position: absolute;
+  inset-block-start: 0.6rem;
+  inset-inline-start: 0.75rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: 999px;
+  background: var(--brand);
+  color: var(--on-brand);
+  font: 700 0.8rem/1 var(--font-mono);
+}
+main::before  { content: "main · container"; }
+aside::before { content: "aside · container"; }

@@ -1,0 +1,12 @@
+*, *::before, *::after { box-sizing: border-box; }
+* { margin: 0; }
+body { line-height: 1.5; }
+img, svg { display: block; max-inline-size: 100%; }
+input, button { font: inherit; }
+ul[class] { padding: 0; list-style: none; }
+h1, h2, p { overflow-wrap: break-word; }
+body { min-block-size: 100dvh; }
+textarea, select { font: inherit; }
+picture, video, canvas { display: block; max-inline-size: 100%; }
+
+/* After – der komplette 10-Zeilen-Reset: Breiten stimmen, keine Zufallsabstände, Bilder passen, Formulare erben die Schrift. */

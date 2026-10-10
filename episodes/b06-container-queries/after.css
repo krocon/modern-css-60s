@@ -1,0 +1,11 @@
+main, aside { container-type: inline-size; }
+
+.card { display: grid; gap: 1rem; }
+
+@container (width > 30rem) {
+  .card { grid-template-columns: 12rem 1fr; }
+}
+
+/* After – Container Queries: main und aside sind Container. Die Karte fragt die Breite
+   ihres Containers ab, nicht die des Bildschirms → breit im Main, gestapelt in der schmalen Sidebar.
+   Wird die Sidebar breit (Seite einspaltig), wird auch ihre Karte quer – ohne extra Code. */

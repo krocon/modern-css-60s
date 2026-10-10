@@ -1,0 +1,11 @@
+/* Zustand „register“ – index.html meldet sw.js beim Browser an. Der Service Worker existiert jetzt, der Cache ist noch leer. */
+@import url("demo.css");
+
+.a-reg { color: #d946ef; }
+.a-reg span { background: #d946ef; color: #ffffff; }
+.b-sw { background: color-mix(in srgb, #d946ef 18%, var(--surface-2)); box-shadow: 0 0 0 4px rgb(217 70 239 / 0.25); }
+.a-net, .a-cache, .b-net, .b-cache { opacity: 0.35; }
+.a-net { color: var(--text-muted); }
+.b-net { border-color: var(--border); }
+.b-cache .full { display: none; }
+.b-cache .empty { display: block; }

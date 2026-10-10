@@ -1,0 +1,4 @@
+/* No top – position: sticky ohne top/inset: der Header verhält sich wie relative und scrollt weg. */
+@import url("after.css");
+
+.site-header { top: auto; }

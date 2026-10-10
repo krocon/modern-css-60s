@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>D5 · A textarea that grows as you type</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css before-long.css after.css after-empty.css after-long.css after-max.css fallback-long.css"
+        data-labels="Before|Before + text|After|After · empty|After · long|After · max|Fallback">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>Leave a reply</h1>
+    <p class="lead">Start typing – the box grows with your text. No JavaScript.</p>
+
+    <article class="comment">
+      <p class="who"><strong>Ada Lovelace</strong> · 2 hours ago</p>
+      <p>Today I learned: <code>field-sizing: content</code> makes a textarea grow with its text. One line of CSS!</p>
+    </article>
+
+    <form class="reply" onsubmit="return false">
+      <label for="reply">Your reply</label>
+      <textarea id="reply" rows="4" placeholder="Write something nice…">Great tip, thanks Ada!</textarea>
+      <button>Post reply</button>
+    </form>
+  </main>
+
+  <script>
+    // Demo-Zustände für die Video-Bühne (ohne Timer): Der Name des Stylesheets bestimmt, wie viel Text
+    // im Feld steht (*-empty / *-long / *-max). So lässt sich „beim Tippen wachsen“ als Folge von Zuständen zeigen.
+    (() => {
+      const link = document.querySelector('link[data-styles]');
+      const box = document.getElementById('reply');
+      const long = 'Great tip, thanks Ada!\nI deleted 20 lines of resize JavaScript today.\nNo more scrollHeight, no more input listeners.\nThe box simply grows with every line I type.\nOne line of CSS. Love it.';
+      const texts = {
+        empty: '',
+        long,
+        max: long + '\n\nAnd it keeps growing:\nline seven\nline eight\nline nine\nline ten\nuntil max-block-size says stop.\nFrom here on, a scrollbar.\nline thirteen\nline fourteen',
+      };
+      let demo = false;
+      const apply = () => {
+        const key = (link.getAttribute('href').match(/-(empty|long|max)\.css$/) || [])[1];
+        if (key) { box.value = texts[key]; demo = true; }
+        else if (demo) { box.value = box.defaultValue; demo = false; }
+      };
+      link.addEventListener('load', apply);
+      addEventListener('load', apply);
+    })();
+  </script>
+</body>
+</html>

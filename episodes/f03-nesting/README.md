@@ -3,13 +3,19 @@
 **DE:** Für Verschachtelung brauchst du kein Sass mehr
 
 🎬 Episode 043 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 043 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/f03-nesting/
 
-## Core idea
+## Core CSS (`after.css`)
 
-Native Nesting mit &:hover und @media im Block
-
-_Demo coming soon / Demo folgt._
+```css
+.card {
+  & h2 { color: var(--brand); }
+  &:hover { border-color: var(--brand); }
+  @media (width < 40rem) {
+    flex-direction: column;
+  }
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2023 (widely available since June 2026) · [caniuse](https://caniuse.co
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

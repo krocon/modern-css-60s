@@ -3,13 +3,19 @@
 **DE:** Endlich: Animation von und zu display: none
 
 🎬 Episode 049 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 049 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/g04-starting-style/
 
-## Core idea
+## Core CSS (`after.css`)
 
-@starting-style + transition-behavior: allow-discrete
-
-_Demo coming soon / Demo folgt._
+```css
+dialog {
+  transition: opacity .4s, translate .4s,
+    display .4s, overlay .4s;
+  transition-behavior: allow-discrete;
+  &:not([open]) { opacity: 0; translate: 0 2rem; }
+  @starting-style { opacity: 0; translate: 0 2rem; }
+}
+```
 
 ## Browser support
 
@@ -22,4 +28,4 @@ Baseline 2024 · [caniuse](https://caniuse.com/?search=starting-style) · [Web F
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

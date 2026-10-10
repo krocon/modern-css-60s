@@ -1,0 +1,9 @@
+.trip { view-transition-name: var(--vt); }
+
+::view-transition-group(*) {
+  animation-duration: .5s;
+  animation-timing-function: ease-in-out;
+}
+
+/* After – jede Karte hat einen eindeutigen view-transition-name (--vt im HTML).
+   app.js ändert das DOM in document.startViewTransition(): der Browser morpht Position und Größe jeder Karte. */

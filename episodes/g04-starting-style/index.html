@@ -1,0 +1,56 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>G4 · Finally: animate to and from display: none</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="page.css">
+  <!-- Nur dieses Stylesheet wechselt. state-*.css = Momentaufnahmen der Transition für das Video (dort sind Transitions aus). -->
+  <link rel="stylesheet" href="after.css"
+        data-styles="before.css after.css state-25.css state-50.css state-open.css state-closing.css"
+        data-labels="Before|After|Open 100 ms|Open 200 ms|Open|Closing 200 ms">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <p class="eyebrow">Settings · Moonlight</p>
+    <h1>Project settings</h1>
+    <section class="panel danger">
+      <div>
+        <h2>Delete this project</h2>
+        <p>All pages, images and comments will be removed.</p>
+      </div>
+      <button type="button" class="btn btn-danger" onclick="document.getElementById('confirm').showModal()">Delete project …</button>
+    </section>
+
+    <figure class="frames">
+      <figcaption>Opening the dialog, frame by frame</figcaption>
+      <ol>
+        <li><span class="screen"><span class="mini"></span></span><small>0 ms</small></li>
+        <li><span class="screen"><span class="mini"></span></span><small>100 ms</small></li>
+        <li><span class="screen"><span class="mini"></span></span><small>200 ms</small></li>
+        <li><span class="screen"><span class="mini"></span></span><small>300 ms</small></li>
+        <li><span class="screen"><span class="mini"></span></span><small>400 ms</small></li>
+      </ol>
+    </figure>
+  </main>
+
+  <dialog id="confirm" aria-labelledby="confirm-title">
+    <form method="dialog">
+      <h2 id="confirm-title">Delete “Moonlight”?</h2>
+      <p>This can’t be undone. 24 pages and 118 images will be gone for good.</p>
+      <div class="actions">
+        <button class="btn" value="cancel">Cancel</button>
+        <button class="btn btn-danger" value="delete">Delete</button>
+      </div>
+    </form>
+  </dialog>
+  <script>
+    // Nur für die Video-Bühne: Momentaufnahmen brauchen einen offenen Dialog (?css=state-….css). Keine Zeitabhängigkeit.
+    if (/^state-/.test(new URLSearchParams(location.search).get('css') || '')) document.getElementById('confirm').showModal();
+  </script>
+</body>
+</html>

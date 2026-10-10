@@ -1,0 +1,13 @@
+/* Zustand für die Video-Bühne: simulierter Tastaturfokus (Tab) auf „Pricing“.
+   Gleicher Stil wie :focus-visible in after.css – im Video gibt es keine echte Tastatur.
+   Im Browser echt: after.css wählen und Tab drücken. */
+@import url("after.css");
+
+.nav a:nth-child(2) {
+  outline: 4px solid var(--brand);
+  outline-offset: 4px;
+  background: var(--brand-soft);
+}
+.kbd-hint { display: flex; }
+.kbd-hint .key::before { content: "Tab ⇥"; }
+.kbd-hint .target::before { content: "Focus: Pricing"; }

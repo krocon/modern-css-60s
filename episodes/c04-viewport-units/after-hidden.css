@@ -1,0 +1,4 @@
+/* After · Leisten weg – dvh wächst mit: der Hero füllt jetzt den ganzen Bildschirm. */
+@import url("after.css");
+.phone { --bar-top: 0px; --bar-bottom: 0px; }
+.status::after { content: "100dvh · bars hidden → grows, still fits ✓"; }

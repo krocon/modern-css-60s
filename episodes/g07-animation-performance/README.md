@@ -3,13 +3,18 @@
 **DE:** Animiere nur diese 2 Eigenschaften
 
 🎬 Episode 052 of 59 · *Modern HTML & CSS in 60 seconds* / Folge 052 von 59 · *Modernes HTML & CSS in 60 Sekunden*  
-▶️ Live demo: coming soon
+▶️ Live demo: https://krocon.github.io/modern-css-60s/episodes/g07-animation-performance/
 
-## Core idea
+## Core CSS (`after.css`)
 
-transform und opacity vs. width im Performance-Panel
-
-_Demo coming soon / Demo folgt._
+```css
+.drawer {
+  transform: translateX(-100%);
+  opacity: 0;
+  transition: transform .3s, opacity .3s;
+}
+.menu-open .drawer { transform: none; opacity: 1; }
+```
 
 ## Browser support
 
@@ -22,4 +27,4 @@ Baseline widely available · [caniuse](https://caniuse.com/?search=transforms2d)
 
 ## Run it
 
-No build tools: open `index.html` with a double-click.
+No build tools: open `index.html` with a double-click, then use the switch in the top right corner (before/after, light/dark).

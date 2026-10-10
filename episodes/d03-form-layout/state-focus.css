@@ -1,0 +1,4 @@
+/* Zustand – Klick auf das Label „Email address“: Dank for/id landet der Fokus im Feld (hier statisch nachgestellt). */
+@import url("after.css");
+label[for="email"] { color: var(--brand); }
+#email { outline: 3px solid var(--brand); outline-offset: 2px; }

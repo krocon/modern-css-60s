@@ -1,0 +1,46 @@
+/* page.css – gemeinsame Optik aller Zustände. position: sticky und das overflow am Wrapper (.app) stehen NUR in before/after.css. */
+.site-header {
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  border-block-end: 1px solid var(--border);
+  background: var(--surface);
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.08);
+}
+.logo { color: var(--text); font-size: var(--step-2); font-weight: 800; text-decoration: none; letter-spacing: -0.03em; }
+.logo span { color: var(--brand); }
+.site-header nav { display: flex; gap: var(--space-4); }
+.site-header nav a { color: var(--text-muted); font-weight: 600; text-decoration: none; }
+.site-header nav a[aria-current] { color: var(--brand); }
+
+/* Die Deko ragt rechts aus dem Bild – deshalb wollte jemand overflow-x am Wrapper. */
+.hero {
+  overflow-y: clip; /* nur senkrecht kappen – waagerecht ragt die Deko weiter raus */
+  position: relative;
+  padding: var(--space-6) var(--space-5);
+  background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 22%, var(--surface)), color-mix(in srgb, var(--accent) 22%, var(--surface)));
+}
+.hero::after {
+  content: "";
+  position: absolute;
+  inset-block-start: -4rem;
+  inset-inline-end: -12rem;
+  inline-size: 28rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: radial-gradient(circle, color-mix(in srgb, var(--brand) 45%, transparent), transparent 70%);
+  pointer-events: none;
+}
+.hero > * { position: relative; z-index: 1; max-inline-size: 40rem; }
+.kicker { color: var(--brand); font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; font-size: var(--step--1); }
+.hero h1 { margin-block: var(--space-2); font-size: var(--step-4); }
+.lead { color: var(--text-muted); font-size: var(--step-1); }
+
+.journal { display: grid; gap: var(--space-5); max-inline-size: 42rem; margin-inline: auto; padding: var(--space-6) var(--space-5); }
+.journal section { padding-inline-start: var(--space-4); border-inline-start: 4px solid color-mix(in srgb, var(--brand) 35%, transparent); }
+.day { color: var(--accent); font-weight: 700; font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.08em; }
+.journal h2 { margin-block: var(--space-1) var(--space-2); font-size: var(--step-2); }
+.journal section p:last-child { color: var(--text-muted); font-size: var(--step-1); }
+.site-footer { padding: var(--space-5); text-align: center; color: var(--text-muted); border-block-start: 1px solid var(--border); }

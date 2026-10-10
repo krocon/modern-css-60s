@@ -1,0 +1,10 @@
+/* Zustand Fokus theme_color + background_color: Statusleiste und Startbild. Die übrigen Zeilen und Marker treten zurück. */
+@import url("after.css");
+
+.json li:not([data-f="colors"]) { opacity: 0.35; }
+.json li[data-f="colors"] { background: rgb(217 70 239 / 0.22); box-shadow: inset 4px 0 0 #d946ef; }
+.previews [data-f]:not([data-f="colors"])::after { opacity: 0.25; }
+.previews [data-f="colors"] { box-shadow: 0 0 0 3px #ffffff, 0 0 0 6px #d946ef; border-radius: 0.6rem; }
+.previews [data-f="colors"]::after { scale: 1.25; }
+.previews .splash[data-f="colors"] { border-radius: 1.9rem; box-shadow: 0 0 0 0.45rem #0b1020, 0 0 0 calc(0.45rem + 4px) #d946ef; }
+.status[data-f="colors"] { border-radius: 0; box-shadow: inset 0 0 0 3px #ffffff; }

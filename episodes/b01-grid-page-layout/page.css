@@ -1,0 +1,43 @@
+/* page.css – gemeinsame Optik aller Zustände (Farben, Panels, Schrift).
+   Das eigentliche Layout steht NUR in before.css / after.css. */
+.layout { padding: var(--space-3); }
+
+.layout > * {
+  position: relative;
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+/* kleines Namensschild je Bereich (zeigt den Namen aus grid-template-areas) */
+.layout > [data-area]::after {
+  content: attr(data-area);
+  position: absolute;
+  inset-block-end: 0.6rem;
+  inset-inline-end: 0.6rem;
+  padding: 0.3rem 0.55rem;
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--brand) 14%, transparent);
+  color: var(--brand);
+  font: 700 0.75rem/1 var(--font-mono);
+}
+
+.layout > header { background: var(--brand); border-color: transparent; color: var(--on-brand); }
+.layout > header[data-area]::after { background: color-mix(in srgb, var(--on-brand) 18%, transparent); color: var(--on-brand); }
+.logo { color: inherit; font-size: var(--step-2); font-weight: 800; text-decoration: none; letter-spacing: -0.02em; }
+.logo span { opacity: 0.7; }
+.tagline { opacity: 0.85; }
+
+nav ul { display: grid; gap: var(--space-1); padding: 0; list-style: none; }
+nav a { display: block; padding: 0.4rem 0.75rem; border-radius: 0.5rem; color: var(--text); text-decoration: none; font-weight: 600; }
+nav a[aria-current] { background: var(--brand); color: var(--on-brand); }
+
+main h1 { margin-block: var(--space-1) var(--space-3); font-size: var(--step-3); }
+main p + p { margin-block-start: var(--space-3); }
+main p:not(.meta) { max-inline-size: 60ch; color: var(--text-muted); font-size: var(--step-1); }
+.meta { color: var(--accent); font-weight: 700; font-size: var(--step--1); text-transform: uppercase; letter-spacing: 0.08em; }
+
+aside h2 { font-size: var(--step-1); margin-block-end: var(--space-2); }
+aside ol { display: grid; gap: var(--space-2); padding-inline-start: 1.2rem; }
+
+.layout > footer { color: var(--text-muted); font-size: var(--step--1); padding-block: var(--space-3); }
