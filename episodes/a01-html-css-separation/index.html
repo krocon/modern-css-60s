@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>A1 · One HTML page, three designs</title>
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <!-- Nur dieses Stylesheet wechselt. Das HTML darunter bleibt immer gleich. -->
+  <link rel="stylesheet" href="theme-b.css" data-styles="before.css theme-a.css theme-b.css theme-c.css" data-labels="Raw|Editorial|Neon|Brutal">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+
+  <header>
+    <p class="kicker">Modern HTML &amp; CSS · A1</p>
+    <h1>Structure stays, style changes</h1>
+  </header>
+
+  <nav aria-label="Main">
+    <ul>
+      <li><a href="#html">HTML</a></li>
+      <li><a href="#css">CSS</a></li>
+      <li><a href="#responsive">Responsive</a></li>
+    </ul>
+  </nav>
+
+  <main>
+    <article>
+      <h2 id="html">HTML says what things are</h2>
+      <p>A header, a navigation, an article and a footer. No color classes, no inline styles, no layout hints – just meaning.</p>
+
+      <h2 id="css">CSS decides how they look</h2>
+      <p>Swap the stylesheet with the switch in the top right corner. Grid moves the navigation, custom properties change every color, a different font and different spacing do the rest.</p>
+
+      <h2 id="responsive">Every design stays responsive</h2>
+      <p>Make the window narrow. Layout lives in the stylesheet, not in the markup – so each theme decides on its own how to behave on small screens.</p>
+    </article>
+  </main>
+
+  <footer>
+    <p>Not one tag in this file changes between the three designs.</p>
+  </footer>
+</body>
+</html>

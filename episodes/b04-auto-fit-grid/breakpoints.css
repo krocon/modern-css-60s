@@ -1,0 +1,23 @@
+/* Breakpoints – der alte Weg: für jede Bildschirmbreite eine eigene Media Query. */
+.page {
+  max-inline-size: 76rem;
+  margin-inline: auto;
+  padding: 5rem var(--space-4) var(--space-6);
+}
+.page > h1 { font-size: var(--step-4); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text-muted); font-size: var(--step-1); }
+
+.card {
+  padding: var(--space-4);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--surface-2);
+}
+.card h2 { font-size: var(--step-1); color: var(--brand); }
+.card p { margin-block-start: var(--space-2); color: var(--text-muted); }
+.cards { display: flex; flex-wrap: wrap; gap: 1rem; }
+
+.card { width: 100%; }
+@media (min-width: 40em) { .card { width: calc(50% - 0.5rem); } }
+@media (min-width: 60em) { .card { width: calc(33.3% - 0.67rem); } }
+@media (min-width: 80em) { .card { width: calc(25% - 0.75rem); } }

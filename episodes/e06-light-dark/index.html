@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>E6 · light-dark(): one line per color, both themes</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="../../shared/demo-frame.css">
+  <link rel="stylesheet" href="after.css" data-styles="before.css after.css" data-labels="Before|After">
+  <script src="../../shared/demo-toolbar.js" defer></script>
+</head>
+<body>
+  <a class="demo-back" href="../../index.html">← All episodes</a>
+  <main class="page">
+    <h1>One line per color</h1>
+    <p class="lead">Switch your system theme – or use ☀ / ☾ in the top right corner.</p>
+
+    <form class="panel" onsubmit="return false">
+      <h2>Newsletter settings</h2>
+      <label>Name <input type="text" value="Ada Lovelace"></label>
+      <label>Frequency
+        <select><option>Daily</option><option selected>Weekly</option><option>Monthly</option></select>
+      </label>
+      <label class="check"><input type="checkbox" checked> Send me the CSS tip of the week</label>
+      <button>Save</button>
+    </form>
+
+    <section class="panel log" aria-label="Changelog">
+      <h2>Changelog</h2>
+      <ol>
+        <li><code>color-scheme: light dark</code> – both themes allowed</li>
+        <li><code>--surface</code> – one line with <code>light-dark()</code></li>
+        <li><code>--text</code> – one line with <code>light-dark()</code></li>
+        <li><code>--brand</code> – one line with <code>light-dark()</code></li>
+        <li>Form controls follow automatically</li>
+        <li>Scrollbars follow automatically</li>
+        <li>No media query left</li>
+        <li>Baseline since 2024</li>
+      </ol>
+    </section>
+  </main>
+</body>
+</html>

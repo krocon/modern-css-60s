@@ -1,0 +1,46 @@
+/* ==========================================================================
+   demo-frame.css – einheitliche Demo-Optik für die Aufnahmen
+   Schalter oben rechts (Vorher/Nachher + Theme), Zurück-Link unten links (verdeckt so keinen Inhalt).
+   Bewusst unabhängig von base.css: funktioniert auch auf Seiten ohne Basis (Folge A1).
+   ========================================================================== */
+.demo-toolbar,
+.demo-back {
+  position: fixed;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.25rem;
+  border: 1px solid #334155;
+  border-radius: 999px;
+  background: #0f172a;
+  box-shadow: 0 0.5rem 1.5rem rgb(0 0 0 / 0.25);
+  color-scheme: dark;
+  font: 600 0.8125rem/1 system-ui, -apple-system, "Segoe UI", sans-serif;
+}
+
+.demo-toolbar { inset-block-start: 1rem; inset-inline-end: 1rem; }
+.demo-back { inset-block-end: 1rem; inset-inline-start: 1rem; padding: 0.625rem 0.875rem; color: #cbd5e1; text-decoration: none; }
+.demo-back:hover { color: #ffffff; }
+
+.demo-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 0.5rem 0.875rem;
+  background: transparent;
+  color: #cbd5e1;
+  font: inherit;
+  cursor: pointer;
+}
+.demo-toolbar button:hover { color: #ffffff; }
+.demo-toolbar button[aria-pressed="true"] { background: #d946ef; color: #ffffff; }
+.demo-toolbar button:focus-visible,
+.demo-back:focus-visible { outline: 2px solid #f0abfc; outline-offset: 2px; }
+.demo-toolbar .demo-sep { align-self: stretch; inline-size: 1px; margin-block: 0.25rem; background: #334155; }
+
+@media print { .demo-toolbar, .demo-back { display: none; } }
+
+/* Eingebettet im Video (?embed=1): nur die Demo selbst */
+.is-embed .demo-toolbar, .is-embed .demo-back { display: none; }
+.is-embed { scrollbar-width: none; }
+.is-embed::-webkit-scrollbar { display: none; }

@@ -1,0 +1,30 @@
+:root {
+  color-scheme: light dark;
+  --surface: light-dark(#ffffff, #0f172a);
+  --text:    light-dark(#0f172a, #f8fafc);
+  --brand:   light-dark(#a21caf, #f0abfc);
+}
+
+/* After – eine Zeile pro Farbe. Folgt dem System UND dem ☀/☾-Schalter (color-scheme). */
+
+.page { max-inline-size: 44rem; margin-inline: auto; padding: 5rem var(--space-4) var(--space-6); }
+.page > h1 { font-size: var(--step-4); color: var(--text); }
+.lead { margin-block: var(--space-2) var(--space-5); color: var(--text); opacity: 0.75; }
+body { background: var(--surface); color: var(--text); }
+
+.panel {
+  display: grid;
+  gap: var(--space-3);
+  padding: var(--space-5);
+  border: 1px solid color-mix(in srgb, var(--text) 15%, transparent);
+  border-radius: var(--radius);
+}
+.panel + .panel { margin-block-start: var(--space-4); }
+.panel h2 { font-size: var(--step-2); color: var(--brand); }
+label { display: grid; gap: var(--space-1); font-weight: 600; }
+.check { display: flex; align-items: center; gap: var(--space-2); font-weight: 400; }
+input, select { padding: 0.5rem 0.75rem; accent-color: var(--brand); }
+button { justify-self: start; padding: 0.625rem 1.25rem; border: 0; border-radius: 999px; background: var(--brand); color: var(--surface); font-weight: 700; }
+
+.log { max-block-size: 14rem; overflow: auto; }
+.log ol { padding-inline-start: 1.25rem; display: grid; gap: var(--space-2); }
